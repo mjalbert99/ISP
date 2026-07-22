@@ -1,0 +1,2 @@
+place_macro -macro_name {sram0} -location {20.195 196.36} -orientation R0
+place_macro -macro_name {sram1} -location {254.78 196.36} -orientation MY

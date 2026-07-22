@@ -1,0 +1,5 @@
+VCD info: dumpfile bnr_trace.vcd opened for output.
+----------------------------------------
+TEST PASSED!
+----------------------------------------
+src/bnr_tb.v:195: $finish called at 342 (1s)

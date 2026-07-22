@@ -1,0 +1,872 @@
+
+Magic 8.3 revision 652 - Compiled on Wed Jun  3 15:53:19 PDT 2026.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+WARNING: RLIMIT_NOFILE is above 1024 and Tcl_Version<9 this may cause runtime issues [rlim_cur=10240]
+Using NULL graphics device.
+Input style gdsii: scaleFactor=5, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    obsactive obsm1 obsm2 obsm3 obsm4 obsm5 obsm6 obsm7 obsm8 obsm9 obsm10 glass fillblock comment obscomment 
+Processing system .magicrc file
+Switching to WIRING tool.
+Switching to NETLIST tool.
+Switching to PICK tool.
+Switching to BOX tool.
+Loading "magic.tcl" from command line.
+"rescue" isn't a valid gds option.
+GDS commands have the form ":gds option", where option is one of:
+    help		print this help information
+    abstract [allow|disallow]
+		[dis]allow writing of GDS with calls to abstract cells
+    addendum [yes|no]	output only cells that are not type "readonly"
+    arrays [yes|no]	output arrays as individual subuses (like in CIF)
+    compress [value]	compress output with zlib compression 0 to 6
+    contacts [yes|no]	optimize output by arraying contacts as subcells
+    datestamp [yes|value]	use current time or value as the creation date stamp
+    drccheck [yes|no]	mark all cells as needing DRC checking
+    flatten [yes|no|limit]	flatten simple cells (e.g., contacts) on input
+    flatglob [<name>|none]	flatten cells by name with glob patterning
+    labels [yes|no]	cause labels to be output when writing GDS-II
+    library [yes|no]	do not output the top level, only subcells
+    lower [yes|no]		allow both upper and lower case in labels
+    magscale [value]	scale to interpret text magnification 1 in microns
+    maskhints [yes|no]	generate mask hint properties on input
+    merge [yes|no]		merge tiles into polygons in the output
+    nodatestamp [yes|no]	write a zero value creation date stamp
+    noduplicates [yes|no]	do not read cells that exist before reading GDS
+    ordering [on|off]	cause cells to be read in post-order
+    read file		read Calma GDS-II format from "file"
+		into edit cell
+    readonly [yes|no]	set cell as read-only and generate output from GDS file
+    rescale [yes|no]	allow or disallow internal grid subdivision
+    savepaths [yes|no]	save path centerlines as cell properties
+    warning [option]	set warning information level
+    write file		output Calma GDS-II format to "file"
+		for the window's root cell
+    polygon subcells [yes|no]
+		put non-Manhattan polygons into subcells
+    path subcells [yes|no]
+		put wire paths into individual subcells
+    undefined [allow|disallow]
+		[dis]allow writing of GDS with calls to undefined cells
+    unique [yes|no]	rename any cells with names duplicated in the GDS
+If no option is given, a CALMA GDS-II stream file is
+    produced for the root cell.
+The current CIF output style ("cif ostyle") is used
+    to select the mask layers output by :gds write.
+The current CIF input style ("cif istyle") is used
+    to select the mask layers read by :gds read.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 3.0
+Library name: NangateOpenCellLibrary
+Reading "AND2_X1".
+CIF file read warning: Input off lambda grid by 3/5; grid redefined.
+Making label "& Vendor Nangate Inc" on type comment in cell AND2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AND2_X1 sticky.
+Making label "& Instance AND2_X1" on type comment in cell AND2_X1 sticky.
+Reading "AND2_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AND2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AND2_X2 sticky.
+Making label "& Instance AND2_X2" on type comment in cell AND2_X2 sticky.
+Reading "AND2_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AND2_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND2_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AND2_X4 sticky.
+Making label "& Instance AND2_X4" on type comment in cell AND2_X4 sticky.
+Reading "AND3_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell AND3_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND3_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AND3_X1 sticky.
+Making label "& Instance AND3_X1" on type comment in cell AND3_X1 sticky.
+Reading "AND3_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AND3_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND3_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AND3_X2 sticky.
+Making label "& Instance AND3_X2" on type comment in cell AND3_X2 sticky.
+Reading "AND3_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AND3_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND3_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AND3_X4 sticky.
+Making label "& Instance AND3_X4" on type comment in cell AND3_X4 sticky.
+Reading "AND4_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell AND4_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND4_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AND4_X1 sticky.
+Making label "& Instance AND4_X1" on type comment in cell AND4_X1 sticky.
+Reading "AND4_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AND4_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND4_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AND4_X2 sticky.
+Making label "& Instance AND4_X2" on type comment in cell AND4_X2 sticky.
+Reading "AND4_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AND4_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AND4_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AND4_X4 sticky.
+Making label "& Instance AND4_X4" on type comment in cell AND4_X4 sticky.
+Reading "ANTENNA_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell ANTENNA_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell ANTENNA_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell ANTENNA_X1 sticky.
+Making label "& Instance ANTENNA_X1" on type comment in cell ANTENNA_X1 sticky.
+Reading "AOI211_X1".
+Moving label "ZN" from metal1 to ndiffc in cell AOI211_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell AOI211_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI211_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI211_X1 sticky.
+Making label "& Instance AOI211_X1" on type comment in cell AOI211_X1 sticky.
+Reading "AOI211_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI211_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI211_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI211_X2 sticky.
+Making label "& Instance AOI211_X2" on type comment in cell AOI211_X2 sticky.
+Reading "AOI211_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI211_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI211_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI211_X4 sticky.
+Making label "& Instance AOI211_X4" on type comment in cell AOI211_X4 sticky.
+Reading "AOI21_X1".
+Moving label "ZN" from metal1 to ndiffc in cell AOI21_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell AOI21_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI21_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI21_X1 sticky.
+Making label "& Instance AOI21_X1" on type comment in cell AOI21_X1 sticky.
+Reading "AOI21_X2".
+Moving label "ZN" from metal1 to ndiffc in cell AOI21_X2.
+Making label "& Vendor Nangate Inc" on type comment in cell AOI21_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI21_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI21_X2 sticky.
+Making label "& Instance AOI21_X2" on type comment in cell AOI21_X2 sticky.
+Reading "AOI21_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI21_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI21_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI21_X4 sticky.
+Making label "& Instance AOI21_X4" on type comment in cell AOI21_X4 sticky.
+Reading "AOI221_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI221_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI221_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI221_X1 sticky.
+Making label "& Instance AOI221_X1" on type comment in cell AOI221_X1 sticky.
+Reading "AOI221_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI221_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI221_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI221_X2 sticky.
+Making label "& Instance AOI221_X2" on type comment in cell AOI221_X2 sticky.
+Reading "AOI221_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI221_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI221_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI221_X4 sticky.
+Making label "& Instance AOI221_X4" on type comment in cell AOI221_X4 sticky.
+Reading "AOI222_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI222_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI222_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI222_X1 sticky.
+Making label "& Instance AOI222_X1" on type comment in cell AOI222_X1 sticky.
+Reading "AOI222_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI222_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI222_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI222_X2 sticky.
+Making label "& Instance AOI222_X2" on type comment in cell AOI222_X2 sticky.
+Reading "AOI222_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI222_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI222_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI222_X4 sticky.
+Making label "& Instance AOI222_X4" on type comment in cell AOI222_X4 sticky.
+Reading "AOI22_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI22_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI22_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI22_X1 sticky.
+Making label "& Instance AOI22_X1" on type comment in cell AOI22_X1 sticky.
+Reading "AOI22_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI22_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI22_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI22_X2 sticky.
+Making label "& Instance AOI22_X2" on type comment in cell AOI22_X2 sticky.
+Reading "AOI22_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell AOI22_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell AOI22_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell AOI22_X4 sticky.
+Making label "& Instance AOI22_X4" on type comment in cell AOI22_X4 sticky.
+Reading "BUF_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell BUF_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell BUF_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell BUF_X1 sticky.
+Making label "& Instance BUF_X1" on type comment in cell BUF_X1 sticky.
+Reading "BUF_X16".
+Making label "& Vendor Nangate Inc" on type comment in cell BUF_X16 sticky.
+Making label "& Product Open Cell Library" on type comment in cell BUF_X16 sticky.
+Making label "& Version 2010_12" on type comment in cell BUF_X16 sticky.
+Making label "& Instance BUF_X16" on type comment in cell BUF_X16 sticky.
+Reading "BUF_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell BUF_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell BUF_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell BUF_X2 sticky.
+Making label "& Instance BUF_X2" on type comment in cell BUF_X2 sticky.
+Reading "BUF_X32".
+Making label "& Vendor Nangate Inc" on type comment in cell BUF_X32 sticky.
+Making label "& Product Open Cell Library" on type comment in cell BUF_X32 sticky.
+Making label "& Version 2010_12" on type comment in cell BUF_X32 sticky.
+Making label "& Instance BUF_X32" on type comment in cell BUF_X32 sticky.
+Reading "BUF_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell BUF_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell BUF_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell BUF_X4 sticky.
+Making label "& Instance BUF_X4" on type comment in cell BUF_X4 sticky.
+Reading "BUF_X8".
+Making label "& Vendor Nangate Inc" on type comment in cell BUF_X8 sticky.
+Making label "& Product Open Cell Library" on type comment in cell BUF_X8 sticky.
+Making label "& Version 2010_12" on type comment in cell BUF_X8 sticky.
+Making label "& Instance BUF_X8" on type comment in cell BUF_X8 sticky.
+Reading "CLKBUF_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKBUF_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKBUF_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKBUF_X1 sticky.
+Making label "& Instance CLKBUF_X1" on type comment in cell CLKBUF_X1 sticky.
+Reading "CLKBUF_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKBUF_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKBUF_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKBUF_X2 sticky.
+Making label "& Instance CLKBUF_X2" on type comment in cell CLKBUF_X2 sticky.
+Reading "CLKBUF_X3".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKBUF_X3 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKBUF_X3 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKBUF_X3 sticky.
+Making label "& Instance CLKBUF_X3" on type comment in cell CLKBUF_X3 sticky.
+Reading "DFFRS_X1".
+Moving label "SN" from metal1 to poly1cont in cell DFFRS_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell DFFRS_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFFRS_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell DFFRS_X1 sticky.
+Making label "& Instance DFFRS_X1" on type comment in cell DFFRS_X1 sticky.
+Reading "DFFRS_X2".
+Moving label "RN" from metal1 to poly1cont in cell DFFRS_X2.
+Moving label "SN" from metal1 to poly1cont in cell DFFRS_X2.
+Making label "& Vendor Nangate Inc" on type comment in cell DFFRS_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFFRS_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell DFFRS_X2 sticky.
+Making label "& Instance DFFRS_X2" on type comment in cell DFFRS_X2 sticky.
+Reading "DFFR_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell DFFR_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFFR_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell DFFR_X1 sticky.
+Making label "& Instance DFFR_X1" on type comment in cell DFFR_X1 sticky.
+Reading "DFFR_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell DFFR_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFFR_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell DFFR_X2 sticky.
+Making label "& Instance DFFR_X2" on type comment in cell DFFR_X2 sticky.
+Reading "DFFS_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell DFFS_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFFS_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell DFFS_X1 sticky.
+Making label "& Instance DFFS_X1" on type comment in cell DFFS_X1 sticky.
+Reading "DFFS_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell DFFS_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFFS_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell DFFS_X2 sticky.
+Making label "& Instance DFFS_X2" on type comment in cell DFFS_X2 sticky.
+Reading "DFF_X1".
+Moving label "QN" from metal1 to ndiffc in cell DFF_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell DFF_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFF_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell DFF_X1 sticky.
+Making label "& Instance DFF_X1" on type comment in cell DFF_X1 sticky.
+Reading "DFF_X2".
+Moving label "CK" from metal1 to poly1cont in cell DFF_X2.
+Making label "& Vendor Nangate Inc" on type comment in cell DFF_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DFF_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell DFF_X2 sticky.
+Making label "& Instance DFF_X2" on type comment in cell DFF_X2 sticky.
+Reading "DLH_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell DLH_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DLH_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell DLH_X1 sticky.
+Making label "& Instance DLH_X1" on type comment in cell DLH_X1 sticky.
+Reading "DLH_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell DLH_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DLH_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell DLH_X2 sticky.
+Making label "& Instance DLH_X2" on type comment in cell DLH_X2 sticky.
+Reading "DLL_X1".
+Moving label "Q" from metal1 to ndiffc in cell DLL_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell DLL_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DLL_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell DLL_X1 sticky.
+Making label "& Instance DLL_X1" on type comment in cell DLL_X1 sticky.
+Reading "DLL_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell DLL_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell DLL_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell DLL_X2 sticky.
+Making label "& Instance DLL_X2" on type comment in cell DLL_X2 sticky.
+Reading "FA_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell FA_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FA_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell FA_X1 sticky.
+Making label "& Instance FA_X1" on type comment in cell FA_X1 sticky.
+Reading "FILLCELL_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell FILLCELL_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FILLCELL_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell FILLCELL_X1 sticky.
+Making label "& Instance FILLCELL_X1" on type comment in cell FILLCELL_X1 sticky.
+Reading "FILLCELL_X16".
+Making label "& Vendor Nangate Inc" on type comment in cell FILLCELL_X16 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FILLCELL_X16 sticky.
+Making label "& Version 2010_12" on type comment in cell FILLCELL_X16 sticky.
+Making label "& Instance FILLCELL_X16" on type comment in cell FILLCELL_X16 sticky.
+Reading "FILLCELL_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell FILLCELL_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FILLCELL_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell FILLCELL_X2 sticky.
+Making label "& Instance FILLCELL_X2" on type comment in cell FILLCELL_X2 sticky.
+Reading "FILLCELL_X32".
+Making label "& Vendor Nangate Inc" on type comment in cell FILLCELL_X32 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FILLCELL_X32 sticky.
+Making label "& Version 2010_12" on type comment in cell FILLCELL_X32 sticky.
+Making label "& Instance FILLCELL_X32" on type comment in cell FILLCELL_X32 sticky.
+Reading "FILLCELL_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell FILLCELL_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FILLCELL_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell FILLCELL_X4 sticky.
+Making label "& Instance FILLCELL_X4" on type comment in cell FILLCELL_X4 sticky.
+Reading "FILLCELL_X8".
+Making label "& Vendor Nangate Inc" on type comment in cell FILLCELL_X8 sticky.
+Making label "& Product Open Cell Library" on type comment in cell FILLCELL_X8 sticky.
+Making label "& Version 2010_12" on type comment in cell FILLCELL_X8 sticky.
+Making label "& Instance FILLCELL_X8" on type comment in cell FILLCELL_X8 sticky.
+Reading "HA_X1".
+Moving label "B" from metal1 to poly1cont in cell HA_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell HA_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell HA_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell HA_X1 sticky.
+Making label "& Instance HA_X1" on type comment in cell HA_X1 sticky.
+Reading "INV_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell INV_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell INV_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell INV_X1 sticky.
+Making label "& Instance INV_X1" on type comment in cell INV_X1 sticky.
+Reading "INV_X16".
+Making label "& Vendor Nangate Inc" on type comment in cell INV_X16 sticky.
+Making label "& Product Open Cell Library" on type comment in cell INV_X16 sticky.
+Making label "& Version 2010_12" on type comment in cell INV_X16 sticky.
+Making label "& Instance INV_X16" on type comment in cell INV_X16 sticky.
+Reading "INV_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell INV_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell INV_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell INV_X2 sticky.
+Making label "& Instance INV_X2" on type comment in cell INV_X2 sticky.
+Reading "INV_X32".
+Making label "& Vendor Nangate Inc" on type comment in cell INV_X32 sticky.
+Making label "& Product Open Cell Library" on type comment in cell INV_X32 sticky.
+Making label "& Version 2010_12" on type comment in cell INV_X32 sticky.
+Making label "& Instance INV_X32" on type comment in cell INV_X32 sticky.
+Reading "INV_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell INV_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell INV_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell INV_X4 sticky.
+Making label "& Instance INV_X4" on type comment in cell INV_X4 sticky.
+Reading "INV_X8".
+Making label "& Vendor Nangate Inc" on type comment in cell INV_X8 sticky.
+Making label "& Product Open Cell Library" on type comment in cell INV_X8 sticky.
+Making label "& Version 2010_12" on type comment in cell INV_X8 sticky.
+Making label "& Instance INV_X8" on type comment in cell INV_X8 sticky.
+Reading "LOGIC0_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell LOGIC0_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell LOGIC0_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell LOGIC0_X1 sticky.
+Making label "& Instance LOGIC0_X1" on type comment in cell LOGIC0_X1 sticky.
+Reading "LOGIC1_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell LOGIC1_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell LOGIC1_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell LOGIC1_X1 sticky.
+Making label "& Instance LOGIC1_X1" on type comment in cell LOGIC1_X1 sticky.
+Reading "MUX2_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell MUX2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell MUX2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell MUX2_X1 sticky.
+Making label "& Instance MUX2_X1" on type comment in cell MUX2_X1 sticky.
+Reading "MUX2_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell MUX2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell MUX2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell MUX2_X2 sticky.
+Making label "& Instance MUX2_X2" on type comment in cell MUX2_X2 sticky.
+Reading "NAND2_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND2_X1 sticky.
+Making label "& Instance NAND2_X1" on type comment in cell NAND2_X1 sticky.
+Reading "NAND2_X2".
+Moving label "ZN" from metal1 to pdiffc in cell NAND2_X2.
+Making label "& Vendor Nangate Inc" on type comment in cell NAND2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND2_X2 sticky.
+Making label "& Instance NAND2_X2" on type comment in cell NAND2_X2 sticky.
+Reading "NAND2_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND2_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND2_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND2_X4 sticky.
+Making label "& Instance NAND2_X4" on type comment in cell NAND2_X4 sticky.
+Reading "NAND3_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND3_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND3_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND3_X1 sticky.
+Making label "& Instance NAND3_X1" on type comment in cell NAND3_X1 sticky.
+Reading "NAND3_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND3_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND3_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND3_X2 sticky.
+Making label "& Instance NAND3_X2" on type comment in cell NAND3_X2 sticky.
+Reading "NAND3_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND3_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND3_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND3_X4 sticky.
+Making label "& Instance NAND3_X4" on type comment in cell NAND3_X4 sticky.
+Reading "NAND4_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND4_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND4_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND4_X1 sticky.
+Making label "& Instance NAND4_X1" on type comment in cell NAND4_X1 sticky.
+Reading "NAND4_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND4_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND4_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND4_X2 sticky.
+Making label "& Instance NAND4_X2" on type comment in cell NAND4_X2 sticky.
+Reading "NAND4_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell NAND4_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NAND4_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell NAND4_X4 sticky.
+Making label "& Instance NAND4_X4" on type comment in cell NAND4_X4 sticky.
+Reading "NOR2_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR2_X1 sticky.
+Making label "& Instance NOR2_X1" on type comment in cell NOR2_X1 sticky.
+Reading "NOR2_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR2_X2 sticky.
+Making label "& Instance NOR2_X2" on type comment in cell NOR2_X2 sticky.
+Reading "NOR2_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR2_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR2_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR2_X4 sticky.
+Making label "& Instance NOR2_X4" on type comment in cell NOR2_X4 sticky.
+Reading "NOR3_X1".
+Moving label "ZN" from metal1 to ndiffc in cell NOR3_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell NOR3_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR3_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR3_X1 sticky.
+Making label "& Instance NOR3_X1" on type comment in cell NOR3_X1 sticky.
+Reading "NOR3_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR3_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR3_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR3_X2 sticky.
+Making label "& Instance NOR3_X2" on type comment in cell NOR3_X2 sticky.
+Reading "NOR3_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR3_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR3_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR3_X4 sticky.
+Making label "& Instance NOR3_X4" on type comment in cell NOR3_X4 sticky.
+Reading "NOR4_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR4_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR4_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR4_X1 sticky.
+Making label "& Instance NOR4_X1" on type comment in cell NOR4_X1 sticky.
+Reading "NOR4_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR4_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR4_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR4_X2 sticky.
+Making label "& Instance NOR4_X2" on type comment in cell NOR4_X2 sticky.
+Reading "NOR4_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell NOR4_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell NOR4_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell NOR4_X4 sticky.
+Making label "& Instance NOR4_X4" on type comment in cell NOR4_X4 sticky.
+Reading "OAI211_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI211_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI211_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI211_X1 sticky.
+Making label "& Instance OAI211_X1" on type comment in cell OAI211_X1 sticky.
+Reading "OAI211_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI211_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI211_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI211_X2 sticky.
+Making label "& Instance OAI211_X2" on type comment in cell OAI211_X2 sticky.
+Reading "OAI211_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI211_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI211_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI211_X4 sticky.
+Making label "& Instance OAI211_X4" on type comment in cell OAI211_X4 sticky.
+Reading "OAI21_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI21_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI21_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI21_X1 sticky.
+Making label "& Instance OAI21_X1" on type comment in cell OAI21_X1 sticky.
+Reading "OAI21_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI21_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI21_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI21_X2 sticky.
+Making label "& Instance OAI21_X2" on type comment in cell OAI21_X2 sticky.
+Reading "OAI21_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI21_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI21_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI21_X4 sticky.
+Making label "& Instance OAI21_X4" on type comment in cell OAI21_X4 sticky.
+Reading "OAI221_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI221_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI221_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI221_X1 sticky.
+Making label "& Instance OAI221_X1" on type comment in cell OAI221_X1 sticky.
+Reading "OAI221_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI221_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI221_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI221_X2 sticky.
+Making label "& Instance OAI221_X2" on type comment in cell OAI221_X2 sticky.
+Reading "OAI221_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI221_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI221_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI221_X4 sticky.
+Making label "& Instance OAI221_X4" on type comment in cell OAI221_X4 sticky.
+Reading "OAI222_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI222_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI222_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI222_X1 sticky.
+Making label "& Instance OAI222_X1" on type comment in cell OAI222_X1 sticky.
+Reading "OAI222_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI222_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI222_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI222_X2 sticky.
+Making label "& Instance OAI222_X2" on type comment in cell OAI222_X2 sticky.
+Reading "OAI222_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI222_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI222_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI222_X4 sticky.
+Making label "& Instance OAI222_X4" on type comment in cell OAI222_X4 sticky.
+Reading "OAI22_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI22_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI22_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI22_X1 sticky.
+Making label "& Instance OAI22_X1" on type comment in cell OAI22_X1 sticky.
+Reading "OAI22_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI22_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI22_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI22_X2 sticky.
+Making label "& Instance OAI22_X2" on type comment in cell OAI22_X2 sticky.
+Reading "OAI22_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI22_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI22_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI22_X4 sticky.
+Making label "& Instance OAI22_X4" on type comment in cell OAI22_X4 sticky.
+Reading "OAI33_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OAI33_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OAI33_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OAI33_X1 sticky.
+Making label "& Instance OAI33_X1" on type comment in cell OAI33_X1 sticky.
+Reading "OR2_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OR2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OR2_X1 sticky.
+Making label "& Instance OR2_X1" on type comment in cell OR2_X1 sticky.
+Reading "OR2_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OR2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OR2_X2 sticky.
+Making label "& Instance OR2_X2" on type comment in cell OR2_X2 sticky.
+Reading "OR2_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OR2_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR2_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OR2_X4 sticky.
+Making label "& Instance OR2_X4" on type comment in cell OR2_X4 sticky.
+Reading "OR3_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OR3_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR3_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OR3_X1 sticky.
+Making label "& Instance OR3_X1" on type comment in cell OR3_X1 sticky.
+Reading "OR3_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OR3_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR3_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OR3_X2 sticky.
+Making label "& Instance OR3_X2" on type comment in cell OR3_X2 sticky.
+Reading "OR3_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OR3_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR3_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OR3_X4 sticky.
+Making label "& Instance OR3_X4" on type comment in cell OR3_X4 sticky.
+Reading "OR4_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell OR4_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR4_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell OR4_X1 sticky.
+Making label "& Instance OR4_X1" on type comment in cell OR4_X1 sticky.
+Reading "OR4_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell OR4_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR4_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell OR4_X2 sticky.
+Making label "& Instance OR4_X2" on type comment in cell OR4_X2 sticky.
+Reading "OR4_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell OR4_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell OR4_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell OR4_X4 sticky.
+Making label "& Instance OR4_X4" on type comment in cell OR4_X4 sticky.
+Reading "SDFFRS_X1".
+Moving label "CK" from metal1 to poly1cont in cell SDFFRS_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell SDFFRS_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFFRS_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFFRS_X1 sticky.
+Making label "& Instance SDFFRS_X1" on type comment in cell SDFFRS_X1 sticky.
+Reading "SDFFRS_X2".
+Moving label "CK" from metal1 to poly1cont in cell SDFFRS_X2.
+Moving label "SN" from metal1 to poly1cont in cell SDFFRS_X2.
+Making label "& Vendor Nangate Inc" on type comment in cell SDFFRS_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFFRS_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFFRS_X2 sticky.
+Making label "& Instance SDFFRS_X2" on type comment in cell SDFFRS_X2 sticky.
+Reading "SDFFR_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell SDFFR_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFFR_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFFR_X1 sticky.
+Making label "& Instance SDFFR_X1" on type comment in cell SDFFR_X1 sticky.
+Reading "SDFFR_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell SDFFR_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFFR_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFFR_X2 sticky.
+Making label "& Instance SDFFR_X2" on type comment in cell SDFFR_X2 sticky.
+Reading "SDFFS_X1".
+Moving label "Q" from metal1 to pdiffc in cell SDFFS_X1.
+Moving label "QN" from metal1 to pdiffc in cell SDFFS_X1.
+Moving label "SN" from metal1 to poly1cont in cell SDFFS_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell SDFFS_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFFS_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFFS_X1 sticky.
+Making label "& Instance SDFFS_X1" on type comment in cell SDFFS_X1 sticky.
+Reading "SDFFS_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell SDFFS_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFFS_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFFS_X2 sticky.
+Making label "& Instance SDFFS_X2" on type comment in cell SDFFS_X2 sticky.
+Reading "SDFF_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell SDFF_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFF_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFF_X1 sticky.
+Making label "& Instance SDFF_X1" on type comment in cell SDFF_X1 sticky.
+Reading "SDFF_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell SDFF_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell SDFF_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell SDFF_X2 sticky.
+Making label "& Instance SDFF_X2" on type comment in cell SDFF_X2 sticky.
+Reading "TBUF_X1".
+Moving label "Z" from metal1 to ndiffc in cell TBUF_X1.
+Making label "& Vendor Nangate Inc" on type comment in cell TBUF_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TBUF_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell TBUF_X1 sticky.
+Making label "& Instance TBUF_X1" on type comment in cell TBUF_X1 sticky.
+Reading "TBUF_X16".
+Making label "& Vendor Nangate Inc" on type comment in cell TBUF_X16 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TBUF_X16 sticky.
+Making label "& Version 2010_12" on type comment in cell TBUF_X16 sticky.
+Making label "& Instance TBUF_X16" on type comment in cell TBUF_X16 sticky.
+Reading "TBUF_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell TBUF_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TBUF_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell TBUF_X2 sticky.
+Making label "& Instance TBUF_X2" on type comment in cell TBUF_X2 sticky.
+Reading "TBUF_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell TBUF_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TBUF_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell TBUF_X4 sticky.
+Making label "& Instance TBUF_X4" on type comment in cell TBUF_X4 sticky.
+Reading "TBUF_X8".
+Making label "& Vendor Nangate Inc" on type comment in cell TBUF_X8 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TBUF_X8 sticky.
+Making label "& Version 2010_12" on type comment in cell TBUF_X8 sticky.
+Making label "& Instance TBUF_X8" on type comment in cell TBUF_X8 sticky.
+Reading "TINV_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell TINV_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TINV_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell TINV_X1 sticky.
+Making label "& Instance TINV_X1" on type comment in cell TINV_X1 sticky.
+Reading "TLAT_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell TLAT_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell TLAT_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell TLAT_X1 sticky.
+Making label "& Instance TLAT_X1" on type comment in cell TLAT_X1 sticky.
+Reading "XNOR2_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell XNOR2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell XNOR2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell XNOR2_X1 sticky.
+Making label "& Instance XNOR2_X1" on type comment in cell XNOR2_X1 sticky.
+Reading "XNOR2_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell XNOR2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell XNOR2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell XNOR2_X2 sticky.
+Making label "& Instance XNOR2_X2" on type comment in cell XNOR2_X2 sticky.
+Reading "XOR2_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell XOR2_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell XOR2_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell XOR2_X1 sticky.
+Making label "& Instance XOR2_X1" on type comment in cell XOR2_X1 sticky.
+Reading "XOR2_X2".
+Moving label "Z" from metal1 to ndiffc in cell XOR2_X2.
+Making label "& Vendor Nangate Inc" on type comment in cell XOR2_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell XOR2_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell XOR2_X2 sticky.
+Making label "& Instance XOR2_X2" on type comment in cell XOR2_X2 sticky.
+Reading "CLKGATE_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATE_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATE_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATE_X1 sticky.
+Making label "& Instance CLKGATE_X1" on type comment in cell CLKGATE_X1 sticky.
+Reading "CLKGATE_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATE_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATE_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATE_X2 sticky.
+Making label "& Instance CLKGATE_X2" on type comment in cell CLKGATE_X2 sticky.
+Reading "CLKGATE_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATE_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATE_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATE_X4 sticky.
+Making label "& Instance CLKGATE_X4" on type comment in cell CLKGATE_X4 sticky.
+Reading "CLKGATE_X8".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATE_X8 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATE_X8 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATE_X8 sticky.
+Making label "& Instance CLKGATE_X8" on type comment in cell CLKGATE_X8 sticky.
+Reading "CLKGATETST_X1".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATETST_X1 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATETST_X1 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATETST_X1 sticky.
+Making label "& Instance CLKGATETST_X1" on type comment in cell CLKGATETST_X1 sticky.
+Reading "CLKGATETST_X2".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATETST_X2 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATETST_X2 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATETST_X2 sticky.
+Making label "& Instance CLKGATETST_X2" on type comment in cell CLKGATETST_X2 sticky.
+Reading "CLKGATETST_X4".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATETST_X4 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATETST_X4 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATETST_X4 sticky.
+Making label "& Instance CLKGATETST_X4" on type comment in cell CLKGATETST_X4 sticky.
+Reading "CLKGATETST_X8".
+Making label "& Vendor Nangate Inc" on type comment in cell CLKGATETST_X8 sticky.
+Making label "& Product Open Cell Library" on type comment in cell CLKGATETST_X8 sticky.
+Making label "& Version 2010_12" on type comment in cell CLKGATETST_X8 sticky.
+Making label "& Instance CLKGATETST_X8" on type comment in cell CLKGATETST_X8 sticky.
+Reading LEF data from file /root/Work/vlsi/pdks/pdk/nangate45/lef/NangateOpenCellLibrary.tech.lef.
+This action cannot be undone.
+LEF read, Line 309 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 309 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 318 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 318 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 327 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 327 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 336 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 336 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 345 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 345 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 354 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 354 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 363 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 363 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 372 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 372 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 381 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 381 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 556 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 556 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 566 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 566 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 576 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 576 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 586 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 586 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 596 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 596 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read: Processed 776 lines.
+LEF Read: encountered 28 warnings total.
+Reading LEF data from file /root/Work/vlsi/pdks/pdk/nangate45/lef/NangateOpenCellLibrary.lef.
+This action cannot be undone.
+LEF read, Line 307 (Warning): Cut type "via1_4" redefined.
+LEF read, Line 309 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 309 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 316 (Warning): Cut type "via1_0" redefined.
+LEF read, Line 318 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 318 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 325 (Warning): Cut type "via1_1" redefined.
+LEF read, Line 327 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 327 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 334 (Warning): Cut type "via1_2" redefined.
+LEF read, Line 336 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 336 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 343 (Warning): Cut type "via1_3" redefined.
+LEF read, Line 345 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 345 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 352 (Warning): Cut type "via1_5" redefined.
+LEF read, Line 354 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 354 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 361 (Warning): Cut type "via1_6" redefined.
+LEF read, Line 363 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 363 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 370 (Warning): Cut type "via1_7" redefined.
+LEF read, Line 372 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 372 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 379 (Warning): Cut type "via1_8" redefined.
+LEF read, Line 381 (Warning): Cut size for magic type "(null)" (26 x 26) does not match LEF/DEF
+LEF read, Line 381 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 388 (Warning): Cut type "via2_8" redefined.
+LEF read, Line 397 (Warning): Cut type "via2_4" redefined.
+LEF read, Line 406 (Warning): Cut type "via2_5" redefined.
+LEF read, Line 415 (Warning): Cut type "via2_7" redefined.
+LEF read, Line 424 (Warning): Cut type "via2_6" redefined.
+LEF read, Line 433 (Warning): Cut type "via2_0" redefined.
+LEF read, Line 442 (Warning): Cut type "via2_1" redefined.
+LEF read, Line 451 (Warning): Cut type "via2_2" redefined.
+LEF read, Line 460 (Warning): Cut type "via2_3" redefined.
+LEF read, Line 469 (Warning): Cut type "via3_2" redefined.
+LEF read, Line 478 (Warning): Cut type "via3_0" redefined.
+LEF read, Line 487 (Warning): Cut type "via3_1" redefined.
+LEF read, Line 496 (Warning): Cut type "via4_0" redefined.
+LEF read, Line 505 (Warning): Cut type "via5_0" redefined.
+LEF read, Line 514 (Warning): Cut type "via6_0" redefined.
+LEF read, Line 523 (Warning): Cut type "via7_0" redefined.
+LEF read, Line 532 (Warning): Cut type "via8_0" redefined.
+LEF read, Line 541 (Warning): Cut type "via9_0" redefined.
+LEF read: Processed 10373 lines.
+LEF Read: encountered 45 warnings total.
+Reading DEF data from file output/SRAM_routed.def.
+This action cannot be undone.
+LEF read, Line 236 (Warning): Cut size for magic type "metal2" (26 x 26) does not match LEF/DEF
+LEF read, Line 236 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 236 (Warning): Cut size for magic type "metal2" (26 x 26) does not match LEF/DEF
+LEF read, Line 236 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+LEF read, Line 236 (Warning): Cut size for magic type "metal2" (26 x 26) does not match LEF/DEF
+LEF read, Line 236 (Warning): Via cut size (28 x 28).  Magic layer cut size will be used!
+  Processed 6 vias total.
+Cell sram_10x1024 couldn't be read
+DEF read, Line 3522 (Error): Cell sram_10x1024 is not defined.  Maybe you have not read the corresponding LEF file?
+  Processed 3279 subcell instances total.
+  Processed 46 pins total.
+  Processed 2 special nets total.
+  Processed 44 nets total.
+DEF read: Processed 5976 lines.
+DEF Read: encountered 1 error total.
+DEF Read: encountered 6 warnings total.
+   Copying output for cell FILLCELL_X32 from /root/Work/vlsi/pdks/pdk/nangate45/gds/NangateOpenCellLibrary.gds
+   Copying output for cell FILLCELL_X8 from /root/Work/vlsi/pdks/pdk/nangate45/gds/NangateOpenCellLibrary.gds
+   Copying output for cell FILLCELL_X4 from /root/Work/vlsi/pdks/pdk/nangate45/gds/NangateOpenCellLibrary.gds
+   Copying output for cell FILLCELL_X1 from /root/Work/vlsi/pdks/pdk/nangate45/gds/NangateOpenCellLibrary.gds
+   Copying output for cell FILLCELL_X16 from /root/Work/vlsi/pdks/pdk/nangate45/gds/NangateOpenCellLibrary.gds
+   Generating output for cell SRAM
+TOTAL DRC ERRORS: 0
+Extracting FILLCELL_X32 into FILLCELL_X32.ext:
+Processing FILLCELL_X32
+Extracting FILLCELL_X8 into FILLCELL_X8.ext:
+Processing FILLCELL_X8
+Extracting FILLCELL_X4 into FILLCELL_X4.ext:
+Processing FILLCELL_X4
+Extracting FILLCELL_X1 into FILLCELL_X1.ext:
+Processing FILLCELL_X1
+Extracting FILLCELL_X16 into FILLCELL_X16.ext:
+Processing FILLCELL_X16
+Extracting SRAM into SRAM.ext:
+Processing SRAM
+Warning: multiple input files specified; ignoring "prefix"
+exttospice finished.

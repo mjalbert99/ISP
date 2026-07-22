@@ -1,0 +1,52 @@
+
+14. Printing statistics.
+
+=== DPC ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     5488        - wires
+     6211        - wire bits
+       88        - public wires
+      647        - public wire bits
+       10        - ports
+       28        - port bits
+     2609 8.92E+05 cells
+        1        -   $scopeinfo
+       75     79.8   AND2_X1
+       16    21.28   AND3_X1
+        2    3.192   AND4_X1
+       47    62.51   AOI211_X1
+      205   218.12   AOI21_X1
+       17   27.132   AOI221_X1
+        5    10.64   AOI222_X1
+       65    86.45   AOI22_X1
+      513  2729.16   DFFR_X1
+      243  129.276   INV_X1
+       13    6.916   LOGIC0_X1
+      406  755.972   MUX2_X1
+      143  114.114   NAND2_X1
+       30    31.92   NAND3_X1
+       14    18.62   NAND4_X1
+      201  160.398   NOR2_X1
+       38   40.432   NOR3_X1
+       10     13.3   NOR4_X1
+       27    35.91   OAI211_X1
+      200    212.8   OAI21_X1
+       28   44.688   OAI221_X1
+        6   12.768   OAI222_X1
+      101   134.33   OAI22_X1
+        1    1.862   OAI33_X1
+       30    31.92   OR2_X1
+        7     9.31   OR3_X1
+        1    1.596   OR4_X1
+        4 8.86E+05   SRAM10x2048
+      114  181.944   XNOR2_X1
+       46   73.416   XOR2_X1
+
+   Area for cell type $scopeinfo is unknown!
+
+   Chip area for module '\DPC': 891563.212000
+     of which used for sequential elements: 2729.160000 (0.31%)
+

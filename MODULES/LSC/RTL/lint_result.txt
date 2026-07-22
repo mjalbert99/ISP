@@ -1,0 +1,43 @@
+%Warning-WIDTHEXPAND: src/LSC.v:53:24: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_count' generates 11 bits.
+                                     : ... note: In instance 'LSC'
+   53 |             if(x_count == LINE_W - 1) begin
+      |                        ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: src/LSC.v:82:49: Operator GT expects 56 bits on the RHS, but RHS's VARREF 'MAX_VAL' generates 10 bits.
+                                     : ... note: In instance 'LSC'
+   82 |     wire[PIXEL_W-1:0] clamped_pixel  = (shifted > MAX_VAL) ? {PIXEL_W{1'b1}} : shifted[PIXEL_W-1:0];
+      |                                                 ^
+%Warning-WIDTHEXPAND: src/LSC.v:124:36: Operator LTE expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_count' generates 11 bits.
+                                      : ... note: In instance 'LSC'
+  124 |                 x_dist <= (x_count <= MID_X) ? (MID_X - x_count) : (x_count - MID_X);
+      |                                    ^~
+%Warning-WIDTHTRUNC: src/LSC.v:124:24: Operator ASSIGNDLY expects 11 bits on the Assign RHS, but Assign RHS's COND generates 32 or 12 bits.
+                                     : ... note: In instance 'LSC'
+  124 |                 x_dist <= (x_count <= MID_X) ? (MID_X - x_count) : (x_count - MID_X);
+      |                        ^~
+%Warning-WIDTHTRUNC: src/LSC.v:125:24: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's COND generates 32 or 11 bits.
+                                     : ... note: In instance 'LSC'
+  125 |                 y_dist <= (y_count <= MID_Y) ? (MID_Y - y_count) : (y_count - MID_Y);
+      |                        ^~
+%Warning-WIDTHEXPAND: src/LSC.v:134:26: Operator ADD expects 22 bits on the RHS, but RHS's VARREF 'y2' generates 20 bits.
+                                      : ... note: In instance 'LSC'
+  134 |                 r2 <= x2 + y2;
+      |                          ^
+%Warning-WIDTHEXPAND: src/LSC.v:146:52: Operator ADD expects 46 bits on the RHS, but RHS's VARREF 'r2_R' generates 23 bits.
+                                      : ... note: In instance 'LSC'
+  146 |                     2'b00: gain <= (1 << FP_SHIFT) + r2_R ;
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/LSC.v:147:52: Operator ADD expects 46 bits on the RHS, but RHS's VARREF 'r2_Gr' generates 23 bits.
+                                      : ... note: In instance 'LSC'
+  147 |                     2'b01: gain <= (1 << FP_SHIFT) + r2_Gr;
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/LSC.v:148:52: Operator ADD expects 46 bits on the RHS, but RHS's VARREF 'r2_Gb' generates 23 bits.
+                                      : ... note: In instance 'LSC'
+  148 |                     2'b10: gain <= (1 << FP_SHIFT) + r2_Gb;
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/LSC.v:149:52: Operator ADD expects 46 bits on the RHS, but RHS's VARREF 'r2_B' generates 23 bits.
+                                      : ... note: In instance 'LSC'
+  149 |                     2'b11: gain <= (1 << FP_SHIFT) + r2_B ;
+      |                                                    ^
+%Error: Exiting due to 10 warning(s)

@@ -1,0 +1,3 @@
+VCD info: dumpfile blc_trace.vcd opened for output.
+SUCCESS: All 256 checks passed!
+src/blc_tb.v:141: $finish called at 808500 (1ps)

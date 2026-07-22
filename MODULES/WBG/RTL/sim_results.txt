@@ -1,0 +1,3 @@
+VCD info: dumpfile wbg_trace.vcd opened for output.
+SUCCESS: All 256 checks passed!
+src/wbg_tb.v:116: $finish called at 808500 (1ps)

@@ -1,0 +1,109 @@
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:50:83: Operator GTE expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_out' generates 11 bits.
+                                          : ... note: In instance 'BNR.core'
+   50 |     wire is_edge  = ((y_out < 2) || (y_out >= FRAME_W-2) || (x_out < 2) || (x_out >= LINE_W-2));
+      |                                                                                   ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:68:24: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_count' generates 11 bits.
+                                          : ... note: In instance 'BNR.core'
+   68 |             if(x_count == LINE_W - 1) begin
+      |                        ^~
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:91:22: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_out' generates 11 bits.
+                                          : ... note: In instance 'BNR.core'
+   91 |             if(x_out == LINE_W - 1) begin
+      |                      ^~
+%Warning-WIDTHTRUNC: src/BNR_CORE.v:126:30: Operator ASSIGN expects 12 bits on the Assign RHS, but Assign RHS's DIVS generates 32 bits.
+                                          : ... note: In instance 'BNR.core'
+  126 |                 recip_rom[r] = 1024 / r;
+      |                              ^
+%Warning-WIDTHTRUNC: src/BNR_CORE.v:270:37: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's MUL generates 17 bits.
+                                          : ... note: In instance 'BNR.core'
+  270 |                     neigh_weight[i] <= spatial_weight[i] * lut_weight_out[i];
+      |                                     ^~
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:277:52: Operator ADD expects 13 bits on the LHS, but LHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  277 |                 total_weight0_0 <= neigh_weight[7] + neigh_weight[6] + neigh_weight[5] + neigh_weight[4];
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:277:52: Operator ADD expects 13 bits on the RHS, but RHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  277 |                 total_weight0_0 <= neigh_weight[7] + neigh_weight[6] + neigh_weight[5] + neigh_weight[4];
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:277:70: Operator ADD expects 13 bits on the RHS, but RHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  277 |                 total_weight0_0 <= neigh_weight[7] + neigh_weight[6] + neigh_weight[5] + neigh_weight[4];
+      |                                                                      ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:277:88: Operator ADD expects 13 bits on the RHS, but RHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  277 |                 total_weight0_0 <= neigh_weight[7] + neigh_weight[6] + neigh_weight[5] + neigh_weight[4];
+      |                                                                                        ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:278:52: Operator ADD expects 13 bits on the LHS, but LHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  278 |                 total_weight0_1 <= neigh_weight[3] + neigh_weight[2] + neigh_weight[1] + neigh_weight[0];
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:278:52: Operator ADD expects 13 bits on the RHS, but RHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  278 |                 total_weight0_1 <= neigh_weight[3] + neigh_weight[2] + neigh_weight[1] + neigh_weight[0];
+      |                                                    ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:278:70: Operator ADD expects 13 bits on the RHS, but RHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  278 |                 total_weight0_1 <= neigh_weight[3] + neigh_weight[2] + neigh_weight[1] + neigh_weight[0];
+      |                                                                      ^
+%Warning-WIDTHEXPAND: src/BNR_CORE.v:278:88: Operator ADD expects 13 bits on the RHS, but RHS's ARRAYSEL generates 4 bits.
+                                           : ... note: In instance 'BNR.core'
+  278 |                 total_weight0_1 <= neigh_weight[3] + neigh_weight[2] + neigh_weight[1] + neigh_weight[0];
+      |                                                                                        ^
+%Warning-WIDTHTRUNC: src/BNR_CORE.v:304:38: Operator ASSIGNDLY expects 8 bits on the Assign RHS, but Assign RHS's ADD generates 32 or 13 bits.
+                                          : ... note: In instance 'BNR.core'
+  304 |                 final_total_weight   <= total_weight2 + CENTER_WEIGHT;
+      |                                      ^~
+%Warning-WIDTHTRUNC: src/BNR_CORE.v:311:52: Bit extraction of array[127:0] requires 7 bit index, not 8 bits.
+                                          : ... note: In instance 'BNR.core'
+  311 |                 current_recip          <= recip_rom[final_total_weight];
+      |                                                    ^
+%Warning-WIDTHTRUNC: src/BNR_CORE.v:326:31: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's SHIFTR generates 29 bits.
+                                          : ... note: In instance 'BNR.core'
+  326 |                     pixel_out <= mult_result >> 10;
+      |                               ^~
+%Warning-WIDTHEXPAND: src/BNR.v:52:40: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'rd_addr' generates 11 bits.
+                                     : ... note: In instance 'BNR'
+   52 |                 rd_addr    <= (rd_addr == LINE_W-1) ? 1'b0 : rd_addr + 1'b1;
+      |                                        ^~
+%Warning-WIDTHEXPAND: src/BNR.v:52:53: Operator COND expects 11 bits on the Conditional True, but Conditional True's CONST '1'h0' generates 1 bits.
+                                     : ... note: In instance 'BNR'
+   52 |                 rd_addr    <= (rd_addr == LINE_W-1) ? 1'b0 : rd_addr + 1'b1;
+      |                                                     ^
+%Warning-WIDTHEXPAND: src/BNR.v:57:40: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'wr_addr' generates 11 bits.
+                                     : ... note: In instance 'BNR'
+   57 |                 wr_addr    <= (wr_addr == LINE_W-1) ? 1'b0 : wr_addr + 1'b1;
+      |                                        ^~
+%Warning-WIDTHEXPAND: src/BNR.v:57:53: Operator COND expects 11 bits on the Conditional True, but Conditional True's CONST '1'h0' generates 1 bits.
+                                     : ... note: In instance 'BNR'
+   57 |                 wr_addr    <= (wr_addr == LINE_W-1) ? 1'b0 : wr_addr + 1'b1;
+      |                                                     ^
+%Warning-WIDTHEXPAND: src/BNR.v:58:40: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'wr_addr' generates 11 bits.
+                                     : ... note: In instance 'BNR'
+   58 |                 line_count <= (wr_addr == LINE_W-1) ? line_count + 1'b1 : line_count; 
+      |                                        ^~
+%Error: src/BNR.v:63:5: Cannot find file containing module: 'SRAM10x2048'
+   63 |     SRAM10x2048 sram0 (
+      |     ^~~~~~~~~~~
+%Error: src/BNR.v:63:5: This may be because there's no search path specified with -I<dir>.
+   63 |     SRAM10x2048 sram0 (
+      |     ^~~~~~~~~~~
+        ... Looked in:
+             SRAM10x2048
+             SRAM10x2048.v
+             SRAM10x2048.sv
+             obj_dir/SRAM10x2048
+             obj_dir/SRAM10x2048.v
+             obj_dir/SRAM10x2048.sv
+%Error: src/BNR.v:74:5: Cannot find file containing module: 'SRAM10x2048'
+   74 |     SRAM10x2048 sram1 (
+      |     ^~~~~~~~~~~
+%Error: src/BNR.v:85:5: Cannot find file containing module: 'SRAM10x2048'
+   85 |     SRAM10x2048 sram2 (
+      |     ^~~~~~~~~~~
+%Error: src/BNR.v:96:5: Cannot find file containing module: 'SRAM10x2048'
+   96 |     SRAM10x2048 sram3 (
+      |     ^~~~~~~~~~~
+%Error: Exiting due to 5 error(s), 21 warning(s)

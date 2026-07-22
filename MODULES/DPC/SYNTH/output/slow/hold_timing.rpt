@@ -1,0 +1,28 @@
+Startpoint: valid_in (input port clocked by clk)
+Endpoint: _7968_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.15    0.15 ^ input external delay
+    27   43.86    0.00    0.00    0.15 ^ valid_in (in)
+                  0.00    0.00    0.15 ^ _7968_/D (DFFR_X1)
+                                  0.15   data arrival time
+
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                                  0.05 ^ _7968_/CK (DFFR_X1)
+                          0.01    0.06   library hold time
+                                  0.06   data required time
+-----------------------------------------------------------------------------
+                                  0.06   data required time
+                                 -0.15   data arrival time
+-----------------------------------------------------------------------------
+                                  0.09   slack (MET)
+
+

@@ -1,0 +1,2 @@
+ALL TESTS PASSED
+src/fifo_tb.v:183: $finish called at 325000 (1ps)

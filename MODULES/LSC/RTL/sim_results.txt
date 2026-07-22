@@ -1,0 +1,9 @@
+VCD info: dumpfile lsc_trace.vcd opened for output.
+
+--- SIMULATION REPORT ---
+Matches: 4096
+Errors:  0
+STATUS:  PASSED
+-------------------------
+
+src/lsc_tb.v:189: $finish called at 12391500 (1ps)

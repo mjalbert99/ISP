@@ -1,0 +1,73 @@
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:35:24: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_count' generates 11 bits.
+                                          : ... note: In instance 'DPC.core'
+   35 |             if(x_count == LINE_W - 1) begin
+      |                        ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:59:22: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_out' generates 11 bits.
+                                          : ... note: In instance 'DPC.core'
+   59 |             if(x_out == LINE_W - 1) begin
+      |                      ^~
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:84:83: Operator GTE expects 32 or 12 bits on the LHS, but LHS's VARREF 'x_out' generates 11 bits.
+                                          : ... note: In instance 'DPC.core'
+   84 |     wire is_edge  = ((y_out < 2) || (y_out >= FRAME_W-2) || (x_out < 2) || (x_out >= LINE_W-2));
+      |                                                                                   ^~
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:207:39: Operator ADD expects 13 bits on the LHS, but LHS's VARREF 'pair0' generates 11 bits.
+                                           : ... note: In instance 'DPC.core'
+  207 |                 neigh_total <= (pair0 + pair1 + pair2 + pair3) >> 3;
+      |                                       ^
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:207:39: Operator ADD expects 13 bits on the RHS, but RHS's VARREF 'pair1' generates 11 bits.
+                                           : ... note: In instance 'DPC.core'
+  207 |                 neigh_total <= (pair0 + pair1 + pair2 + pair3) >> 3;
+      |                                       ^
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:207:47: Operator ADD expects 13 bits on the RHS, but RHS's VARREF 'pair2' generates 11 bits.
+                                           : ... note: In instance 'DPC.core'
+  207 |                 neigh_total <= (pair0 + pair1 + pair2 + pair3) >> 3;
+      |                                               ^
+%Warning-WIDTHEXPAND: src/DPC_CORE.v:207:55: Operator ADD expects 13 bits on the RHS, but RHS's VARREF 'pair3' generates 11 bits.
+                                           : ... note: In instance 'DPC.core'
+  207 |                 neigh_total <= (pair0 + pair1 + pair2 + pair3) >> 3;
+      |                                                       ^
+%Warning-WIDTHEXPAND: src/DPC.v:54:40: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'rd_addr' generates 11 bits.
+                                     : ... note: In instance 'DPC'
+   54 |                 rd_addr    <= (rd_addr == LINE_W-1) ? 1'b0 : rd_addr + 1'b1;
+      |                                        ^~
+%Warning-WIDTHEXPAND: src/DPC.v:54:53: Operator COND expects 11 bits on the Conditional True, but Conditional True's CONST '1'h0' generates 1 bits.
+                                     : ... note: In instance 'DPC'
+   54 |                 rd_addr    <= (rd_addr == LINE_W-1) ? 1'b0 : rd_addr + 1'b1;
+      |                                                     ^
+%Warning-WIDTHEXPAND: src/DPC.v:59:40: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'wr_addr' generates 11 bits.
+                                     : ... note: In instance 'DPC'
+   59 |                 wr_addr    <= (wr_addr == LINE_W-1) ? 1'b0 : wr_addr + 1'b1;
+      |                                        ^~
+%Warning-WIDTHEXPAND: src/DPC.v:59:53: Operator COND expects 11 bits on the Conditional True, but Conditional True's CONST '1'h0' generates 1 bits.
+                                     : ... note: In instance 'DPC'
+   59 |                 wr_addr    <= (wr_addr == LINE_W-1) ? 1'b0 : wr_addr + 1'b1;
+      |                                                     ^
+%Warning-WIDTHEXPAND: src/DPC.v:60:40: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'wr_addr' generates 11 bits.
+                                     : ... note: In instance 'DPC'
+   60 |                 line_count <= (wr_addr == LINE_W-1) ? line_count + 1'b1 : line_count; 
+      |                                        ^~
+%Error: src/DPC.v:65:5: Cannot find file containing module: 'SRAM10x2048'
+   65 |     SRAM10x2048 sram0 (
+      |     ^~~~~~~~~~~
+%Error: src/DPC.v:65:5: This may be because there's no search path specified with -I<dir>.
+   65 |     SRAM10x2048 sram0 (
+      |     ^~~~~~~~~~~
+        ... Looked in:
+             SRAM10x2048
+             SRAM10x2048.v
+             SRAM10x2048.sv
+             obj_dir/SRAM10x2048
+             obj_dir/SRAM10x2048.v
+             obj_dir/SRAM10x2048.sv
+%Error: src/DPC.v:76:5: Cannot find file containing module: 'SRAM10x2048'
+   76 |     SRAM10x2048 sram1 (
+      |     ^~~~~~~~~~~
+%Error: src/DPC.v:87:5: Cannot find file containing module: 'SRAM10x2048'
+   87 |     SRAM10x2048 sram2 (
+      |     ^~~~~~~~~~~
+%Error: src/DPC.v:98:5: Cannot find file containing module: 'SRAM10x2048'
+   98 |     SRAM10x2048 sram3 (
+      |     ^~~~~~~~~~~
+%Error: Exiting due to 5 error(s), 12 warning(s)

@@ -1,0 +1,19 @@
+%Warning-WIDTHTRUNC: src/WBG.v:55:24: Operator ASSIGNDLY expects 1 bits on the Assign RHS, but Assign RHS's REPLICATE generates 2 bits.
+                                    : ... note: In instance 'WBG'
+   55 |             valid_pipe <= {valid_pipe[0], valid_in};
+      |                        ^~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: src/WBG.v:56:24: Operator ASSIGNDLY expects 1 bits on the Assign RHS, but Assign RHS's REPLICATE generates 2 bits.
+                                    : ... note: In instance 'WBG'
+   56 |             h_pipe     <= {h_pipe[0], h_sync};
+      |                        ^~
+%Warning-WIDTHTRUNC: src/WBG.v:57:24: Operator ASSIGNDLY expects 1 bits on the Assign RHS, but Assign RHS's REPLICATE generates 2 bits.
+                                    : ... note: In instance 'WBG'
+   57 |             v_pipe     <= {v_pipe[0], v_sync};
+      |                        ^~
+%Warning-WIDTHEXPAND: src/WBG.v:73:44: Operator GT expects 22 bits on the RHS, but RHS's VARREF 'MAX_VAL' generates 10 bits.
+                                     : ... note: In instance 'WBG'
+   73 |                 if((res_pipe >> FRAC_BITS) > MAX_VAL) begin
+      |                                            ^
+%Error: Exiting due to 4 warning(s)
