@@ -1,5 +1,0 @@
-src/demos_tb.v:22: error: Unknown module type: DEMOSIAC
-2 error(s) during elaboration.
-*** These modules were missing:
-        DEMOSIAC referenced 1 times.
-***

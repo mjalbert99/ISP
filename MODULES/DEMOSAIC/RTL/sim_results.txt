@@ -1,0 +1,5 @@
+VCD info: dumpfile demos_trace.vcd opened for output.
+----------------------------------------
+TEST PASSED!
+----------------------------------------
+src/demos_tb.v:223: $finish called at 1218 (1s)

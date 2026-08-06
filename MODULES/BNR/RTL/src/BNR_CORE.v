@@ -192,6 +192,7 @@ module BNR_CORE #(
                 window[2][0] <= sram_in1;
                 window[3][0] <= sram_in2;
                 window[4][0] <= sram_in3;
+                
                 for(j = 0; j < 4; j++) begin
                     window[0][j+1] <= window[0][j];
                     window[1][j+1] <= window[1][j];

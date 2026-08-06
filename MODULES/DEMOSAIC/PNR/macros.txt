@@ -1,0 +1,4 @@
+place_macro -macro_name {sram0} -location {393.94 1191.12} -orientation R0
+place_macro -macro_name {sram1} -location {803.94 1191.12} -orientation R0
+place_macro -macro_name {sram2} -location {803.94 426.16} -orientation R0
+place_macro -macro_name {sram3} -location {393.94 426.16} -orientation R0
