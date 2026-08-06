@@ -1,0 +1,51 @@
+%Warning-WIDTHEXPAND: src/CCM.v:117:45: Operator ADD expects 22 bits on the LHS, but LHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  117 |                 red_dist   <= red_mult[0]   + red_mult[1]   + red_mult[2];
+      |                                             ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: src/CCM.v:117:45: Operator ADD expects 22 bits on the RHS, but RHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  117 |                 red_dist   <= red_mult[0]   + red_mult[1]   + red_mult[2];
+      |                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:117:61: Operator ADD expects 22 bits on the RHS, but RHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  117 |                 red_dist   <= red_mult[0]   + red_mult[1]   + red_mult[2];
+      |                                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:118:45: Operator ADD expects 22 bits on the LHS, but LHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  118 |                 green_dist <= green_mult[0] + green_mult[1] + green_mult[2];
+      |                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:118:45: Operator ADD expects 22 bits on the RHS, but RHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  118 |                 green_dist <= green_mult[0] + green_mult[1] + green_mult[2];
+      |                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:118:61: Operator ADD expects 22 bits on the RHS, but RHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  118 |                 green_dist <= green_mult[0] + green_mult[1] + green_mult[2];
+      |                                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:119:45: Operator ADD expects 22 bits on the LHS, but LHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  119 |                 blue_dist  <= blue_mult[0]  + blue_mult[1]  + blue_mult[2];
+      |                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:119:45: Operator ADD expects 22 bits on the RHS, but RHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  119 |                 blue_dist  <= blue_mult[0]  + blue_mult[1]  + blue_mult[2];
+      |                                             ^
+%Warning-WIDTHEXPAND: src/CCM.v:119:61: Operator ADD expects 22 bits on the RHS, but RHS's ARRAYSEL generates 20 bits.
+                                      : ... note: In instance 'CCM'
+  119 |                 blue_dist  <= blue_mult[0]  + blue_mult[1]  + blue_mult[2];
+      |                                                             ^
+%Warning-WIDTHTRUNC: src/CCM.v:123:27: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's COND generates 32 or 23 bits.
+                                     : ... note: In instance 'CCM'
+  123 |                 red_out   <= (red_dist_rnd[MAX_DIST_W]) ? 0 :
+      |                           ^~
+%Warning-WIDTHTRUNC: src/CCM.v:126:27: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's COND generates 32 or 23 bits.
+                                     : ... note: In instance 'CCM'
+  126 |                 green_out <= (green_dist_rnd[MAX_DIST_W]) ? 0 :
+      |                           ^~
+%Warning-WIDTHTRUNC: src/CCM.v:129:27: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's COND generates 32 or 23 bits.
+                                     : ... note: In instance 'CCM'
+  129 |                 blue_out  <= (blue_dist_rnd[MAX_DIST_W]) ? 0 :
+      |                           ^~
+%Error: Exiting due to 12 warning(s)

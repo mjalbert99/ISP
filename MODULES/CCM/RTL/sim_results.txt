@@ -1,0 +1,3 @@
+VCD info: dumpfile ccm_trace.vcd opened for output.
+SUCCESS: All 63 pixel comparisons passed!
+src/ccm_tb.v:161: $finish called at 350 (1s)
