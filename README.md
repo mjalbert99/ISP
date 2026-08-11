@@ -232,16 +232,23 @@ The mathematical accuracy and coordinate tracking logic of the WBG module are th
 
 ![UVM Results](media/WBG_UVM.png)
 
-# Demosiac
+# Demosiac (DEMOS)
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/c7bt)
 ![UVM Results](media/DEMOS_UVM.png)
 
 62% util .25ns setup slack, 0 hold slack, power (57% internal, 37 swithcing, and 6% leakage for ) 4.02 mW.
 ![PNR Results](media/DEMOS_PNR.png)
 
-# CCM (Color Correction Matrix)
+# Color Correction Matrix (CCM)
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/wvd9)
 ![UVM Results](media/CCM_UVM.png)
 
-# Gamma Correction
+# Gamma Correction (GAM)
+**EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/riHv)
+![UVM Results](media/GAM_UVM.png)
+
+56% utilization. .2ns setup slack, 0 hold slack, power (37.5% internal, 59.6 swithcing, and 2.9% leakage for ) 2.89 mW.
+
+![PNR Results](media/GAM_PNR.png)
+# YUV????

@@ -54,7 +54,7 @@ place_pins -hor_layers metal3 -ver_layers metal2 \
 
 insert_tiecells "LOGIC1_X1/Z" -prefix "TIE_HIGH_"
 insert_tiecells "LOGIC0_X1/Z" -prefix "TIE_LOW_"
-place_tapcellscd
+place_tapcells
 place_endcaps
 
 

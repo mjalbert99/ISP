@@ -1,0 +1,2 @@
+mkdir -p gds
+magic -dnull -noconsole -T /root/Work/vlsi/pdks/pdk/nangate45/magic.tech s magic.tcl &> gds/gds.txt

@@ -1,0 +1,6 @@
+place_macro -macro_name {blue_channel} -location {775.07 798.84} -orientation R0
+place_macro -macro_name {blue_gamma} -location {775.07 16.24} -orientation R0
+place_macro -macro_name {green_channel} -location {15.07 798.84} -orientation MY
+place_macro -macro_name {green_gamma} -location {15.07 16.24} -orientation R0
+place_macro -macro_name {red_channel} -location {395.07 798.84} -orientation MY
+place_macro -macro_name {red_gamma} -location {395.07 16.24} -orientation R0

@@ -1,0 +1,29 @@
+Startpoint: blue_channel (falling edge-triggered flip-flop clocked by clk)
+Endpoint: blue_gamma (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    1.50    1.50   clock clk (fall edge)
+                          0.00    1.50   clock network delay (ideal)
+                  0.00    0.00    1.50 v blue_channel/clk1 (SRAM10x2048)
+     1   68.97    0.16    0.58    2.08 ^ blue_channel/dout1[7] (SRAM10x2048)
+                  0.16    0.00    2.08 ^ blue_gamma/addr1[7] (SRAM10x2048)
+                                  2.08   data arrival time
+
+                  0.00    3.00    3.00   clock clk (rise edge)
+                          0.00    3.00   clock network delay (ideal)
+                         -0.15    2.85   clock uncertainty
+                          0.00    2.85   clock reconvergence pessimism
+                                  2.85 ^ blue_gamma/clk1 (SRAM10x2048)
+                         -0.05    2.80   macro clock tree delay
+                         -0.02    2.78   library setup time
+                                  2.78   data required time
+-----------------------------------------------------------------------------
+                                  2.78   data required time
+                                 -2.08   data arrival time
+-----------------------------------------------------------------------------
+                                  0.71   slack (MET)
+
+

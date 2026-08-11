@@ -1,0 +1,43 @@
+%Warning-WIDTHEXPAND: src/GAM.v:65:41: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'rd_addr' generates 11 bits.
+                                     : ... note: In instance 'GAM'
+   65 |                     rd_addr <= (rd_addr == LINE_W-1) ? 0 : rd_addr + 1'b1;
+      |                                         ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: src/GAM.v:83:41: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'wr_addr' generates 11 bits.
+                                     : ... note: In instance 'GAM'
+   83 |                     wr_addr <= (wr_addr == LINE_W-1) ? 0 : wr_addr + 1'b1;
+      |                                         ^~
+%Warning-WIDTHEXPAND: src/GAM.v:84:33: Operator EQ expects 32 or 12 bits on the LHS, but LHS's VARREF 'wr_addr' generates 11 bits.
+                                     : ... note: In instance 'GAM'
+   84 |                     if (wr_addr == LINE_W-1) 
+      |                                 ^~
+%Error: src/GAM.v:120:5: Cannot find file containing module: 'SRAM10x2048'
+  120 |     SRAM10x2048 red_gamma (
+      |     ^~~~~~~~~~~
+%Error: src/GAM.v:120:5: This may be because there's no search path specified with -I<dir>.
+  120 |     SRAM10x2048 red_gamma (
+      |     ^~~~~~~~~~~
+        ... Looked in:
+             SRAM10x2048
+             SRAM10x2048.v
+             SRAM10x2048.sv
+             obj_dir/SRAM10x2048
+             obj_dir/SRAM10x2048.v
+             obj_dir/SRAM10x2048.sv
+%Error: src/GAM.v:131:5: Cannot find file containing module: 'SRAM10x2048'
+  131 |     SRAM10x2048 green_gamma (
+      |     ^~~~~~~~~~~
+%Error: src/GAM.v:142:5: Cannot find file containing module: 'SRAM10x2048'
+  142 |     SRAM10x2048 blue_gamma (
+      |     ^~~~~~~~~~~
+%Error: src/GAM.v:153:5: Cannot find file containing module: 'SRAM10x2048'
+  153 |     SRAM10x2048 red_channel (
+      |     ^~~~~~~~~~~
+%Error: src/GAM.v:164:5: Cannot find file containing module: 'SRAM10x2048'
+  164 |     SRAM10x2048 green_channel (
+      |     ^~~~~~~~~~~
+%Error: src/GAM.v:175:5: Cannot find file containing module: 'SRAM10x2048'
+  175 |     SRAM10x2048 blue_channel (
+      |     ^~~~~~~~~~~
+%Error: Exiting due to 7 error(s), 3 warning(s)

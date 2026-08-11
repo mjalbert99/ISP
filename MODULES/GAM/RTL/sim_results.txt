@@ -1,0 +1,3 @@
+VCD info: dumpfile gam_trace.vcd opened for output.
+SUCCESS: All 64 pixel comparisons passed!
+src/gam_tb.v:143: $finish called at 346 (1s)

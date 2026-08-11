@@ -1,0 +1,28 @@
+Startpoint: _1321_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: blue_channel (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _1321_/CK (DFFR_X1)
+     9   19.46    0.02    0.07    0.07 v _1321_/Q (DFFR_X1)
+                  0.02    0.00    0.07 v blue_channel/addr0[7] (SRAM10x2048)
+                                  0.07   data arrival time
+
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                                  0.05 ^ blue_channel/clk0 (SRAM10x2048)
+                          0.07    0.12   library hold time
+                                  0.12   data required time
+-----------------------------------------------------------------------------
+                                  0.12   data required time
+                                 -0.07   data arrival time
+-----------------------------------------------------------------------------
+                                 -0.05   slack (VIOLATED)
+
+
