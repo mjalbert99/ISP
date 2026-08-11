@@ -232,23 +232,150 @@ The mathematical accuracy and coordinate tracking logic of the WBG module are th
 
 ![UVM Results](media/WBG_UVM.png)
 
-# Demosiac (DEMOS)
+# Demosaic (DEMOS)
+
+## Overview
+The Demosaic (DEMOS) module is responsible for reconstructing a full-color RGB image from the single-channel Bayer pattern captured by the sensor. The design implements the High-Quality Linear Interpolation algorithm, commonly known as the Malvar-He-Cutler (MHC) approach. By evaluating a 5x5 spatial window, the algorithm calculates sharp, artifact-free color interpolations by factoring in the high-frequency luminance data (usually the Green channel) to correct the Red and Blue channel estimations.
+
+## Architecture & Hardware Design
+
+### Memory and Buffering (`DEMOSAIC.v`)
+To facilitate the necessary 5x5 spatial window for the MHC algorithm, the module must simultaneously access 5 lines of video data.
+* **SRAM Line Buffers:** The top-level module instantiates four distinct 10x2048 SRAM blocks (`sram0` through `sram3`). These act as synchronized FIFO line buffers, cascading the incoming 10-bit pixel stream to construct the required vertical depth.
+
+### MHC Processing Core (`DEMOS_CORE.v`)
+To compute the complex cross, diagonal, and linear summations required by the MHC algorithm without violating timing, the mathematical core is aggressively pipelined across 4 stages (`DELAY = 4`).
+* **Bayer Phase Tracking:** The core actively tracks the underlying X and Y coordinates to determine the phase of the 5x5 window's center pixel (`2'b00` for Red center, `2'b01`/`2'b10` for Green centers, and `2'b11` for Blue center). This dictates exactly which interpolation equations are routed to the final RGB output ports.
+* **Hardware-Optimized Interpolation:** The core evaluates directional sums (cross, diagonal, vertical/horizontal inner/outer) and computes the necessary gradients. To avoid instantiating costly hardware dividers, the final normalization steps utilize fixed-point right shifts (e.g., `>>> 3` for division by 8, and `>>> 4` for division by 16).
+* **Edge Handling:** To prevent visual artifacts at the extreme boundaries of the image frame, the module implements dynamic edge padding logic, intelligently repeating boundary pixels into the `calc_window` when the coordinate pipeline detects a frame edge.
+* **Dynamic Clamping:** Following interpolation, the resulting color values are aggressively clamped. Any mathematically underflowed values are locked to `0`, and any overflowed values are locked to the 10-bit maximum (`MAX_VAL`) to maintain data integrity.
+
+## UVM Verification Environment
+The DEMOS module's mathematical model and boundary handling are thoroughly validated using a comprehensive UVM framework.
+
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/c7bt)
+
+* **Functional Coverage:** The testbench utilizes a dedicated `demos_coverage` subscriber to validate the simulation stimulus. An internal covergroup successfully maps the 10-bit input (`pixel_in`) and the resulting RGB outputs (`red_out`, `green_out`, `blue_out`) across 10 distinct distribution bins to verify the full dynamic range. It also tracks explicit cross-coverage for the output control signals (`valid_out`, `h_sync_out`, `v_sync_out`). To replicate real-world sensor behavior, the driving sequence (`demos_base_seq`) actively injects stalls by dropping the `valid_in` signal on alternating rows.
+* **Predictive Scoreboard:** The `scoreboard` component fully models the MHC algorithm in software. As data flows in, it constructs a complete 2D reference image (`ref_image`) in memory. The scoreboard dynamically mirrors boundary pixels to safely build a 5x5 spatial window at the frame edges. It independently computes the necessary inner, outer, diagonal, and cross sums, scales the results via bit-shifts, and clamps the expected values to `MAX_VAL`. Upon capturing an output packet from the DUT, the scoreboard directly compares its derived math against the packet's hardware-generated RGB values, instantly throwing a `UVM_ERROR` (`"SCBD_MISMATCH"`) if any mathematical deviation is detected.
+
 ![UVM Results](media/DEMOS_UVM.png)
 
-62% util .25ns setup slack, 0 hold slack, power (57% internal, 37 swithcing, and 6% leakage for ) 4.02 mW.
+## Logic Synthesis & Static Timing Analysis (STA)
+Logic synthesis and static timing analysis (STA) were executed using Yosys and OpenSTA across three distinct operating corners: `slow` (worst-case), `typ`, and `fast`. The target technology mapping utilized the nanGate45 standard cell library alongside custom 10x2048 SRAM macro libraries. The logic synthesis targeted a strict 3ns clock period (333.33 MHz) via ABC constraints (`-D 3000`).
+
+* **Capacitance & Slew Violations:** Similar to other modules in the pipeline, the synthesis optimization pass failed to properly buffer several high-fanout nets. OpenSTA flagged these as severe maximum capacitance (`max_capacitance`) and maximum fanout (`max_fanout`) violations, which consequently cascaded into maximum slew (`max_slew`) failures.
+
+* **Worst-Case Timing:** As a direct result of the high capacitance and degraded slew on these unbuffered nets, the static timing analysis reported maximum path delay (setup) failures under the worst-case operating corners. 
+* **Waiver & Resolution:** Because Yosys relies on ideal clock networks and basic wire load assumptions, these synthesis-stage violations were waived. The physical design (PNR) tool's superior CTS (Clock Tree Synthesis) and routing engines successfully rebuilt the data paths, buffered the high-fanout nets, and resolved all capacitance, slew, and setup/hold timing issues for final sign-off.
+
+## Physical Design (PNR)
+The physical implementation flow was executed using OpenROAD, advancing the synthesized netlist through floorplanning, placement, clock tree synthesis (CTS), and detailed routing. The final layout targets a fixed die size of 1050µm × 1720µm utilizing standard cells and four distinct custom SRAM macro configurations (`sram0` through `sram3`).
+
+* **Floorplanning & Power Distribution:** The design incorporates an extensive power distribution network (PDN) utilizing `metal1` for standard cell rows, `metal4` for intermediate horizontal stripes, and wide `metal5`/`metal6` grids for low-impedance vertical infrastructure. Custom SRAM halos (`-halo {1 1 1 1}`) and grid mappings were applied to ensure clean power delivery to the memory blocks.
+* **Placement & Congestion Control:** To prevent cell crowding around the memory interfaces and routing bottlenecks during detailed routing, cell placement padding was globally constrained using `-left 5 -right 5`. Low-drive buffer and inverter variants (`*BUF_X1`, `*BUF_X2`, `*INV_X1`, `*INV_X2`, etc.) were set as `dont_use` to force the tool to instantiate robust, transition-resilient logic across the layout.
+* **Clock Tree Synthesis (CTS):** Clock networks were synthesized using a specific buffer target list bounded strictly to high-drive variants (`CLKBUF_X3`). 
+* **Routing & Sign-off:** Signal routing was constrained to layers `metal2` through `metal6`, while clock trees were assigned to higher-speed `metal3` through `metal6` layers. Antenna violations were automatically checked and mitigated via intermediate diode insertion (`repair_antennas`). 
+* **Physical & Electrical Metrics:** 
+  * **Timing Sign-off:** Successfully closed timing with a positive setup slack margin of `0.25ns` and a hold slack of `0.00ns`.
+  * **Power Consumption:** Total power consumption closed at `4.02mW` (`4.02e-03 Watts`), with an electrical distribution profile heavily dominated by core logic evaluation: `57.6%` internal power, `36.7%` dynamic switching power, and a well-controlled `5.7%` static leakage component.
+
 ![PNR Results](media/DEMOS_PNR.png)
+
 
 # Color Correction Matrix (CCM)
 
+## Overview
+The Color Correction Matrix (CCM) module applies a 3x3 transformation matrix to the incoming RGB video stream to correct and calibrate color representation. By computing the linear combinations of the input Red, Green, and Blue channels, the module adjusts the color space to compensate for sensor cross-talk and illumination variances. 
+
+## Architecture & Hardware Design
+The CCM hardware is aggressively pipelined with a 3-cycle delay (`DELAY = 3`) to maintain high-throughput arithmetic processing without violating the target clock frequency.
+
+* **Dynamic Coefficient Loading:** The 3x3 transformation matrix coefficients are loaded dynamically into internal registers at the start of a video frame when both `coef_in` and `v_sync` signals are asserted high. The coefficients are provided via concatenated row inputs (`row0`, `row1`, `row2`).
+* **Pipeline Stage 1 (Multiplication):** Valid input RGB pixels are first buffered and then multiplied by their corresponding signed fixed-point matrix coefficients in parallel (e.g., `red_pipe * matrix[0][0]`).
+* **Pipeline Stage 2 (Accumulation):** The resulting multiplier products for each channel are summed together to create an unnormalized, high-resolution distance value (e.g., `red_mult[0] + red_mult[1] + red_mult[2]`).
+* **Pipeline Stage 3 (Normalization & Clamping):** To resolve the fixed-point arithmetic, a rounding constant (`ROUND_CONST`) is added to the accumulated sum, followed by an arithmetic right shift (`>>> FRAC_W`). The hardware then evaluates the sign bit; negative results (underflow) are clamped to `0`, while results exceeding the 10-bit maximum are clamped to `MAX_VAL`. 
+
+## Verification Environment
+The CCM logic is validated through a dedicated Verilog testbench (`ccm_tb.v`) designed to verify the fixed-point arithmetic limits and boundary conditions.
+
+* **Fixed-Point Mapping:** The testbench models real-world fractional coefficients (e.g., `1.20`, `-0.10`) by converting them into signed integer equivalents (e.g., `307`, `-26`) corresponding to the module's 8-bit fractional width (`FRAC_W = 8`).
+* **Reference Model:** A software function (`calc_expected`) accurately mirrors the hardware's rounding constant addition, bit-shifting, and saturation logic.
+* **Randomized Stimulus:** The testbench injects randomized 10-bit RGB pixel data across a complete frame footprint (`FRAME_W` and `LINE_W`), continuously comparing the hardware's output against the reference model to guarantee bit-level accuracy.
+
+## UVM Verification Environment
+The Color Correction Matrix (CCM) module is verified using a comprehensive Universal Verification Methodology (UVM) framework designed to thoroughly validate its pipelined control logic and fixed-point arithmetic across all operating extremes.
+
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/wvd9)
+
+* **Predictive Scoreboard (`scoreboard`):** The scoreboard acts as an independent software reference model, dynamically capturing the active 3x3 transformation matrix coefficients (`row0`, `row1`, `row2`) whenever a `coef_in` packet is detected. Upon receiving valid input pixels, the scoreboard independently computes the complex linear combinations, applying the identical rounding constant (`ROUND_CONST`) and fractional bit-shifting (`>>> FRAC_W`) as the hardware. The derived red, green, and blue values are aggressively clamped to either `0` or `MAX_VAL` to mimic hardware underflow/overflow handling and are then pushed into a prediction queue (`exp_que`). When the DUT asserts `valid_out`, the scoreboard extracts these values and directly compares them to the hardware's output, immediately throwing a `UVM_ERROR` (`"SB_MISMATCH"`) if any mathematical deviation is detected.
+* **Functional Coverage (`ccm_coverage`):** A dedicated UVM subscriber validates the stimulus quality by tracking the 10-bit input pixel data (`red_in`, `green_in`, `blue_in`) and the internal transformation coefficients, ensuring they hit 10 distinct distribution bins spanning the entire dynamic range (`0` to `(2**COEF_W)-1`). The covergroup also implements explicit cross-coverage for the resulting output control signals (`valid_out`, `h_sync_out`, `v_sync_out`). 
+* **Dynamic Stimulus (`ccm_base_seq`):** To replicate realistic sensor behavior and test the module's 3-cycle pipeline resilience, the driving sequence actively generates a complete frame sequence (16x16) while systematically dropping the `valid_in` signal on alternating rows (`i%2 == 1`) to inject pipeline stalls.
+
 ![UVM Results](media/CCM_UVM.png)
 
 # Gamma Correction (GAM)
+
+## Overview
+The Gamma Correction (GAM) module implements non-linear luminance/color mapping to match the display characteristics of human visual perception or target display devices. Rather than utilizing resource-intensive mathematical power functions ($\gamma$), the module leverages Look-Up Tables (LUTs) stored in on-chip SRAM to rapidly map 10-bit input RGB intensity values to their gamma-corrected target values.
+
+## Architecture & Hardware Design
+
+### Look-Up Table (LUT) & Channel Memory (`GAM.v`)
+The module instantiates six 10x2048 SRAM blocks (`SRAM10x2048`) divided into two functional tiers:
+* **Gamma LUT SRAMs (`red_gamma`, `green_gamma`, `blue_gamma`):** Store the target gamma correction curves for each color channel. These memories are updated dynamically during the first line of a video frame (`line_count == 0` and `wr_addr < GAM_W`), streaming incoming gamma table values (`gam_red_in`, `gam_green_in`, `gam_blue_in`) directly into memory.
+* **Channel Buffering SRAMs (`red_channel`, `green_channel`, `blue_channel`):** Store incoming video pixel streams (`red_in`, `green_in`, `blue_in`). As pixels are read out from these buffers, their intensity values act directly as the read addresses (`red_addr`, `green_addr`, `blue_addr`) to query the Gamma LUT SRAMs.
+
+### Control Logic & Pipeline Delay
+* **Two-Stage Memory Lookup:** Gamma correction involves a cascaded memory read operations: incoming pixels are first written/read from the channel SRAMs to produce lookup indices, which then drive the read ports of the Gamma LUT SRAMs to retrieve final RGB intensity values (`red_gamma_out`, `green_gamma_out`, `blue_gamma_out`).
+* **Pipelined Sync Control:** To keep control signals aligned with memory read latencies, `read_trigger` tracks frame depth (`pixel_cnt >= LINE_W`). Shift registers (`val_shift`, `h_shift`, `v_shift`) delay `valid_in`, `h_sync`, and `v_sync` across the pipeline to align with the valid output data (`valid_out`, `h_sync_out`, `v_sync_out`).
+
+## Verification Environment
+The GAM module is validated using a self-checking Verilog testbench (`gam_tb.v`) designed to verify memory array updates and pixel transformation correctness.
+
+* **LUT Modeling:** The testbench populates software-side reference arrays (`LUT_R`, `LUT_G`, `LUT_B`) with mathematical transformations across the active LUT width (`GAM_W`).
+* **Stimulus & Response Tracking:** During simulation, the testbench streams test pixels alongside active gamma LUT data during the frame's initial row. The reference function pre-calculates target outputs based on the software LUT and stores expected values in queues (`exp_r`, `exp_g`, `exp_b`).
+* **Automated Comparison:** As `valid_out` is asserted, the testbench extracts the transformed RGB values from the DUT, comparing them directly against the expected LUT lookup outputs and logging any mismatches (`err_count`).
+
+## UVM Verification Environment for Gamma Correction (GAM)
+
+The Gamma Correction (GAM) module is verified using a Universal Verification Methodology (UVM) testbench that thoroughly validates its memory array updates, pipeline delays, and fixed-point data translation logic. 
+
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/riHv)
+
+* **Predictive Scoreboard (`scoreboard`):** The scoreboard verifies the gamma mapping operations by mirroring the DUT's memory behavior in a software-side reference model. Whenever a new frame begins (`v_sync` goes high), the scoreboard flushes its internal tracking queues and resets its gamma index. While valid data is flowing into the module, it sequentially populates reference arrays (`red_gam`, `green_gam`, `blue_gam`) with the incoming setup values, while simultaneously queueing the raw input pixel data to serve as read addresses. As the module asserts `valid_out`, the scoreboard extracts the original input pixels from its queue, uses them as indices into the software reference arrays, and compares the mapped values against the hardware's actual RGB outputs to catch any synchronization or memory errors.
+* **Functional Coverage (`gam_coverage`):** A UVM subscriber actively monitors the test stimulus to ensure comprehensive validation of the 10-bit data path. The covergroup tracks both the input pixel values (`red_in`, `green_in`, `blue_in`) and the incoming gamma configuration values (`gam_red_in`, `gam_green_in`, `gam_blue_in`), partitioning them into 10 distinct distribution bins across the `(2**PIXEL_W)-1` range. To guarantee control logic validation, it also implements explicit cross-coverage of the active output sync signals (`valid_out`, `h_sync_out`, `v_sync_out`).
+* **Dynamic Stimulus (`gam_base_seq`):** The sequence simulates the timing characteristics of real hardware camera sensors to properly test the module's latency handling. After executing a randomized reset sequence, it systematically generates a 16x16 pixel matrix, precisely asserting `v_sync` at the frame origin and `h_sync` at the beginning of each line. To stress-test the memory pipeline and verify data integrity during bus interruptions, the sequence alternates valid data streams, intentionally dropping the `valid_in` signal entirely on odd rows (`i%2 == 1`).
+
 ![UVM Results](media/GAM_UVM.png)
 
+## Synthesis & Static Timing Analysis (STA)
+
+### Overview
+The physical implementation and timing verification for the Gamma Correction (`GAM`) module are managed through an automated multi-corner flow using Yosys for synthesis and an STA engine for timing sign-off. The design targets the Nangate 45nm OpenCellLibrary alongside a custom 10x2048 SRAM macro (`SRAM10x2048.lib`).
+
+### Logic Synthesis (Yosys)
+The synthesis process is driven by a script that sequentially iterates across three operational corners: `slow`, `typ`, and `fast`. 
+* **Design Mapping:** The `GAM.v` RTL is read, flattened, and linked against the target standard cell and SRAM liberty files. 
+* **Logic Optimization:** Sequential elements and memories are mapped directly to target library components, utilizing `abc` for combinational logic mapping with a target clock period constraint of 3000ps (`-D 3000`). High and low signal tie-offs are explicitly mapped to `LOGIC1_X1` and `LOGIC0_X1` standard cells[cite: 35].
+* **Outputs:** For each respective corner, the flow outputs a synthesized Verilog netlist (`GAM_<corner>_netlist.v`) and a statistical area/cell report (`GAM_<corner>_stat.txt`).
+
+### Static Timing Analysis
+A dedicated STA script evaluates the synthesized netlists against the `gam.sdc` design constraints across the three extreme voltage/temperature corners. 
+* **Timing Paths:** It generates detailed, full-clock-expanded reports analyzing maximum path delays for setup timing (`setup_timing.rpt`) and minimum path delays for hold timing (`hold_timing.rpt`).
+* **Slack Metrics:** Comprehensive Worst Negative Slack (WNS) and Total Negative Slack (TNS) reports are extracted down to a 4-digit precision to quantify timing margins.
+* **Design Rule Checks (DRC):** The STA flow actively flags electrical violations, outputting separate lists for maximum slew (`slew_drv.rpt`), maximum capacitance (`cap_drv.rpt`), and maximum fanout (`fanout_drv.rpt`) violations to ensure signal integrity.
+
+
+## Physical Design (PNR)
+The physical implementation flow was executed utilizing the Nangate45 Open Cell Library and custom 10x2048 SRAM macros. The design was advanced through floorplanning, placement, clock tree synthesis (CTS), and detailed routing to achieve final sign-off.
+
+* **Floorplanning & Power Distribution:** The floorplan was initialized with a die area of 1455µm × 2040µm and a core area of 1445µm × 2030µm. The power distribution network (PDN) routes standard cell rows using `metal1` and constructs a core power mesh across `metal4`, `metal5`, and `metal6`. The internal SRAM macros were configured with a placement halo of `{1 1 1 1}` to ensure proper spacing and clean power delivery.
+* **Placement & Congestion Control:** To manage routing congestion around the memory interfaces and complex logic, a global placement padding constraint of `-left 5 -right 5` was applied.
+* **Clock Tree Synthesis (CTS):** The clock tree was synthesized targeting a buffer list of high-drive `CLKBUF_X3` variants to ensure robust clock distribution and minimize skew.
+* **Routing & Sign-off:** Signal routing was constrained to layers `metal2` through `metal6`, while clock signals were assigned to layers `metal3` through `metal6`. Antenna violations were automatically detected and mitigated via diode insertion during the detailed routing phase.
+* **Area Utilization:** The final layout achieved a core density/utilization of **57%**.
+* **Timing Sign-off:** The design successfully closed timing with a worst-case max path (setup) slack of **0.07ns** and a min path (hold) slack of **0.00ns**.
+* **Power Consumption:** Total power consumption closed at **2.89mW**. This breaks down into an electrical distribution profile of **37.5%** internal power, **59.6%** dynamic switching power, and **2.9%** static leakage power[cite: 6].
 56% utilization. .2ns setup slack, 0 hold slack, power (37.5% internal, 59.6 swithcing, and 2.9% leakage for ) 2.89 mW.
 
 ![PNR Results](media/GAM_PNR.png)
-# YUV????
