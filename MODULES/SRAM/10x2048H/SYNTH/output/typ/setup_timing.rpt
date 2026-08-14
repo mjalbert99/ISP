@@ -1,0 +1,59 @@
+Startpoint: addr0[10] (input port clocked by clk1)
+Endpoint: sram0 (rising edge-triggered flip-flop clocked by clk0)
+Path Group: clk0
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk1 (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.80    0.80 v input external delay
+     2    2.40    0.00    0.00    0.80 v addr0[10] (in)
+                  0.00    0.00    0.80 v _19_/A2 (OR2_X1)
+     1    0.21    0.01    0.04    0.84 v _19_/ZN (OR2_X1)
+                  0.01    0.00    0.84 v sram0/csb0 (SRAM)
+                                  0.84   data arrival time
+
+                  0.00    3.00    3.00   clock clk0 (rise edge)
+                          0.00    3.00   clock network delay (ideal)
+                         -0.15    2.85   clock uncertainty
+                          0.00    2.85   clock reconvergence pessimism
+                                  2.85 ^ sram0/clk0 (SRAM)
+                         -0.01    2.84   library setup time
+                                  2.84   data required time
+-----------------------------------------------------------------------------
+                                  2.84   data required time
+                                 -0.84   data arrival time
+-----------------------------------------------------------------------------
+                                  2.00   slack (MET)
+
+
+Startpoint: sram1 (falling edge-triggered flip-flop clocked by clk1)
+Endpoint: dout1[0] (output port clocked by clk1)
+Path Group: clk1
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    1.50    1.50   clock clk1 (fall edge)
+                          0.00    1.50   clock network delay (ideal)
+                  0.00    0.00    1.50 v sram1/clk1 (SRAM)
+     1    0.90    0.00    0.30    1.80 v sram1/dout1[0] (SRAM)
+                  0.00    0.00    1.80 v _14_/B (MUX2_X1)
+     1    0.00    0.01    0.05    1.85 v _14_/Z (MUX2_X1)
+                  0.01    0.00    1.85 v dout1[0] (out)
+                                  1.85   data arrival time
+
+                  0.00    3.00    3.00   clock clk1 (rise edge)
+                          0.00    3.00   clock network delay (ideal)
+                         -0.15    2.85   clock uncertainty
+                          0.00    2.85   clock reconvergence pessimism
+                         -0.80    2.05   output external delay
+                                  2.05   data required time
+-----------------------------------------------------------------------------
+                                  2.05   data required time
+                                 -1.85   data arrival time
+-----------------------------------------------------------------------------
+                                  0.20   slack (MET)
+
+

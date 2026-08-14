@@ -1,0 +1,25 @@
+
+17. Printing statistics.
+
+=== SRAM10x2048 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       19        - wires
+       75        - wire bits
+       15        - public wires
+       71        - public wire bits
+        8        - ports
+       46        - port bits
+       20 1.24E+05 cells
+        1    4.522   DFF_X1
+        2    1.064   INV_X1
+       11   20.482   MUX2_X1
+        2    1.596   NAND2_X1
+        2    2.128   OR2_X1
+        2 1.24E+05   SRAM
+
+   Chip area for module '\SRAM10x2048': 124365.894000
+     of which used for sequential elements: 4.522000 (0.00%)
+

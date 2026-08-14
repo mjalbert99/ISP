@@ -846,7 +846,7 @@ DEF read, Line 3522 (Error): Cell sram_10x1024 is not defined.  Maybe you have n
   Processed 46 pins total.
   Processed 2 special nets total.
   Processed 44 nets total.
-DEF read: Processed 5849 lines.
+DEF read: Processed 5976 lines.
 DEF Read: encountered 1 error total.
 DEF Read: encountered 6 warnings total.
    Copying output for cell FILLCELL_X32 from /root/Work/vlsi/pdks/pdk/nangate45/gds/NangateOpenCellLibrary.gds

@@ -1,0 +1,1138 @@
+(DELAYFILE
+ (SDFVERSION "3.0")
+ (DESIGN "SRAM20x2048")
+ (DATE "Thu Jul  9 10:42:39 2026")
+ (VENDOR "Parallax")
+ (PROGRAM "STA")
+ (VERSION "3.1.0")
+ (DIVIDER /)
+ (VOLTAGE 1.250::1.100)
+ (PROCESS "1.000::1.000")
+ (TEMPERATURE 0.000::25.000)
+ (TIMESCALE 1ns)
+ (CELL
+  (CELLTYPE "SRAM20x2048")
+  (INSTANCE)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT addr0[0] hold28/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT addr0[0] sram1/addr0[0] (0.043::0.043) (0.043::0.043))
+    (INTERCONNECT addr0[10] _18_/A2 (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT addr0[10] _19_/A2 (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT addr0[1] hold41/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT addr0[1] sram1/addr0[1] (0.061::0.061) (0.061::0.061))
+    (INTERCONNECT addr0[2] hold40/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT addr0[2] sram1/addr0[2] (0.059::0.059) (0.059::0.059))
+    (INTERCONNECT addr0[3] hold27/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr0[4] hold26/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr0[5] hold25/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr0[6] hold21/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr0[7] hold24/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr0[8] hold22/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr0[9] hold23/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT addr1[0] sram0/addr1[0] (0.004::0.004))
+    (INTERCONNECT addr1[0] sram1/addr1[0] (0.002::0.002))
+    (INTERCONNECT addr1[10] _16_/A2 (0.011::0.011) (0.011::0.011))
+    (INTERCONNECT addr1[10] _17_/A2 (0.011::0.011) (0.011::0.011))
+    (INTERCONNECT addr1[10] _20_/A (0.010::0.010) (0.010::0.010))
+    (INTERCONNECT addr1[1] sram0/addr1[1] (0.003::0.003))
+    (INTERCONNECT addr1[1] sram1/addr1[1] (0.002::0.002))
+    (INTERCONNECT addr1[2] sram0/addr1[2] (0.004::0.004))
+    (INTERCONNECT addr1[2] sram1/addr1[2] (0.002::0.002))
+    (INTERCONNECT addr1[3] sram0/addr1[3] (0.047::0.047))
+    (INTERCONNECT addr1[3] sram1/addr1[3] (0.007::0.007))
+    (INTERCONNECT addr1[4] sram0/addr1[4] (0.048::0.048))
+    (INTERCONNECT addr1[4] sram1/addr1[4] (0.008::0.008))
+    (INTERCONNECT addr1[5] sram0/addr1[5] (0.050::0.050))
+    (INTERCONNECT addr1[5] sram1/addr1[5] (0.008::0.008))
+    (INTERCONNECT addr1[6] sram0/addr1[6] (0.051::0.051))
+    (INTERCONNECT addr1[6] sram1/addr1[6] (0.008::0.008))
+    (INTERCONNECT addr1[7] sram0/addr1[7] (0.056::0.056))
+    (INTERCONNECT addr1[7] sram1/addr1[7] (0.008::0.008))
+    (INTERCONNECT addr1[8] sram0/addr1[8] (0.053::0.053))
+    (INTERCONNECT addr1[8] sram1/addr1[8] (0.008::0.008))
+    (INTERCONNECT addr1[9] sram0/addr1[9] (0.055::0.055))
+    (INTERCONNECT addr1[9] sram1/addr1[9] (0.008::0.008))
+    (INTERCONNECT clk0 clkbuf_0_clk0/A (0.007::0.007) (0.007::0.007))
+    (INTERCONNECT clk1 clkbuf_regs_0_clk1/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT clk1 clkbuf_0_clk1/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT csb0 _05_/A (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT csb0 _19_/A1 (0.003::0.003) (0.002::0.002))
+    (INTERCONNECT csb1 _04_/A (0.010::0.010) (0.010::0.010))
+    (INTERCONNECT csb1 _17_/A1 (0.010::0.010) (0.010::0.010))
+    (INTERCONNECT csb1 _20_/S (0.010::0.010) (0.009::0.009))
+    (INTERCONNECT din0[0] hold42/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT din0[0] sram1/din0[0] (0.063::0.063) (0.063::0.063))
+    (INTERCONNECT din0[1] hold39/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT din0[1] sram1/din0[1] (0.057::0.057) (0.057::0.057))
+    (INTERCONNECT din0[2] hold38/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT din0[2] sram1/din0[2] (0.052::0.052) (0.052::0.052))
+    (INTERCONNECT din0[3] hold37/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT din0[3] sram1/din0[3] (0.051::0.051) (0.051::0.051))
+    (INTERCONNECT din0[4] hold43/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT din0[4] sram1/din0[4] (0.065::0.065) (0.065::0.065))
+    (INTERCONNECT din0[5] hold36/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT din0[5] sram1/din0[5] (0.049::0.049) (0.049::0.049))
+    (INTERCONNECT din0[6] hold34/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT din0[6] sram1/din0[6] (0.047::0.047) (0.047::0.047))
+    (INTERCONNECT din0[7] hold32/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT din0[7] sram1/din0[7] (0.046::0.046) (0.046::0.046))
+    (INTERCONNECT din0[8] hold44/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT din0[8] sram1/din0[8] (0.066::0.066) (0.066::0.066))
+    (INTERCONNECT din0[9] hold30/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT din0[9] sram1/din0[9] (0.044::0.044) (0.044::0.044))
+    (INTERCONNECT _04_/ZN _16_/A1 (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT _05_/ZN _18_/A1 (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT _06_/Z dout1[8] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT _07_/Z dout1[7] (0.004::0.004) (0.004::0.004))
+    (INTERCONNECT _08_/Z dout1[6] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT _09_/Z dout1[5] (0.004::0.004) (0.004::0.004))
+    (INTERCONNECT _10_/Z dout1[4] (0.004::0.004) (0.004::0.004))
+    (INTERCONNECT _11_/Z dout1[3] (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT _12_/Z dout1[2] (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT _13_/Z dout1[1] (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT _14_/Z dout1[0] (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT _15_/Z dout1[9] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT _16_/ZN sram1/csb1 (0.004::0.004) (0.004::0.004))
+    (INTERCONNECT _17_/ZN sram0/csb1 (0.004::0.004) (0.004::0.004))
+    (INTERCONNECT _18_/ZN sram1/csb0 (0.009::0.009) (0.009::0.009))
+    (INTERCONNECT _19_/ZN sram0/csb0 (0.012::0.012) (0.011::0.012))
+    (INTERCONNECT _20_/Z _21_/D (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT _21_/Q _06_/S (0.013::0.013) (0.012::0.012))
+    (INTERCONNECT _21_/Q _07_/S (0.013::0.014) (0.013::0.013))
+    (INTERCONNECT _21_/Q _08_/S (0.013::0.013) (0.012::0.012))
+    (INTERCONNECT _21_/Q _09_/S (0.014::0.014) (0.013::0.013))
+    (INTERCONNECT _21_/Q _10_/S (0.013::0.013) (0.012::0.012))
+    (INTERCONNECT _21_/Q _11_/S (0.015::0.015) (0.014::0.014))
+    (INTERCONNECT _21_/Q _12_/S (0.015::0.016) (0.015::0.015))
+    (INTERCONNECT _21_/Q _13_/S (0.015::0.016) (0.015::0.015))
+    (INTERCONNECT _21_/Q _14_/S (0.015::0.016) (0.015::0.015))
+    (INTERCONNECT _21_/Q _15_/S (0.012::0.012) (0.011::0.011))
+    (INTERCONNECT _21_/Q _20_/B (0.009::0.009) (0.009::0.009))
+    (INTERCONNECT sram0/dout1[0] _14_/A (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram0/dout1[1] _13_/A (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram0/dout1[2] _12_/A (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram0/dout1[3] _11_/A (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram0/dout1[4] _10_/A (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram0/dout1[5] _09_/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram0/dout1[6] _08_/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram0/dout1[7] _07_/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram0/dout1[8] _06_/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram0/dout1[9] _15_/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram1/dout1[0] _14_/B (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram1/dout1[1] _13_/B (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram1/dout1[2] _12_/B (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram1/dout1[3] _11_/B (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT sram1/dout1[4] _10_/B (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram1/dout1[5] _09_/B (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram1/dout1[6] _08_/B (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram1/dout1[7] _07_/B (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT sram1/dout1[8] _06_/B (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT sram1/dout1[9] _15_/B (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT clkbuf_regs_0_clk1/Z clkbuf_0_clk1_regs/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_0_clk0/Z clkbuf_1_1_0_clk0/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT clkbuf_0_clk0/Z clkbuf_1_0_0_clk0/A (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT clkbuf_1_0_0_clk0/Z sram1/clk0 (0.011::0.012) (0.012::0.012))
+    (INTERCONNECT clkbuf_1_1_0_clk0/Z sram0/clk0 (0.011::0.012) (0.011::0.012))
+    (INTERCONNECT clkbuf_0_clk1/Z clkbuf_1_1__f_clk1/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_0_clk1/Z clkbuf_1_0__f_clk1/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_1_0__f_clk1/Z sram1/clk1 (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_1_1__f_clk1/Z sram0/clk1 (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_0_clk1_regs/Z clkbuf_1_0__f_clk1_regs/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_1_0__f_clk1_regs/Z _21_/CK (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold1/Z sram1/addr0[6] (0.035::0.037) (0.037::0.038))
+    (INTERCONNECT hold1/Z sram0/addr0[6] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT hold2/Z sram1/addr0[8] (0.036::0.038) (0.038::0.039))
+    (INTERCONNECT hold2/Z sram0/addr0[8] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT hold3/Z sram1/addr0[9] (0.038::0.040) (0.040::0.041))
+    (INTERCONNECT hold3/Z sram0/addr0[9] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT hold4/Z sram1/addr0[7] (0.039::0.042) (0.041::0.042))
+    (INTERCONNECT hold4/Z sram0/addr0[7] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT hold5/Z sram1/addr0[5] (0.041::0.043) (0.043::0.044))
+    (INTERCONNECT hold5/Z sram0/addr0[5] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT hold6/Z sram1/addr0[4] (0.042::0.045) (0.045::0.045))
+    (INTERCONNECT hold6/Z sram0/addr0[4] (0.006::0.006) (0.006::0.006))
+    (INTERCONNECT hold7/Z sram1/addr0[3] (0.044::0.046) (0.046::0.047))
+    (INTERCONNECT hold7/Z sram0/addr0[3] (0.006::0.006) (0.006::0.006))
+    (INTERCONNECT hold8/Z hold29/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold9/Z hold31/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold10/Z hold33/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold11/Z hold35/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold12/Z sram0/din0[5] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold13/Z sram0/din0[3] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold14/Z sram0/din0[2] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold15/Z sram0/din0[1] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold16/Z sram0/addr0[2] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold17/Z sram0/addr0[1] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold18/Z sram0/din0[0] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold19/Z sram0/din0[4] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold20/Z sram0/din0[8] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold21/Z hold1/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold22/Z hold2/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold23/Z hold3/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold24/Z hold4/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold25/Z hold5/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold26/Z hold6/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold27/Z hold7/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold28/Z hold8/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold29/Z sram0/addr0[0] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold30/Z hold9/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold31/Z sram0/din0[9] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold32/Z hold10/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold33/Z sram0/din0[7] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold34/Z hold11/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold35/Z sram0/din0[6] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold36/Z hold12/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold37/Z hold13/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold38/Z hold14/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold39/Z hold15/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold40/Z hold16/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold41/Z hold17/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold42/Z hold18/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold43/Z hold19/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold44/Z hold20/A (0.000::0.000) (0.000::0.000))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "INV_X1")
+  (INSTANCE _04_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A ZN (0.016::0.025) (0.011::0.014))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "INV_X1")
+  (INSTANCE _05_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A ZN (0.014::0.024) (0.010::0.013))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _06_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.044::0.072) (0.047::0.082)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.044::0.072) (0.047::0.082)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.043::0.071) (0.047::0.082)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.043::0.071) (0.047::0.082)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.061::0.103) (0.053::0.091)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.050::0.088) (0.055::0.091)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _07_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.042::0.069) (0.046::0.080)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.042::0.069) (0.046::0.080)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.042::0.068) (0.046::0.080)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.042::0.068) (0.046::0.080)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.060::0.100) (0.051::0.090)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.048::0.085) (0.054::0.089)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _08_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.043::0.071) (0.046::0.081)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.043::0.071) (0.046::0.081)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.043::0.070) (0.047::0.081)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.043::0.070) (0.047::0.081)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.061::0.102) (0.052::0.091)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.049::0.087) (0.055::0.090)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _09_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.042::0.067) (0.045::0.079)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.042::0.067) (0.045::0.079)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.041::0.067) (0.045::0.079)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.041::0.067) (0.045::0.079)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.059::0.099) (0.051::0.089)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.048::0.084) (0.054::0.088)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _10_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.041::0.067) (0.045::0.079)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.041::0.067) (0.045::0.079)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.041::0.066) (0.045::0.079)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.041::0.066) (0.045::0.079)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.059::0.098) (0.051::0.089)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.047::0.083) (0.053::0.088)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _11_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.037::0.060) (0.042::0.074)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.037::0.060) (0.042::0.074)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.037::0.059) (0.042::0.074)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.037::0.059) (0.042::0.074)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.055::0.091) (0.047::0.084)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.043::0.076) (0.051::0.084)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _12_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.038::0.062) (0.043::0.075)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.038::0.062) (0.043::0.075)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.038::0.061) (0.043::0.076)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.038::0.061) (0.043::0.076)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.056::0.093) (0.048::0.085)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.044::0.078) (0.052::0.085)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _13_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.037::0.058) (0.041::0.073)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.037::0.058) (0.041::0.073)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.036::0.057) (0.041::0.073)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.036::0.057) (0.041::0.073)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.055::0.090) (0.047::0.083)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.043::0.075) (0.050::0.083)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _14_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.035::0.056) (0.040::0.072)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.035::0.056) (0.040::0.072)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.035::0.055) (0.040::0.072)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.035::0.055) (0.040::0.072)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.053::0.087) (0.046::0.082)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.041::0.072) (0.049::0.081)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _15_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.043::0.071) (0.046::0.081)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.043::0.071) (0.046::0.081)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.043::0.070) (0.047::0.081)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.043::0.070) (0.047::0.081)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.061::0.102) (0.052::0.091)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.049::0.087) (0.055::0.090)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "NAND2_X1")
+  (INSTANCE _16_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A1 ZN (0.025::0.045) (0.029::0.042))
+    (IOPATH A2 ZN (0.029::0.050) (0.030::0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "OR2_X1")
+  (INSTANCE _17_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A1 ZN (0.034::0.057) (0.042::0.070))
+    (IOPATH A2 ZN (0.036::0.060) (0.044::0.075))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "NAND2_X1")
+  (INSTANCE _18_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A1 ZN (0.035::0.064) (0.040::0.059))
+    (IOPATH A2 ZN (0.035::0.063) (0.039::0.053))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "OR2_X1")
+  (INSTANCE _19_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A1 ZN (0.043::0.076) (0.047::0.078))
+    (IOPATH A2 ZN (0.045::0.079) (0.050::0.083))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "MUX2_X1")
+  (INSTANCE _20_)
+  (DELAY
+   (ABSOLUTE
+    (COND (B == 1'b1) && (S == 1'b0)
+     (IOPATH A Z (0.034::0.053) (0.041::0.072)))
+    (COND (B == 1'b0) && (S == 1'b0)
+     (IOPATH A Z (0.034::0.053) (0.041::0.072)))
+    (COND (A == 1'b1) && (S == 1'b1)
+     (IOPATH B Z (0.038::0.069) (0.048::0.085)))
+    (COND (A == 1'b0) && (S == 1'b1)
+     (IOPATH B Z (0.038::0.069) (0.048::0.085)))
+    (COND (A == 1'b1) && (B == 1'b0)
+     (IOPATH S Z (0.041::0.066) (0.041::0.071)))
+    (COND (A == 1'b0) && (B == 1'b1)
+     (IOPATH S Z (0.031::0.048) (0.035::0.061)))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "DFF_X1")
+  (INSTANCE _21_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH CK QN (0.038::0.059) (0.034::0.060))
+    (IOPATH CK Q (0.094::0.173) (0.081::0.123))
+   )
+  )
+  (TIMINGCHECK
+    (SETUP (posedge D) (posedge CK) (0.024::0.034))
+    (SETUP (negedge D) (posedge CK) (0.022::0.042))
+    (HOLD (posedge D) (posedge CK) (0.005::0.011))
+    (HOLD (negedge D) (posedge CK) (0.004::0.003))
+    (WIDTH (posedge CK) (0.030::0.053))
+    (WIDTH (negedge CK) (0.028::0.053))
+  )
+ )
+ (CELL
+  (CELLTYPE "SRAM")
+  (INSTANCE sram0)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH clk1 dout1[0] (0.285::0.285) (0.285::0.285))
+    (IOPATH clk1 dout1[1] (0.286::0.286) (0.286::0.286))
+    (IOPATH clk1 dout1[2] (0.289::0.289) (0.289::0.289))
+    (IOPATH clk1 dout1[3] (0.288::0.288) (0.288::0.288))
+    (IOPATH clk1 dout1[4] (0.288::0.288) (0.288::0.288))
+    (IOPATH clk1 dout1[5] (0.291::0.291) (0.291::0.291))
+    (IOPATH clk1 dout1[6] (0.289::0.289) (0.289::0.289))
+    (IOPATH clk1 dout1[7] (0.292::0.292) (0.292::0.292))
+    (IOPATH clk1 dout1[8] (0.291::0.291) (0.291::0.291))
+    (IOPATH clk1 dout1[9] (0.292::0.292) (0.292::0.292))
+   )
+  )
+  (TIMINGCHECK
+    (SETUP din0[0] (posedge clk0) (0.009::0.009))
+    (HOLD din0[0] (posedge clk0) (0.001::0.001))
+    (SETUP din0[1] (posedge clk0) (0.009::0.009))
+    (HOLD din0[1] (posedge clk0) (0.001::0.001))
+    (SETUP din0[2] (posedge clk0) (0.009::0.009))
+    (HOLD din0[2] (posedge clk0) (0.001::0.001))
+    (SETUP din0[3] (posedge clk0) (0.009::0.009))
+    (HOLD din0[3] (posedge clk0) (0.001::0.001))
+    (SETUP din0[4] (posedge clk0) (0.009::0.009))
+    (HOLD din0[4] (posedge clk0) (0.001::0.001))
+    (SETUP din0[5] (posedge clk0) (0.009::0.009))
+    (HOLD din0[5] (posedge clk0) (0.001::0.001))
+    (SETUP din0[6] (posedge clk0) (0.009::0.009))
+    (HOLD din0[6] (posedge clk0) (0.001::0.001))
+    (SETUP din0[7] (posedge clk0) (0.009::0.009))
+    (HOLD din0[7] (posedge clk0) (0.001::0.001))
+    (SETUP din0[8] (posedge clk0) (0.009::0.009))
+    (HOLD din0[8] (posedge clk0) (0.001::0.001))
+    (SETUP din0[9] (posedge clk0) (0.009::0.009))
+    (HOLD din0[9] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[0] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[0] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[1] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[1] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[2] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[2] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[3] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[3] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[4] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[4] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[5] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[5] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[6] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[6] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[7] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[7] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[8] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[8] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[9] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[9] (posedge clk0) (0.001::0.001))
+    (SETUP csb0 (posedge clk0) (0.009::0.009))
+    (HOLD csb0 (posedge clk0) (0.001::0.001))
+    (SETUP addr1[0] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[0] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[1] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[1] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[2] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[2] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[3] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[3] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[4] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[4] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[5] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[5] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[6] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[6] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[7] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[7] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[8] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[8] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[9] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[9] (posedge clk1) (0.001::0.001))
+    (SETUP csb1 (posedge clk1) (0.009::0.009))
+    (HOLD csb1 (posedge clk1) (0.001::0.001))
+  )
+ )
+ (CELL
+  (CELLTYPE "SRAM")
+  (INSTANCE sram1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH clk1 dout1[0] (0.287::0.287) (0.287::0.287))
+    (IOPATH clk1 dout1[1] (0.288::0.288) (0.288::0.287))
+    (IOPATH clk1 dout1[2] (0.286::0.286) (0.286::0.286))
+    (IOPATH clk1 dout1[3] (0.288::0.287) (0.287::0.287))
+    (IOPATH clk1 dout1[4] (0.291::0.291) (0.291::0.291))
+    (IOPATH clk1 dout1[5] (0.289::0.289) (0.289::0.289))
+    (IOPATH clk1 dout1[6] (0.292::0.292) (0.292::0.292))
+    (IOPATH clk1 dout1[7] (0.291::0.291) (0.291::0.291))
+    (IOPATH clk1 dout1[8] (0.293::0.293) (0.293::0.293))
+    (IOPATH clk1 dout1[9] (0.293::0.293) (0.293::0.293))
+   )
+  )
+  (TIMINGCHECK
+    (SETUP din0[0] (posedge clk0) (0.009::0.009))
+    (HOLD din0[0] (posedge clk0) (0.001::0.001))
+    (SETUP din0[1] (posedge clk0) (0.009::0.009))
+    (HOLD din0[1] (posedge clk0) (0.001::0.001))
+    (SETUP din0[2] (posedge clk0) (0.009::0.009))
+    (HOLD din0[2] (posedge clk0) (0.001::0.001))
+    (SETUP din0[3] (posedge clk0) (0.009::0.009))
+    (HOLD din0[3] (posedge clk0) (0.001::0.001))
+    (SETUP din0[4] (posedge clk0) (0.009::0.009))
+    (HOLD din0[4] (posedge clk0) (0.001::0.001))
+    (SETUP din0[5] (posedge clk0) (0.009::0.009))
+    (HOLD din0[5] (posedge clk0) (0.001::0.001))
+    (SETUP din0[6] (posedge clk0) (0.009::0.009))
+    (HOLD din0[6] (posedge clk0) (0.001::0.001))
+    (SETUP din0[7] (posedge clk0) (0.009::0.009))
+    (HOLD din0[7] (posedge clk0) (0.001::0.001))
+    (SETUP din0[8] (posedge clk0) (0.009::0.009))
+    (HOLD din0[8] (posedge clk0) (0.001::0.001))
+    (SETUP din0[9] (posedge clk0) (0.009::0.009))
+    (HOLD din0[9] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[0] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[0] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[1] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[1] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[2] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[2] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[3] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[3] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[4] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[4] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[5] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[5] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[6] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[6] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[7] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[7] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[8] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[8] (posedge clk0) (0.001::0.001))
+    (SETUP addr0[9] (posedge clk0) (0.009::0.009))
+    (HOLD addr0[9] (posedge clk0) (0.001::0.001))
+    (SETUP csb0 (posedge clk0) (0.009::0.009))
+    (HOLD csb0 (posedge clk0) (0.001::0.001))
+    (SETUP addr1[0] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[0] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[1] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[1] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[2] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[2] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[3] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[3] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[4] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[4] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[5] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[5] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[6] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[6] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[7] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[7] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[8] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[8] (posedge clk1) (0.001::0.001))
+    (SETUP addr1[9] (posedge clk1) (0.009::0.009))
+    (HOLD addr1[9] (posedge clk1) (0.001::0.001))
+    (SETUP csb1 (posedge clk1) (0.009::0.009))
+    (HOLD csb1 (posedge clk1) (0.001::0.001))
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_regs_0_clk1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.024) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_0_clk0)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029::0.044) (0.031::0.046))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_0_0_clk0)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.037::0.062) (0.045::0.067))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_1_0_clk0)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.037::0.062) (0.045::0.067))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_0_clk1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.033) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_0__f_clk1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.021::0.032) (0.020::0.033))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_1__f_clk1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.021::0.032) (0.020::0.033))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_0_clk1_regs)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.026) (0.016::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_0__f_clk1_regs)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.016::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.032::0.056) (0.039::0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold2)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033::0.056) (0.039::0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold3)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033::0.056) (0.039::0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold4)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033::0.057) (0.040::0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold5)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033::0.057) (0.040::0.061))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold6)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033::0.058) (0.040::0.061))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE hold7)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034::0.058) (0.041::0.062))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold8)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.020::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold9)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.020::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold10)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.020::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold11)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.020::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold12)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold13)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold14)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold15)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold16)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold17)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold18)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold19)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold20)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold21)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold22)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold23)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold24)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold25)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold26)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold27)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold28)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold29)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold30)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold31)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold32)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold33)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold34)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold35)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold36)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold37)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold38)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold39)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold40)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold41)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold42)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold43)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold44)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+)

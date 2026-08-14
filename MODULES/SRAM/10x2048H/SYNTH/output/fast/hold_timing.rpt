@@ -1,0 +1,58 @@
+Startpoint: addr0[0] (input port clocked by clk1)
+Endpoint: sram0 (rising edge-triggered flip-flop clocked by clk0)
+Path Group: clk0
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk1 (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.15    0.15 ^ input external delay
+     2    0.42    0.00    0.00    0.15 ^ addr0[0] (in)
+                  0.00    0.00    0.15 ^ sram0/addr0[0] (SRAM)
+                                  0.15   data arrival time
+
+                  0.00    0.00    0.00   clock clk0 (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                                  0.05 ^ sram0/clk0 (SRAM)
+                          0.00    0.05   library hold time
+                                  0.05   data required time
+-----------------------------------------------------------------------------
+                                  0.05   data required time
+                                 -0.15   data arrival time
+-----------------------------------------------------------------------------
+                                  0.10   slack (MET)
+
+
+Startpoint: _21_ (rising edge-triggered flip-flop clocked by clk1)
+Endpoint: _21_ (rising edge-triggered flip-flop clocked by clk1)
+Path Group: clk1
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk1 (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _21_/CK (DFF_X1)
+    11   20.18    0.03    0.07    0.07 ^ _21_/Q (DFF_X1)
+                  0.03    0.00    0.07 ^ _20_/B (MUX2_X1)
+     1    1.16    0.00    0.02    0.09 ^ _20_/Z (MUX2_X1)
+                  0.00    0.00    0.09 ^ _21_/D (DFF_X1)
+                                  0.09   data arrival time
+
+                  0.00    0.00    0.00   clock clk1 (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                                  0.05 ^ _21_/CK (DFF_X1)
+                          0.00    0.05   library hold time
+                                  0.05   data required time
+-----------------------------------------------------------------------------
+                                  0.05   data required time
+                                 -0.09   data arrival time
+-----------------------------------------------------------------------------
+                                  0.04   slack (MET)
+
+

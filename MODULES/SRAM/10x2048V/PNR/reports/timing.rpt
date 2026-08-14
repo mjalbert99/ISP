@@ -1,0 +1,119 @@
+Startpoint: addr0[0] (input port clocked by clk1)
+Endpoint: sram0 (rising edge-triggered flip-flop clocked by clk0)
+Path Group: clk0
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk1 (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.15    0.15 v input external delay
+   2.29    0.00    0.00    0.15 v addr0[0] (in)
+           0.00    0.00    0.15 v hold1/A (CLKBUF_X1)
+   1.75    0.01    0.01    0.16 v hold1/Z (CLKBUF_X1)
+           0.01    0.00    0.16 v sram0/addr0[0] (SRAM)
+                           0.16   data arrival time
+
+                   0.00    0.00   clock clk0 (rise edge)
+                   0.11    0.11   clock network delay (propagated)
+                   0.05    0.16   clock uncertainty
+                   0.00    0.16   clock reconvergence pessimism
+                           0.16 ^ sram0/clk0 (SRAM)
+                   0.00    0.16   library hold time
+                           0.16   data required time
+-----------------------------------------------------------------------
+                           0.16   data required time
+                          -0.16   data arrival time
+-----------------------------------------------------------------------
+                           0.00   slack (MET)
+
+
+Startpoint: addr1[0] (input port clocked by clk1)
+Endpoint: sram1 (falling edge-triggered flip-flop clocked by clk1)
+Path Group: clk1
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk1 (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.15    0.15 ^ input external delay
+   2.31    0.00    0.00    0.15 ^ addr1[0] (in)
+           0.00    0.00    0.15 ^ sram1/addr1[0] (SRAM)
+                           0.15   data arrival time
+
+                   0.00    0.00   clock clk1 (rise edge)
+                   0.06    0.06   clock network delay (propagated)
+                   0.05    0.11   clock uncertainty
+                   0.00    0.11   clock reconvergence pessimism
+                           0.11 ^ sram1/clk1 (SRAM)
+                   0.00    0.11   library hold time
+                           0.11   data required time
+-----------------------------------------------------------------------
+                           0.11   data required time
+                          -0.15   data arrival time
+-----------------------------------------------------------------------
+                           0.04   slack (MET)
+
+
+Startpoint: din0[6] (input port clocked by clk1)
+Endpoint: sram1 (rising edge-triggered flip-flop clocked by clk0)
+Path Group: clk0
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk1 (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.80    0.80 v input external delay
+  33.49    0.00    0.00    0.80 v din0[6] (in)
+           0.02    0.01    0.81 v hold46/A (CLKBUF_X1)
+  32.15    0.07    0.12    0.93 v hold46/Z (CLKBUF_X1)
+           0.07    0.02    0.95 v sram1/din0[6] (SRAM)
+                           0.95   data arrival time
+
+                   3.00    3.00   clock clk0 (rise edge)
+                   0.07    3.07   clock network delay (propagated)
+                  -0.15    2.92   clock uncertainty
+                   0.00    2.92   clock reconvergence pessimism
+                           2.92 ^ sram1/clk0 (SRAM)
+                  -0.01    2.91   library setup time
+                           2.91   data required time
+-----------------------------------------------------------------------
+                           2.91   data required time
+                          -0.95   data arrival time
+-----------------------------------------------------------------------
+                           1.96   slack (MET)
+
+
+Startpoint: sram1 (falling edge-triggered flip-flop clocked by clk1)
+Endpoint: dout1[2] (output port clocked by clk1)
+Path Group: clk1
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   1.50    1.50   clock clk1 (fall edge)
+                   0.06    1.56   clock network delay (propagated)
+           0.01    0.00    1.56 v sram1/clk1 (SRAM)
+   9.21    0.00    0.31    1.87 v sram1/dout1[2] (SRAM)
+           0.00    0.00    1.87 v _12_/B (MUX2_X1)
+  14.68    0.02    0.08    1.96 v _12_/Z (MUX2_X1)
+           0.02    0.00    1.96 v dout1[2] (out)
+                           1.96   data arrival time
+
+                   3.00    3.00   clock clk1 (rise edge)
+                   0.00    3.00   clock network delay (propagated)
+                  -0.15    2.85   clock uncertainty
+                   0.00    2.85   clock reconvergence pessimism
+                  -0.80    2.05   output external delay
+                           2.05   data required time
+-----------------------------------------------------------------------
+                           2.05   data required time
+                          -1.96   data arrival time
+-----------------------------------------------------------------------
+                           0.09   slack (MET)
+
+
+worst slack min 0.00
+worst slack max 0.09

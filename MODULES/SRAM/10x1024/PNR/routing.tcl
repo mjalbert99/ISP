@@ -3,12 +3,12 @@ set_routing_layers -clock metal3-metal5
 
 global_route
 
+repair_timing
 detailed_route -output_drc reports/5_route_drc.rpt
 
 repair_antennas
 check_antennas
 
-repair_timing
 
 report_design_area
 

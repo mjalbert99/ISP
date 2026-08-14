@@ -33,8 +33,8 @@ read_sdc $SDC_PATH
 file mkdir output
 
 
-initialize_floorplan -die_area {0 0 260 310} \
-                     -core_area {10 10 250 300} \
+initialize_floorplan -die_area {0 0 245 300} \
+                     -core_area {10 10 235 290} \
                      -site FreePDK45_38x28_10R_NP_162NW_34O
 
 
@@ -42,12 +42,11 @@ initialize_floorplan -die_area {0 0 260 310} \
 make_tracks
 
 # rtl_macro_placer -write_macro_placement macros.txt
-place_macro -macro_name {sram} -location {25 25}
+place_macro -macro_name {sram} -location {22 22}
 
 
-set_io_pin_constraint -pin_names {clk0 csb0 din0 addr0} -region left:*
-set_io_pin_constraint -pin_names {clk1 csb1 din1 addr1} -region right:*
-set_io_pin_constraint -pin_names {dout1} -region top:*
+set_io_pin_constraint -pin_names {clk0 csb0 din0 addr0 clk1 csb1 din1 addr1} -region left:70-250
+set_io_pin_constraint -pin_names {dout1} -region right:-20-80
 
 place_pins -hor_layers metal3 -ver_layers metal2 \
             -min_distance 5 \
@@ -83,7 +82,7 @@ add_pdn_stripe -grid "Core" \
                -layer metal4 \
                -width 0.5 \
                -pitch 26 \
-               -offset 0.0 \
+               -offset 12.5 \
                -spacing 1.6
 
 add_pdn_stripe -grid "Core" \

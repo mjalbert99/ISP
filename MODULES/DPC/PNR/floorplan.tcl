@@ -11,9 +11,9 @@ set LIB_FILE_FST  "${PDK_ROOT}/libs/NangateOpenCellLibrary_fast.lib"
 
 set SRAM_ROOT "/root/Work/vlsi/pdks/pdk/nangate45/sram_20x2048"
 
-set SRAM_LEF "../../SRAM/10x2048/PNR/metals/SRAM10x2048_abstract.lef"
-set SRAM_LIB_SLW "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib"
-set SRAM_LIB_FST "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib"
+set SRAM_LEF "../../SRAM/10x2048H/PNR/metals/SRAM10x2048_abstract.lef"
+set SRAM_LIB_SLW "../../SRAM/10x2048H/PNR/metals/SRAM10x2048.lib"
+set SRAM_LIB_FST "../../SRAM/10x2048H/PNR/metals/SRAM10x2048.lib"
 
 read_lef $TECH_LEF
 read_lef $CELL_LEF
@@ -35,13 +35,8 @@ read_sdc $SDC_PATH
 file mkdir output
 
 
-# initialize_floorplan -utilization 30 \
-#                      -aspect_ratio 1.5 \
-#                      -core_space 10 10 \
-#                      -site FreePDK45_38x28_10R_NP_162NW_34O
-
-initialize_floorplan -die_area {0 0 1050 1720} \
-                     -core_area {10 10 1040 1710} \
+initialize_floorplan -die_area {0 0 910 1500} \
+                     -core_area {10 10 900 1490} \
                      -site FreePDK45_38x28_10R_NP_162NW_34O
 
 
@@ -49,10 +44,15 @@ make_tracks
 
 set_macro_base_halo 5 5
 # rtl_macro_placer -write_macro_placement macros.txt
-place_macro -macro_name {sram1} -location {568 877} -orientation R0
-place_macro -macro_name {sram2} -location {568 50} -orientation R0
-place_macro -macro_name {sram0} -location {100 877} -orientation R0
-place_macro -macro_name {sram3} -location {100 50} -orientation R0
+place_macro -macro_name {sram0} -location {119 1120} -orientation R0
+place_macro -macro_name {sram1} -location {119 750} -orientation R0
+place_macro -macro_name {sram2} -location {119 380} -orientation R0
+place_macro -macro_name {sram3} -location {119 20} -orientation R0
+
+
+
+set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync pixel_in} -region left:500-900
+set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out pixel_out} -region rigth:500-900
 
 place_pins -hor_layers metal3 -ver_layers metal2 \
             -min_distance 20 \
@@ -96,20 +96,20 @@ add_pdn_stripe -grid "Core" \
                -layer metal4 \
                -width 0.5 \
                -pitch 26 \
-               -offset 5.0 \
+               -offset -6.0 \
                -spacing 1.6
 
 add_pdn_stripe -grid "Core" \
                -layer metal5 \
                -width 1.5 \
-               -pitch 100 \
-               -offset 8.0 \
+               -pitch 60 \
+               -offset 7.0 \
                -spacing 1.6
 
 add_pdn_stripe -grid "Core" \
                -layer metal6 \
                -width 1.5 \
-               -pitch 80 \
+               -pitch 60 \
                -offset 11.0 \
                -spacing 1.6
 
@@ -119,17 +119,17 @@ add_pdn_connect -grid "Core" -layers {metal4 metal5}
 add_pdn_connect -grid "Core" -layers {metal5 metal6}
 
 # SRAMS
-define_pdn_grid -name "OpenRAM_Grid0" -macro -instances {sram*} -halo {1 1 1 1} -grid_over_pg_pins
+define_pdn_grid -name "OpenRAM_Grid0" -macro -instances {sram*} -halo {5 5 5 5} -grid_over_pg_pins
 
-# add_pdn_ring -grid "OpenRAM_Grid0" \
-#              -layers {metal4 metal5} \
-#              -widths {1.0 1.0} \
-#              -spacings {1.6 1.6} \
-#              -core_offsets {15.0 15.0}
+add_pdn_stripe -grid "OpenRAM_Grid0" \
+               -layer metal4 \
+               -width 0.5 \
+               -pitch 26 \
+               -offset -6.0
 
 add_pdn_connect -grid "OpenRAM_Grid0" -layers {metal5 metal6}
-
 add_pdn_connect -grid "OpenRAM_Grid0" -layers {metal4 metal5}
+add_pdn_connect -grid "OpenRAM_Grid0" -layers {metal3 metal4}
 
 
 pdngen

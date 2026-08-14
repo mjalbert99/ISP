@@ -59,7 +59,7 @@ library (SRAM) {
   }
 
   cell ("SRAM") {
-    area : 68700.539 
+    area : 62168.051 
     is_macro_cell : true;
     pin("clk0") {
       direction : input;
