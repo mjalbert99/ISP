@@ -12,11 +12,14 @@ https://10xengineers.ai/exploring-the-world-of-infinite-isp-a-guide-to-infinite-
 # TODO
 - REDO SUNMODULES STATS and PHOTOS
 - DO CHANNEL CPU
-- FINISH TOP LEVEL SECTION
-- 
+- FINISH TOP LEVEL/OVERVIEW SECTION
+- RESULT SECTION
+- PIPELINE DIAGRAM
 
 # Project Overview
 This repository contains the ISP core for a System-on-Chip (SoC) project. The core ingests 10-bit width pixel data from a camera sensor and executes burst transactions to feed the downstream ISP FIFO for processing. Designed for a target resolution of 2k at 60 FPS, the bus is synthesized and physically implemented using the nanGate45 Process Design Kit (PDK).
+
+## Pipeline Diagram
 
 ## Performance Targets & Timing Budget
 The system is engineered to process 132,710,400 pixels/sec to support the 2048x1080 resolution target. 
@@ -27,12 +30,36 @@ The system is engineered to process 132,710,400 pixels/sec to support the 2048x1
 ## Tactics Used
 - Overcontrainted submoduels to 2.5ns clock frequency to ensure once they are used in the top level there is ample timing budget. 
 - Only the single submodules have UVM test enviorments
-- Only submodules using OpenRam SRAM units have PNR for basic logic as these need to be synthesized and PNR'd to create a functioning unit
+- Only submodules using OpenRam SRAM units have PNR for basic logic as these need to be synthesized and PNR'd to create a functioning unit or modules using other submodules like the CPUs/Top Level
 - Broken up into processing cores to ensure timing is meet per each section of physical, digital, and color-channel processing
+- Standard ISP line blanking, sliding window algorithms, math exproximations using left/right shift
+- Improved timing for setup using tighter timing contraints on submodules, pipeling, multi VT, cell resizing, buffering, fan-out reconstructions, and module proximity adjustments
+- Improved hold time with buffing and module proximity adjustments
+
+## Challenges
+- Major setup issues on top level. Soultion create sub-cores that meet timing constraints so top level is treated as a connection phase, each logic is created into a module allowing me to adjust where STD cells are precisely, and over constrainted submodules clock frequency to 2.5ns instead of 3ns leading to a greater timing budget.
+- 
+
+## Improvements
+- Could do UVM enviornments and static test benches for all stages instead of just the submodules with STD cells and logic. IE the top level and all CPU cores used in the top level.
+
+## Results
+**TODO**
 
 # ISP Top Level
 Made up of three cores based on the 3 different stages of processing. Physical CPU (P_CPU) is for pyshical processing like black level correction, lense shading, and defected pixels, then it goes to Digital CPU (D_CPU) which handles digital artifacts and processing like bayer noise reduction and white balance gain, and demosaic the bayer to RGB channels, then finally the Color CPU (C_CPU) that handles the color channel processing. This has the stages of color correcting, and gamma balancing. All these come together to produce the end result.
 
+![UVM Results](media/TOP_LEVEL_PNR.png)
+
+### PHYSICAL_CPU (P_CPU)
+![UVM Results](media/P_CPU_PNR.png)
+
+### DIGITAL_CPU (P_CPU)
+![UVM Results](media/D_CPU_PNR.png)
+
+### COLOR_CPU (P_CPU)
+
+![UVM Results](media/C_CPU_PNR.png)
 # Submodules
 ## FIFO Buffer
 
