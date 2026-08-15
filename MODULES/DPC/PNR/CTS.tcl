@@ -1,5 +1,5 @@
-set cts_buffers {CLKBUF_X3 \
-                 CLKBUF_X3 \
+set cts_buffers {CLKBUF_X1 \
+                 CLKBUF_X2 \
                  CLKBUF_X3 \
                 }
 

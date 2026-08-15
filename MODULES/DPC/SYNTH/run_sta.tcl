@@ -1,19 +1,17 @@
 set TOP "DPC"
 set SDC_FILE "../constraints/dpc.sdc"
 
-# Updated list: includes corner_name, std_cell_lib, and sram_lib
-# Removed the "typ" corner.
-# Make sure to update the SRAM paths to match exactly where your OpenRAM files are saved!
+
 set corners [list \
     "slow"\
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_slow.lib" \
-    "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib" \
+    "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
     "typ"\
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_typical.lib" \
-    "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib" \
+    "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
     "fast" \
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_fast.lib" \
-    "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib" \
+    "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
 ]
 
 foreach {corner_name std_lib sram_lib} $corners {

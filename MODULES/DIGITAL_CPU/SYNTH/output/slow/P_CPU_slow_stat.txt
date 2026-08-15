@@ -1,0 +1,22 @@
+
+14. Printing statistics.
+
+=== P_CPU ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       22 wires
+       67 wire bits
+       22 public wires
+       67 public wire bits
+       10 ports
+       28 port bits
+        3 cells
+        1   BLC
+        1   DPC
+        1   LSC
+
+   Area for cell type \BLC is unknown!
+   Area for cell type \LSC is unknown!
+   Area for cell type \DPC is unknown!
+

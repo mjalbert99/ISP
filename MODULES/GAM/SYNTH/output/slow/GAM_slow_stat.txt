@@ -12,7 +12,7 @@
       286        - public wire bits
        17        - ports
        98        - port bits
-      429 1.33E+06 cells
+      429 8.95E+05 cells
        13   13.832   AND2_X1
         9    11.97   AND3_X1
         4    6.384   AND4_X1
@@ -32,10 +32,10 @@
        28   29.792   OAI21_X1
         6     7.98   OAI22_X1
         1    1.064   OR2_X1
-        6 1.33E+06   SRAM10x2048
+        6 8.94E+05   SRAM10x2048
         9   14.364   XNOR2_X1
         2    3.192   XOR2_X1
 
-   Chip area for module '\GAM': 1330622.200000
-     of which used for sequential elements: 824.600000 (0.06%)
+   Chip area for module '\GAM': 895333.642000
+     of which used for sequential elements: 824.600000 (0.09%)
 

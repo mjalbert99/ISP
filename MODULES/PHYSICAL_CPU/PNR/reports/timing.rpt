@@ -1,0 +1,69 @@
+Startpoint: pixel_in[9] (input port clocked by clk)
+Endpoint: blc (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.15    0.15 v input external delay
+   2.31    0.00    0.00    0.15 v pixel_in[9] (in)
+           0.00    0.00    0.15 v hold44/A (CLKBUF_X1)
+   1.15    0.00    0.01    0.16 v hold44/Z (CLKBUF_X1)
+           0.00    0.00    0.16 v hold16/A (CLKBUF_X1)
+   1.18    0.00    0.01    0.18 v hold16/Z (CLKBUF_X1)
+           0.00    0.00    0.18 v hold45/A (CLKBUF_X1)
+   1.11    0.00    0.01    0.19 v hold45/Z (CLKBUF_X1)
+           0.00    0.00    0.19 v hold4/A (CLKBUF_X1)
+   1.35    0.00    0.02    0.21 v hold4/Z (CLKBUF_X1)
+           0.00    0.00    0.21 v hold46/A (CLKBUF_X1)
+   1.15    0.00    0.01    0.22 v hold46/Z (CLKBUF_X1)
+           0.00    0.00    0.22 v hold17/A (CLKBUF_X1)
+   6.79    0.01    0.03    0.25 v hold17/Z (CLKBUF_X1)
+           0.01    0.00    0.25 v blc/pixel_in[9] (BLC)
+                           0.25   data arrival time
+
+                   0.00    0.00   clock clk (rise edge)
+                   0.13    0.13   clock network delay (propagated)
+                   0.05    0.18   clock uncertainty
+                   0.00    0.18   clock reconvergence pessimism
+                           0.18 ^ blc/clk (BLC)
+                   0.07    0.25   library hold time
+                           0.25   data required time
+-----------------------------------------------------------------------
+                           0.25   data required time
+                          -0.25   data arrival time
+-----------------------------------------------------------------------
+                           0.00   slack (MET)
+
+
+Startpoint: dpc (rising edge-triggered flip-flop clocked by clk)
+Endpoint: h_sync_out (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.13    0.13   clock network delay (propagated)
+           0.04    0.00    0.13 ^ dpc/clk (DPC)
+  86.56    0.17    0.73    0.86 ^ dpc/h_sync_out (DPC)
+           0.22    0.13    0.98 ^ h_sync_out (out)
+                           0.98   data arrival time
+
+                   2.50    2.50   clock clk (rise edge)
+                   0.00    2.50   clock network delay (propagated)
+                  -0.15    2.35   clock uncertainty
+                   0.00    2.35   clock reconvergence pessimism
+                  -0.80    1.55   output external delay
+                           1.55   data required time
+-----------------------------------------------------------------------
+                           1.55   data required time
+                          -0.98   data arrival time
+-----------------------------------------------------------------------
+                           0.57   slack (MET)
+
+
+worst slack min 0.00
+worst slack max 0.57

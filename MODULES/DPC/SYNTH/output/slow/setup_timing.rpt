@@ -44,17 +44,17 @@ Fanout     Cap    Slew   Delay    Time   Description
                   0.13    0.00    7.64 ^ _7640_/D (DFFR_X1)
                                   7.64   data arrival time
 
-                  0.00    3.00    3.00   clock clk (rise edge)
-                          0.00    3.00   clock network delay (ideal)
-                         -0.15    2.85   clock uncertainty
-                          0.00    2.85   clock reconvergence pessimism
-                                  2.85 ^ _7640_/CK (DFFR_X1)
-                         -0.12    2.73   library setup time
-                                  2.73   data required time
+                  0.00    2.50    2.50   clock clk (rise edge)
+                          0.00    2.50   clock network delay (ideal)
+                         -0.15    2.35   clock uncertainty
+                          0.00    2.35   clock reconvergence pessimism
+                                  2.35 ^ _7640_/CK (DFFR_X1)
+                         -0.12    2.23   library setup time
+                                  2.23   data required time
 -----------------------------------------------------------------------------
-                                  2.73   data required time
+                                  2.23   data required time
                                  -7.64   data arrival time
 -----------------------------------------------------------------------------
-                                 -4.91   slack (VIOLATED)
+                                 -5.41   slack (VIOLATED)
 
 

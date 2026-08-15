@@ -1,0 +1,29 @@
+Startpoint: bnr (rising edge-triggered flip-flop clocked by clk)
+Endpoint: wbg (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ bnr/clk (BNR)
+     1    8.18    0.01    0.17    0.17 v bnr/h_sync_out (BNR)
+                  0.01    0.00    0.17 v wbg/h_sync (WBG)
+                                  0.17   data arrival time
+
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.05    0.05   clock uncertainty
+                          0.00    0.05   clock reconvergence pessimism
+                                  0.05 ^ wbg/clk (WBG)
+                          0.07   -0.02   macro clock tree delay
+                          0.07    0.05   library hold time
+                                  0.05   data required time
+-----------------------------------------------------------------------------
+                                  0.05   data required time
+                                 -0.17   data arrival time
+-----------------------------------------------------------------------------
+                                  0.11   slack (MET)
+
+

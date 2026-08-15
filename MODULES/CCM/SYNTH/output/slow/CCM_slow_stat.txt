@@ -1,0 +1,44 @@
+
+11. Printing statistics.
+
+=== CCM ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    13103        - wires
+    14576        - wire bits
+       48        - public wires
+      603        - public wire bits
+       18        - ports
+      159        - port bits
+     6483  9047.99 cells
+      261  277.704   AND2_X1
+      176   234.08   AND3_X1
+      105   167.58   AND4_X1
+       32    42.56   AOI211_X1
+      445   473.48   AOI21_X1
+        5     7.98   AOI221_X1
+      168   223.44   AOI22_X1
+      387  2058.84   DFFR_X1
+      330   175.56   INV_X1
+       90    47.88   LOGIC0_X1
+      219  407.778   MUX2_X1
+     1009  805.182   NAND2_X1
+      117  124.488   NAND3_X1
+       34    45.22   NAND4_X1
+      589  470.022   NOR2_X1
+      134  142.576   NOR3_X1
+       12    15.96   NOR4_X1
+       17    22.61   OAI211_X1
+      551  586.264   OAI21_X1
+        4    6.384   OAI221_X1
+       42    55.86   OAI22_X1
+      196  208.544   OR2_X1
+      157   208.81   OR3_X1
+      791 1.26E+03   XNOR2_X1
+      612  976.752   XOR2_X1
+
+   Chip area for module '\CCM': 9047.990000
+     of which used for sequential elements: 2058.840000 (22.75%)
+

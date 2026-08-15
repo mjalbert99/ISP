@@ -1,0 +1,46 @@
+Startpoint: pixel_in[4] (input port clocked by clk)
+Endpoint: _449_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.80    0.80 v input external delay
+     6    9.00    0.00    0.00    0.80 v pixel_in[4] (in)
+                  0.00    0.00    0.80 v _345_/B (XNOR2_X1)
+     2    2.91    0.03    0.13    0.93 v _345_/ZN (XNOR2_X1)
+                  0.03    0.00    0.93 v _349_/A1 (OR3_X1)
+     2    2.81    0.05    0.29    1.22 v _349_/ZN (OR3_X1)
+                  0.05    0.00    1.22 v _351_/B2 (AOI21_X1)
+     2    2.50    0.10    0.16    1.38 ^ _351_/ZN (AOI21_X1)
+                  0.10    0.00    1.38 ^ _353_/A2 (OR2_X1)
+     1    1.61    0.02    0.11    1.49 ^ _353_/ZN (OR2_X1)
+                  0.02    0.00    1.49 ^ _355_/C2 (AOI211_X1)
+     2    2.35    0.02    0.05    1.54 v _355_/ZN (AOI211_X1)
+                  0.02    0.00    1.54 v _356_/A3 (OR3_X1)
+     6    7.34    0.06    0.39    1.93 v _356_/ZN (OR3_X1)
+                  0.06    0.00    1.93 v _385_/A3 (AND3_X1)
+     1    1.49    0.02    0.15    2.08 v _385_/ZN (AND3_X1)
+                  0.02    0.00    2.08 v _386_/B2 (OAI21_X1)
+     1    1.60    0.07    0.12    2.21 ^ _386_/ZN (OAI21_X1)
+                  0.07    0.00    2.21 ^ _388_/B1 (AOI21_X1)
+     1    1.02    0.03    0.05    2.26 v _388_/ZN (AOI21_X1)
+                  0.03    0.00    2.26 v _449_/D (DFFR_X1)
+                                  2.26   data arrival time
+
+                  0.00    2.50    2.50   clock clk (rise edge)
+                          0.00    2.50   clock network delay (ideal)
+                         -0.15    2.35   clock uncertainty
+                          0.00    2.35   clock reconvergence pessimism
+                                  2.35 ^ _449_/CK (DFFR_X1)
+                         -0.16    2.19   library setup time
+                                  2.19   data required time
+-----------------------------------------------------------------------------
+                                  2.19   data required time
+                                 -2.26   data arrival time
+-----------------------------------------------------------------------------
+                                 -0.07   slack (VIOLATED)
+
+

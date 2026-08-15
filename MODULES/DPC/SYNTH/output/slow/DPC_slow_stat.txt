@@ -12,7 +12,7 @@
       647        - public wire bits
        10        - ports
        28        - port bits
-     2609 8.92E+05 cells
+     2609 6.01E+05 cells
         1        -   $scopeinfo
        75     79.8   AND2_X1
        16    21.28   AND3_X1
@@ -41,12 +41,12 @@
        30    31.92   OR2_X1
         7     9.31   OR3_X1
         1    1.596   OR4_X1
-        4 8.86E+05   SRAM10x2048
+        4 5.96E+05   SRAM10x2048
       114  181.944   XNOR2_X1
        46   73.416   XOR2_X1
 
    Area for cell type $scopeinfo is unknown!
 
-   Chip area for module '\DPC': 891563.212000
-     of which used for sequential elements: 2729.160000 (0.31%)
+   Chip area for module '\DPC': 601370.840000
+     of which used for sequential elements: 2729.160000 (0.45%)
 

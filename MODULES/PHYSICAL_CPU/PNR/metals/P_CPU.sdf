@@ -1,0 +1,1020 @@
+(DELAYFILE
+ (SDFVERSION "3.0")
+ (DESIGN "P_CPU")
+ (DATE "Fri Aug 14 18:47:16 2026")
+ (VENDOR "Parallax")
+ (PROGRAM "STA")
+ (VERSION "3.1.0")
+ (DIVIDER /)
+ (VOLTAGE 1.250::1.100)
+ (PROCESS "1.000::1.000")
+ (TEMPERATURE 0.000::25.000)
+ (TIMESCALE 1ns)
+ (CELL
+  (CELLTYPE "P_CPU")
+  (INSTANCE)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT clk clkbuf_0_clk/A (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT h_sync hold51/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[0] hold53/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[1] hold67/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[2] hold68/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[3] hold60/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[4] hold66/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[5] hold64/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[6] hold62/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[7] hold55/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[8] hold58/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT pixel_in[9] hold44/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT resetn blc/resetn (0.068::0.068))
+    (INTERCONNECT resetn dpc/resetn (0.157::0.157))
+    (INTERCONNECT resetn lsc/resetn (0.161::0.161))
+    (INTERCONNECT v_sync hold47/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT valid_in hold40/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/h_sync_out lsc/h_sync (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[0] lsc/pixel_in[0] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[1] lsc/pixel_in[1] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[2] lsc/pixel_in[2] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[3] lsc/pixel_in[3] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[4] lsc/pixel_in[4] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[5] lsc/pixel_in[5] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[6] lsc/pixel_in[6] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[7] lsc/pixel_in[7] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT blc/pixel_out[8] lsc/pixel_in[8] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/pixel_out[9] lsc/pixel_in[9] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/v_sync_out lsc/v_sync (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT blc/valid_out lsc/valid_in (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT dpc/h_sync_out h_sync_out (0.117::0.117) (0.110::0.110))
+    (INTERCONNECT dpc/pixel_out[0] pixel_out[0] (0.078::0.078) (0.074::0.074))
+    (INTERCONNECT dpc/pixel_out[1] pixel_out[1] (0.046::0.046) (0.044::0.044))
+    (INTERCONNECT dpc/pixel_out[2] pixel_out[2] (0.033::0.033) (0.031::0.031))
+    (INTERCONNECT dpc/pixel_out[3] pixel_out[3] (0.043::0.043) (0.040::0.040))
+    (INTERCONNECT dpc/pixel_out[4] pixel_out[4] (0.092::0.092) (0.087::0.087))
+    (INTERCONNECT dpc/pixel_out[5] pixel_out[5] (0.053::0.053) (0.050::0.050))
+    (INTERCONNECT dpc/pixel_out[6] pixel_out[6] (0.061::0.061) (0.058::0.058))
+    (INTERCONNECT dpc/pixel_out[7] pixel_out[7] (0.082::0.082) (0.078::0.078))
+    (INTERCONNECT dpc/pixel_out[8] pixel_out[8] (0.043::0.043) (0.040::0.040))
+    (INTERCONNECT dpc/pixel_out[9] pixel_out[9] (0.075::0.075) (0.071::0.071))
+    (INTERCONNECT dpc/v_sync_out v_sync_out (0.039::0.039) (0.037::0.037))
+    (INTERCONNECT dpc/valid_out valid_out (0.046::0.046) (0.044::0.044))
+    (INTERCONNECT lsc/h_sync_out dpc/h_sync (0.028::0.028) (0.027::0.027))
+    (INTERCONNECT lsc/pixel_out[0] dpc/pixel_in[0] (0.008::0.008) (0.008::0.008))
+    (INTERCONNECT lsc/pixel_out[1] dpc/pixel_in[1] (0.004::0.004) (0.004::0.004))
+    (INTERCONNECT lsc/pixel_out[2] dpc/pixel_in[2] (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT lsc/pixel_out[3] dpc/pixel_in[3] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT lsc/pixel_out[4] dpc/pixel_in[4] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT lsc/pixel_out[5] dpc/pixel_in[5] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT lsc/pixel_out[6] dpc/pixel_in[6] (0.005::0.005) (0.005::0.005))
+    (INTERCONNECT lsc/pixel_out[7] dpc/pixel_in[7] (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT lsc/pixel_out[8] dpc/pixel_in[8] (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT lsc/pixel_out[9] dpc/pixel_in[9] (0.003::0.003) (0.003::0.003))
+    (INTERCONNECT lsc/v_sync_out dpc/v_sync (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT lsc/valid_out dpc/valid_in (0.006::0.006) (0.006::0.006))
+    (INTERCONNECT clkbuf_0_clk/Z clkbuf_1_1__f_clk/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_0_clk/Z clkbuf_1_0__f_clk/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_1_0__f_clk/Z clkload0/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT clkbuf_1_0__f_clk/Z blc/clk (0.006::0.006) (0.006::0.006))
+    (INTERCONNECT clkbuf_1_0__f_clk/Z lsc/clk (0.002::0.002) (0.002::0.002))
+    (INTERCONNECT clkbuf_1_1__f_clk/Z dpc/clk (0.015::0.015) (0.016::0.015))
+    (INTERCONNECT hold1/Z hold42/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold2/Z hold49/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold3/Z hold21/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold4/Z hold46/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold5/Z hold25/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold6/Z hold23/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold7/Z hold57/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold8/Z hold29/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold9/Z hold31/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold10/Z hold33/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold11/Z hold35/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold12/Z hold37/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold13/Z hold39/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold14/Z hold41/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold15/Z hold43/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold16/Z hold45/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold17/Z blc/pixel_in[9] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold18/Z hold48/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold19/Z hold50/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold20/Z hold52/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold21/Z blc/h_sync (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT hold22/Z hold54/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold23/Z blc/pixel_in[0] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT hold24/Z hold59/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold25/Z blc/pixel_in[8] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT hold26/Z hold56/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold27/Z blc/pixel_in[7] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold28/Z hold61/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold29/Z blc/pixel_in[3] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold30/Z hold63/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold31/Z blc/pixel_in[6] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold32/Z hold65/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold33/Z blc/pixel_in[5] (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold34/Z hold11/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold35/Z blc/pixel_in[4] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT hold36/Z hold12/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold37/Z blc/pixel_in[1] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT hold38/Z hold13/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold39/Z blc/pixel_in[2] (0.001::0.001) (0.001::0.001))
+    (INTERCONNECT hold40/Z hold14/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold41/Z hold1/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold42/Z hold15/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold43/Z blc/valid_in (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold44/Z hold16/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold45/Z hold4/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold46/Z hold17/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold47/Z hold18/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold48/Z hold2/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold49/Z hold19/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold50/Z blc/v_sync (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold51/Z hold20/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold52/Z hold3/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold53/Z hold22/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold54/Z hold6/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold55/Z hold26/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold56/Z hold7/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold57/Z hold27/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold58/Z hold24/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold59/Z hold5/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold60/Z hold28/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold61/Z hold8/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold62/Z hold30/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold63/Z hold9/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold64/Z hold32/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold65/Z hold10/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold66/Z hold34/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold67/Z hold36/A (0.000::0.000) (0.000::0.000))
+    (INTERCONNECT hold68/Z hold38/A (0.000::0.000) (0.000::0.000))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "BLC")
+  (INSTANCE blc)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH clk pixel_out[0] (0.195::0.195) (0.176::0.176))
+    (IOPATH clk pixel_out[1] (0.196::0.196) (0.177::0.177))
+    (IOPATH clk pixel_out[2] (0.196::0.196) (0.177::0.177))
+    (IOPATH clk pixel_out[3] (0.194::0.194) (0.175::0.175))
+    (IOPATH clk pixel_out[4] (0.198::0.198) (0.179::0.179))
+    (IOPATH clk pixel_out[5] (0.199::0.199) (0.179::0.179))
+    (IOPATH clk pixel_out[6] (0.197::0.197) (0.178::0.178))
+    (IOPATH clk pixel_out[7] (0.202::0.202) (0.182::0.182))
+    (IOPATH clk pixel_out[8] (0.195::0.195) (0.176::0.176))
+    (IOPATH clk pixel_out[9] (0.199::0.199) (0.180::0.180))
+    (IOPATH clk valid_out (0.198::0.198) (0.182::0.182))
+    (IOPATH clk v_sync_out (0.181::0.181) (0.172::0.172))
+    (IOPATH clk h_sync_out (0.184::0.184) (0.175::0.175))
+   )
+  )
+  (TIMINGCHECK
+    (SETUP (posedge pixel_in[0]) (posedge clk) (0.316::0.316))
+    (SETUP (negedge pixel_in[0]) (posedge clk) (0.411::0.411))
+    (HOLD (posedge pixel_in[0]) (posedge clk) (0.073::0.073))
+    (HOLD (negedge pixel_in[0]) (posedge clk) (0.068::0.068))
+    (SETUP (posedge pixel_in[1]) (posedge clk) (0.410::0.410))
+    (SETUP (negedge pixel_in[1]) (posedge clk) (0.432::0.432))
+    (HOLD (posedge pixel_in[1]) (posedge clk) (0.051::0.051))
+    (HOLD (negedge pixel_in[1]) (posedge clk) (0.047::0.047))
+    (SETUP (posedge pixel_in[2]) (posedge clk) (0.373::0.373))
+    (SETUP (negedge pixel_in[2]) (posedge clk) (0.394::0.394))
+    (HOLD (posedge pixel_in[2]) (posedge clk) (0.043::0.043))
+    (HOLD (negedge pixel_in[2]) (posedge clk) (0.047::0.047))
+    (SETUP (posedge pixel_in[3]) (posedge clk) (0.267::0.267))
+    (SETUP (negedge pixel_in[3]) (posedge clk) (0.322::0.322))
+    (HOLD (posedge pixel_in[3]) (posedge clk) (0.057::0.057))
+    (HOLD (negedge pixel_in[3]) (posedge clk) (0.053::0.053))
+    (SETUP (posedge pixel_in[4]) (posedge clk) (0.303::0.303))
+    (SETUP (negedge pixel_in[4]) (posedge clk) (0.325::0.325))
+    (HOLD (posedge pixel_in[4]) (posedge clk) (0.054::0.054))
+    (HOLD (negedge pixel_in[4]) (posedge clk) (0.051::0.051))
+    (SETUP (posedge pixel_in[5]) (posedge clk) (0.198::0.198))
+    (SETUP (negedge pixel_in[5]) (posedge clk) (0.253::0.253))
+    (HOLD (posedge pixel_in[5]) (posedge clk) (0.055::0.055))
+    (HOLD (negedge pixel_in[5]) (posedge clk) (0.052::0.052))
+    (SETUP (posedge pixel_in[6]) (posedge clk) (0.210::0.210))
+    (SETUP (negedge pixel_in[6]) (posedge clk) (0.249::0.249))
+    (HOLD (posedge pixel_in[6]) (posedge clk) (0.054::0.054))
+    (HOLD (negedge pixel_in[6]) (posedge clk) (0.050::0.050))
+    (SETUP (posedge pixel_in[7]) (posedge clk) (0.092::0.092))
+    (SETUP (negedge pixel_in[7]) (posedge clk) (0.145::0.145))
+    (HOLD (posedge pixel_in[7]) (posedge clk) (0.066::0.066))
+    (HOLD (negedge pixel_in[7]) (posedge clk) (0.066::0.066))
+    (SETUP (posedge pixel_in[8]) (posedge clk) (0.048::0.048))
+    (SETUP (negedge pixel_in[8]) (posedge clk) (0.055::0.055))
+    (HOLD (posedge pixel_in[8]) (posedge clk) (0.078::0.078))
+    (HOLD (negedge pixel_in[8]) (posedge clk) (0.071::0.071))
+    (SETUP (posedge pixel_in[9]) (posedge clk) (0.025::0.025))
+    (SETUP (negedge pixel_in[9]) (posedge clk) (0.034::0.034))
+    (HOLD (posedge pixel_in[9]) (posedge clk) (0.077::0.077))
+    (HOLD (negedge pixel_in[9]) (posedge clk) (0.072::0.072))
+    (SETUP (posedge valid_in) (posedge clk) (0.035::0.035))
+    (SETUP (negedge valid_in) (posedge clk) (0.028::0.028))
+    (HOLD (posedge valid_in) (posedge clk) (0.080::0.080))
+    (HOLD (negedge valid_in) (posedge clk) (0.081::0.081))
+    (SETUP (posedge v_sync) (posedge clk) (0.027::0.027))
+    (SETUP (negedge v_sync) (posedge clk) (0.072::0.072))
+    (HOLD (posedge v_sync) (posedge clk) (0.080::0.080))
+    (HOLD (negedge v_sync) (posedge clk) (0.081::0.081))
+    (SETUP (posedge h_sync) (posedge clk) (0.035::0.035))
+    (SETUP (negedge h_sync) (posedge clk) (0.068::0.068))
+    (HOLD (posedge h_sync) (posedge clk) (0.081::0.081))
+    (HOLD (negedge h_sync) (posedge clk) (0.083::0.083))
+  )
+ )
+ (CELL
+  (CELLTYPE "DPC")
+  (INSTANCE dpc)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH clk pixel_out[0] (0.654::0.654) (0.539::0.539))
+    (IOPATH clk pixel_out[1] (0.585::0.585) (0.505::0.505))
+    (IOPATH clk pixel_out[2] (0.649::0.649) (0.544::0.544))
+    (IOPATH clk pixel_out[3] (0.622::0.622) (0.528::0.528))
+    (IOPATH clk pixel_out[4] (0.692::0.692) (0.560::0.560))
+    (IOPATH clk pixel_out[5] (0.685::0.685) (0.563::0.563))
+    (IOPATH clk pixel_out[6] (0.642::0.642) (0.535::0.535))
+    (IOPATH clk pixel_out[7] (0.652::0.652) (0.538::0.538))
+    (IOPATH clk pixel_out[8] (0.655::0.655) (0.550::0.550))
+    (IOPATH clk pixel_out[9] (0.548::0.548) (0.505::0.505))
+    (IOPATH clk valid_out (0.605::0.605) (0.531::0.531))
+    (IOPATH clk v_sync_out (0.611::0.611) (0.544::0.544))
+    (IOPATH clk h_sync_out (0.674::0.674) (0.537::0.537))
+   )
+  )
+  (TIMINGCHECK
+    (SETUP (posedge pixel_in[0]) (posedge clk) (0.585::0.585))
+    (SETUP (negedge pixel_in[0]) (posedge clk) (0.593::0.593))
+    (HOLD (posedge pixel_in[0]) (posedge clk) (-0.130::-0.130))
+    (HOLD (negedge pixel_in[0]) (posedge clk) (-0.091::-0.091))
+    (SETUP (posedge pixel_in[1]) (posedge clk) (0.670::0.670))
+    (SETUP (negedge pixel_in[1]) (posedge clk) (0.684::0.684))
+    (HOLD (posedge pixel_in[1]) (posedge clk) (-0.182::-0.182))
+    (HOLD (negedge pixel_in[1]) (posedge clk) (-0.153::-0.153))
+    (SETUP (posedge pixel_in[2]) (posedge clk) (0.585::0.585))
+    (SETUP (negedge pixel_in[2]) (posedge clk) (0.596::0.596))
+    (HOLD (posedge pixel_in[2]) (posedge clk) (-0.131::-0.131))
+    (HOLD (negedge pixel_in[2]) (posedge clk) (-0.098::-0.098))
+    (SETUP (posedge pixel_in[3]) (posedge clk) (0.700::0.700))
+    (SETUP (negedge pixel_in[3]) (posedge clk) (0.713::0.713))
+    (HOLD (posedge pixel_in[3]) (posedge clk) (-0.199::-0.199))
+    (HOLD (negedge pixel_in[3]) (posedge clk) (-0.179::-0.179))
+    (SETUP (posedge pixel_in[4]) (posedge clk) (0.669::0.669))
+    (SETUP (negedge pixel_in[4]) (posedge clk) (0.677::0.677))
+    (HOLD (posedge pixel_in[4]) (posedge clk) (-0.188::-0.188))
+    (HOLD (negedge pixel_in[4]) (posedge clk) (-0.150::-0.150))
+    (SETUP (posedge pixel_in[5]) (posedge clk) (0.587::0.587))
+    (SETUP (negedge pixel_in[5]) (posedge clk) (0.599::0.599))
+    (HOLD (posedge pixel_in[5]) (posedge clk) (-0.132::-0.132))
+    (HOLD (negedge pixel_in[5]) (posedge clk) (-0.099::-0.099))
+    (SETUP (posedge pixel_in[6]) (posedge clk) (0.615::0.615))
+    (SETUP (negedge pixel_in[6]) (posedge clk) (0.623::0.623))
+    (HOLD (posedge pixel_in[6]) (posedge clk) (-0.150::-0.150))
+    (HOLD (negedge pixel_in[6]) (posedge clk) (-0.110::-0.110))
+    (SETUP (posedge pixel_in[7]) (posedge clk) (0.673::0.673))
+    (SETUP (negedge pixel_in[7]) (posedge clk) (0.680::0.680))
+    (HOLD (posedge pixel_in[7]) (posedge clk) (-0.189::-0.189))
+    (HOLD (negedge pixel_in[7]) (posedge clk) (-0.151::-0.151))
+    (SETUP (posedge pixel_in[8]) (posedge clk) (0.807::0.807))
+    (SETUP (negedge pixel_in[8]) (posedge clk) (0.826::0.826))
+    (HOLD (posedge pixel_in[8]) (posedge clk) (-0.265::-0.265))
+    (HOLD (negedge pixel_in[8]) (posedge clk) (-0.256::-0.256))
+    (SETUP (posedge pixel_in[9]) (posedge clk) (0.626::0.626))
+    (SETUP (negedge pixel_in[9]) (posedge clk) (0.635::0.635))
+    (HOLD (posedge pixel_in[9]) (posedge clk) (-0.158::-0.158))
+    (HOLD (negedge pixel_in[9]) (posedge clk) (-0.119::-0.119))
+    (SETUP (posedge valid_in) (posedge clk) (1.352::1.352))
+    (SETUP (negedge valid_in) (posedge clk) (1.367::1.367))
+    (HOLD (posedge valid_in) (posedge clk) (-0.347::-0.347))
+    (HOLD (negedge valid_in) (posedge clk) (-0.363::-0.363))
+    (SETUP (posedge v_sync) (posedge clk) (0.537::0.537))
+    (SETUP (negedge v_sync) (posedge clk) (0.562::0.562))
+    (HOLD (posedge v_sync) (posedge clk) (-0.046::-0.046))
+    (HOLD (negedge v_sync) (posedge clk) (-0.076::-0.076))
+  )
+ )
+ (CELL
+  (CELLTYPE "LSC")
+  (INSTANCE lsc)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH clk pixel_out[0] (0.286::0.286) (0.250::0.250))
+    (IOPATH clk pixel_out[1] (0.274::0.274) (0.245::0.245))
+    (IOPATH clk pixel_out[2] (0.268::0.268) (0.244::0.244))
+    (IOPATH clk pixel_out[3] (0.258::0.258) (0.239::0.239))
+    (IOPATH clk pixel_out[4] (0.254::0.254) (0.234::0.234))
+    (IOPATH clk pixel_out[5] (0.285::0.285) (0.253::0.253))
+    (IOPATH clk pixel_out[6] (0.289::0.289) (0.256::0.256))
+    (IOPATH clk pixel_out[7] (0.274::0.274) (0.247::0.247))
+    (IOPATH clk pixel_out[8] (0.278::0.278) (0.250::0.250))
+    (IOPATH clk pixel_out[9] (0.278::0.278) (0.251::0.251))
+    (IOPATH clk valid_out (0.277::0.277) (0.245::0.245))
+    (IOPATH clk v_sync_out (0.249::0.249) (0.230::0.230))
+    (IOPATH clk h_sync_out (0.320::0.320) (0.263::0.263))
+   )
+  )
+  (TIMINGCHECK
+    (SETUP (posedge pixel_in[0]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[0]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[0]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[0]) (posedge clk) (0.073::0.073))
+    (SETUP (posedge pixel_in[1]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[1]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[1]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[1]) (posedge clk) (0.073::0.073))
+    (SETUP (posedge pixel_in[2]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[2]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[2]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[2]) (posedge clk) (0.072::0.072))
+    (SETUP (posedge pixel_in[3]) (posedge clk) (0.069::0.069))
+    (SETUP (negedge pixel_in[3]) (posedge clk) (0.071::0.071))
+    (HOLD (posedge pixel_in[3]) (posedge clk) (0.061::0.061))
+    (HOLD (negedge pixel_in[3]) (posedge clk) (0.071::0.071))
+    (SETUP (posedge pixel_in[4]) (posedge clk) (0.068::0.068))
+    (SETUP (negedge pixel_in[4]) (posedge clk) (0.071::0.071))
+    (HOLD (posedge pixel_in[4]) (posedge clk) (0.061::0.061))
+    (HOLD (negedge pixel_in[4]) (posedge clk) (0.072::0.072))
+    (SETUP (posedge pixel_in[5]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[5]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[5]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[5]) (posedge clk) (0.073::0.073))
+    (SETUP (posedge pixel_in[6]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[6]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[6]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[6]) (posedge clk) (0.073::0.073))
+    (SETUP (posedge pixel_in[7]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[7]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[7]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[7]) (posedge clk) (0.073::0.073))
+    (SETUP (posedge pixel_in[8]) (posedge clk) (0.067::0.067))
+    (SETUP (negedge pixel_in[8]) (posedge clk) (0.069::0.069))
+    (HOLD (posedge pixel_in[8]) (posedge clk) (0.062::0.062))
+    (HOLD (negedge pixel_in[8]) (posedge clk) (0.072::0.072))
+    (SETUP (posedge pixel_in[9]) (posedge clk) (0.070::0.070))
+    (SETUP (negedge pixel_in[9]) (posedge clk) (0.072::0.072))
+    (HOLD (posedge pixel_in[9]) (posedge clk) (0.059::0.059))
+    (HOLD (negedge pixel_in[9]) (posedge clk) (0.070::0.070))
+    (SETUP (posedge valid_in) (posedge clk) (0.488::0.488))
+    (SETUP (negedge valid_in) (posedge clk) (0.453::0.453))
+    (HOLD (posedge valid_in) (posedge clk) (0.071::0.071))
+    (HOLD (negedge valid_in) (posedge clk) (0.074::0.074))
+    (SETUP (posedge v_sync) (posedge clk) (0.378::0.378))
+    (SETUP (negedge v_sync) (posedge clk) (0.348::0.348))
+    (HOLD (posedge v_sync) (posedge clk) (0.078::0.078))
+    (HOLD (negedge v_sync) (posedge clk) (0.055::0.055))
+    (SETUP (posedge h_sync) (posedge clk) (0.067::0.067))
+    (SETUP (negedge h_sync) (posedge clk) (0.069::0.069))
+    (HOLD (posedge h_sync) (posedge clk) (0.062::0.062))
+    (HOLD (negedge h_sync) (posedge clk) (0.072::0.072))
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_0_clk)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.025::0.037) (0.025::0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_0__f_clk)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.043::0.071) (0.052::0.074))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X3")
+  (INSTANCE clkbuf_1_1__f_clk)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034::0.063) (0.043::0.067))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "INV_X16")
+  (INSTANCE clkload0)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A ZN (0.010::0.015) (0.002::0.004))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold2)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold3)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.024::0.037) (0.024::0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold4)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.027) (0.016::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold5)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.023::0.036) (0.023::0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold6)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold7)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.029))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold8)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.027) (0.016::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold9)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold10)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.019::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold11)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.021::0.033) (0.021::0.034))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold12)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.023::0.036) (0.024::0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold13)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.035) (0.023::0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold14)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold15)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold16)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.027) (0.016::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold17)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.026::0.041) (0.028::0.043))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold18)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.028) (0.017::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold19)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.028) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold20)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.021::0.032) (0.020::0.032))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold21)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034::0.056) (0.041::0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold22)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.030) (0.019::0.030))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold23)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029::0.046) (0.032::0.048))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold24)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.019::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold25)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034::0.057) (0.041::0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold26)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold27)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.026::0.041) (0.028::0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold28)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold29)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.025::0.039) (0.027::0.040))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold30)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.024))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold31)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.026::0.040) (0.027::0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold32)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.028) (0.017::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold33)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029::0.047) (0.033::0.049))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold34)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.021::0.032) (0.020::0.032))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold35)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.030::0.048) (0.033::0.050))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold36)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.022::0.034) (0.022::0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold37)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029::0.046) (0.032::0.048))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold38)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.021::0.033) (0.021::0.033))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold39)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.028::0.045) (0.031::0.047))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold40)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.016::0.023) (0.014::0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold41)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.016::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold42)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.016::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold43)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.025::0.039) (0.027::0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold44)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.016::0.024) (0.014::0.023))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold45)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.026) (0.016::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold46)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.027) (0.016::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold47)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.024))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold48)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.028) (0.017::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold49)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.028) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold50)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.028::0.044) (0.030::0.045))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold51)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold52)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.032) (0.020::0.032))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold53)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.027) (0.017::0.026))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold54)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.030) (0.019::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold55)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold56)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold57)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.029) (0.018::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold58)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.027) (0.017::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold59)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.020::0.031) (0.020::0.031))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold60)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.016::0.023) (0.014::0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold61)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold62)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.016::0.023) (0.013::0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold63)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold64)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.017::0.025) (0.015::0.024))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold65)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.019::0.028) (0.017::0.028))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold66)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.026) (0.016::0.025))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold67)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.027) (0.017::0.027))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "CLKBUF_X1")
+  (INSTANCE hold68)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.018::0.026) (0.016::0.026))
+   )
+  )
+ )
+)

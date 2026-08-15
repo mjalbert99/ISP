@@ -9,12 +9,37 @@ https://www.xilinx.com/publications/user-guide/isp-user-guide.pdf
 
 https://10xengineers.ai/exploring-the-world-of-infinite-isp-a-guide-to-infinite-possibilities/
 
-# FIFO Buffer
+# TODO
+- REDO SUNMODULES STATS and PHOTOS
+- DO CHANNEL CPU
+- FINISH TOP LEVEL SECTION
+- 
 
-## Overview
+# Project Overview
+This repository contains the ISP core for a System-on-Chip (SoC) project. The core ingests 10-bit width pixel data from a camera sensor and executes burst transactions to feed the downstream ISP FIFO for processing. Designed for a target resolution of 2k at 60 FPS, the bus is synthesized and physically implemented using the nanGate45 Process Design Kit (PDK).
+
+## Performance Targets & Timing Budget
+The system is engineered to process 132,710,400 pixels/sec to support the 2048x1080 resolution target. 
+* **Row Budget:** The required data rate equates to a strict 15.43 µs per row, calculated via the relationship $(1/60)/1080 = 15.43 $.
+* **Clock Frequency:** Accounting for burst transaction speeds and data packing, a base 300 MHz clock is required. To provide margin for overhead and potential downstream blocking from the ISP, the operating frequency is elevated to 333.33 MHz (a 3ns period).
+* **Latency Margin:** At this elevated frequency, processing a single row requires 6.14 µs, derived from $2048 / 333.33 { MHz} = 6.14 { \mu s}$. This architecture leaves a comfortable processing overhead of ~9.29 µs within the line budget.
+
+## Tactics Used
+- Overcontrainted submoduels to 2.5ns clock frequency to ensure once they are used in the top level there is ample timing budget. 
+- Only the single submodules have UVM test enviorments
+- Only submodules using OpenRam SRAM units have PNR for basic logic as these need to be synthesized and PNR'd to create a functioning unit
+- Broken up into processing cores to ensure timing is meet per each section of physical, digital, and color-channel processing
+
+# ISP Top Level
+Made up of three cores based on the 3 different stages of processing. Physical CPU (P_CPU) is for pyshical processing like black level correction, lense shading, and defected pixels, then it goes to Digital CPU (D_CPU) which handles digital artifacts and processing like bayer noise reduction and white balance gain, and demosaic the bayer to RGB channels, then finally the Color CPU (C_CPU) that handles the color channel processing. This has the stages of color correcting, and gamma balancing. All these come together to produce the end result.
+
+# Submodules
+## FIFO Buffer
+
+### Overview
 The FIFO module serves as a synchronized buffer for the 10-bit pixel data coming off the token bus. Because this logic will be integrated directly into the top-level module of the ISP chip, standard physical implementation steps (Synthesis, PnR, and GLS) are bypassed at this individual module level.
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
 ### Synchronous FIFO (`fifo.v`)
 This module is a parameterized synchronous FIFO, sized by default to a data width of 10 (`DATA_W = 10`) and a depth of 8 (`FIFO_D = 8`). 
@@ -24,22 +49,22 @@ This module is a parameterized synchronous FIFO, sized by default to a data widt
 
 * **Stall-Free Operation:** Reads and writes are internally gated by `!EMPTY` and `!FULL` conditions. Back-to-back invalid operations are safely ignored, eliminating the need for complex external stall logic.
 
-## Verification Environment
+### Verification Environment
 Validation for the FIFO bypasses a heavy UVM environment, as the required operational states are relatively simple. A basic static testbench was utilized to successfully verify:
 * Read/Write operations on an empty buffer.
 * Read/Write operations on a full buffer.
 * Intermediate concurrent read and write operations.
 
-# Black Level Correction (BLC)
+## Black Level Correction (BLC)
 
-## Overview
+### Overview
 The Black Level Correction (BLC) stage is responsible for removing the camera sensor's innate black level offset and rescaling the resulting pixel values back to the full dynamic range. The correction follows the mathematical relationship: `(pixel - offset) * (2^n) / (sat_level - offset)`. 
 
 Because the sensor offset and headroom differ across the Bayer filter color channels, the module dynamically tracks the row and column toggle (driven by `h_sync` and `v_sync`) to identify the currently active channel (R, Gr, Gb, or B).
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
-### BLC Pipeline (`BLC.v`)
+#### BLC Pipeline (`BLC.v`)
 The module processes the pixel stream through a highly optimized, 2-stage deep pipeline (`DELAY = 2`) that aligns the offset subtraction, multiplication, and clamping stages with the passing `valid`, `h_sync`, and `v_sync` control signals.
 * **Elaboration-Time Scaling:** To avoid costly runtime hardware dividers, the scaling factors for each channel are precomputed at elaboration time. These are mapped as local parameters using a 16-bit fixed-point representation (`FRAC_BITS = 16`).
 
@@ -59,17 +84,17 @@ The design is validated within a UVM environment using purely randomized sequenc
 
 ![UVM Results](media/BLC_UVM.png)
 
-# Lens Shading Correction (LSC)
+## Lens Shading Correction (LSC)
 
-## Overview
+### Overview
 The Lens Shading Correction (LSC) module compensates for the optical vignetting inherent to camera lenses, where image brightness naturally falls off towards the corners. The module applies a spatially-dependent digital gain to the incoming pixel stream, effectively brightening the periphery to achieve uniform illumination. 
 
 The correction relies on a simplified radial polynomial equation: `pixel_out = pixel_in * Gain`. 
 The `Gain` is calculated as `1 + c2 * R^2`, where `R^2` is the squared distance from the optical center (`dx^2 + dy^2`). The architecture assumes a standard RGGB raw Bayer pattern, allowing for distinct spatial correction coefficients (`c2`) for each color channel.
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
-### Spatial Pipelining (`LSC.v`)
+#### Spatial Pipelining (`LSC.v`)
 To meet timing requirements while performing complex spatial mathematics, the module is constructed as a 6-stage deep pipeline (`DELAY = 6`). 
 
 * **Coordinate Tracking:** The module actively tracks the current `x_count` and `y_count` of the incoming pixel stream, resetting upon `v_sync` and incrementing through the frame dimensions. 
@@ -78,7 +103,7 @@ To meet timing requirements while performing complex spatial mathematics, the mo
 
 * **Overflow Protection:** After multiplying the input pixel by the computed spatial gain, the shifted result is aggressively clamped. If the brightened pixel exceeds the 10-bit maximum, it is locked to `MAX_VAL` to prevent numerical wrapping artifacts.
 
-## UVM Verification Environment
+### UVM Verification Environment
 The LSC module is rigorously validated using the established UVM environment, focusing on spatial accuracy and boundary conditions.
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/FgsN)
@@ -89,18 +114,18 @@ The LSC module is rigorously validated using the established UVM environment, fo
 
 ![UVM Results](media/LSC_UVM.png)
 
-# Defective Pixel Correction (DPC)
+## Defective Pixel Correction (DPC)
 
-## Overview
+### Overview
 The Defective Pixel Correction (DPC) module is designed to identify and repair "hot" or "dead" pixels generated by sensor anomalies. It achieves this by employing a 5x5 sliding window algorithm to evaluate the 8 nearest neighboring pixels of the same color channel. If the center pixel deviates beyond a defined `THRESHOLD` compared to its neighbors, it is replaced by their average value. The module is designed with a 2-row blanking awareness and only corrects internal cells, leaving the extreme outer edges unmodified.
 
-## Architecture & Hardware Design
+#### Architecture & Hardware Design
 
-### Memory and Buffering (`DPC.v`)
+##### Memory and Buffering (`DPC.v`)
 To facilitate a 5x5 spatial window, the module requires access to multiple rows of video simultaneously. 
 **SRAM Line Buffers:** The top-level module instantiates four distinct 10x2048 SRAM blocks (`sram0` through `sram3`). These act as FIFO line buffers, cascading the incoming pixel stream to construct the vertical depth needed for the algorithm.
 
-### Correction Core (`DPC_CORE.v`)
+##### Correction Core (`DPC_CORE.v`)
 The core processing logic handles the mathematical defect detection and substitution.
 **Spatial Tracking:** The core actively tracks the X and Y coordinates to determine if the current pixel is on a frame edge (`is_edge`) or if it is a green channel pixel (`is_green`) based on the Bayer pattern.
 
@@ -109,7 +134,7 @@ The core processing logic handles the mathematical defect detection and substitu
 * **Defect Substitution:** A pixel is flagged as `is_hot` if it is greater than the neighbor maximum by the `THRESHOLD`. It is flagged as `is_dead` if it is less than the neighbor minimum by the `THRESHOLD`. Defective pixels are immediately replaced by the local neighborhood average (`neigh_total`); otherwise, the original pixel is passed through.
 
 
-## UVM Verification Environment
+#### UVM Verification Environment
 The DPC logic is thoroughly verified to ensure edge cases in the image boundary and varying color channels do not break the 5x5 spatial mapping.
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/Eqfs)
@@ -120,7 +145,7 @@ The DPC logic is thoroughly verified to ensure edge cases in the image boundary 
 
 ![UVM Results](media/DPC_UVM.png)
 
-## Logic Synthesis & Static Timing Analysis (STA)
+### Logic Synthesis & Static Timing Analysis (STA)
 Logic synthesis and static timing analysis (STA) were executed using Yosys and OpenSTA across three distinct operating corners: `slow` (worst-case), `typ`, and `fast`. The target technology mapping utilized the nanGate45 standard cell library alongside custom 10x2048 SRAM macro libraries. The synthesis targeted a strict 3ns clock period (333.33 MHz).
 
 * **Capacitance & Slew Violations:** During the synthesis phase, the ABC optimization pass failed to properly buffer several high-fanout nets. OpenSTA flagged these as severe maximum capacitance (`max_capacitance`) violations, which consequently cascaded into maximum slew (`max_slew`) failures.
@@ -129,7 +154,7 @@ Logic synthesis and static timing analysis (STA) were executed using Yosys and O
 
 * **Waiver & Resolution:** Because Yosys relies on ideal clock networks and basic wire load assumptions, these synthesis-stage violations were waived. The physical design (PNR) tool's superior CTS (Clock Tree Synthesis) and routing engines successfully rebuilt the data paths, buffered the high-fanout nets, and resolved all capacitance, slew, and setup/hold timing issues for final sign-off.
 
-## Physical Design (PNR)
+### Physical Design (PNR)
 The physical implementation flow was executed using OpenROAD, advancing the synthesized netlist through floorplanning, placement, clock tree synthesis (CTS), and detailed routing. The final layout targets a fixed die size of 1050µm × 1720µm utilizing the nanGate45 Open Cell Library and four custom OpenRAM SRAM macro configurations.
 
 * **Floorplanning & Power Distribution:** The design incorporates an extensive power distribution network (PDN) utilizing `metal1` for standard cell rows, `metal4` for intermediate horizontal stripes, and wide `metal5`/`metal6` grids for low-impedance vertical infrastructure. Custom SRAM halos and grid mappings were applied to ensure clean power delivery to the memory blocks.
@@ -147,18 +172,18 @@ The physical implementation flow was executed using OpenROAD, advancing the synt
 
 ![UVM Results](media/DPC_PNR.png)
 
-# Bayer Noise Reduction (BNR)
+## Bayer Noise Reduction (BNR)
 
-## Overview
+### Overview
 The Bayer Noise Reduction (BNR) module filters out high-frequency noise inherent to camera sensors by utilizing a 5x5 sliding window. It calculates a normalized, weighted average of neighboring pixels by evaluating both their spatial proximity and their intensity difference (range) relative to the center pixel. The algorithm selectively smooths areas of uniform color while preserving sharp edges.
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
-### Memory Buffering (`BNR.v`)
+#### Memory Buffering (`BNR.v`)
 To support the complex 5x5 spatial window, the module requires concurrent access to multiple video lines. 
 **SRAM Line Buffers:** The architecture integrates four separate 10x2048 SRAM macros (`sram0` through `sram3`). These act as cascading FIFO buffers to retain the necessary historical row data as the pixel stream flows in.
 
-### Processing Core (`BNR_CORE.v` & `RANGE_LUT.v`)
+#### Processing Core (`BNR_CORE.v` & `RANGE_LUT.v`)
 To meet strict timing budgets while calculating multi-variable weighted averages, the mathematical core is aggressively pipelined across 10 stages (`DELAY = 10`).
 
 * **Bayer-Aware Spatial Weighting:** The module evaluates the X/Y coordinates to determine if the center pixel lies on a Green channel or a Red/Blue channel (`is_green`). It then dynamically applies the correct spatial weight distribution to match the underlying Bayer filter pattern.
@@ -169,7 +194,7 @@ To meet strict timing budgets while calculating multi-variable weighted averages
 
 * **Edge Bypass:** Pixels residing on the extreme outer boundary of the frame (`is_edge`) bypass the filtering logic and are output unmodified.
 
-## UVM Verification Environment
+### UVM Verification Environment
 The BNR module's complex weighting math and boundary conditions are rigorously tested using a UVM framework.
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/9pNZ)
@@ -180,14 +205,14 @@ The BNR module's complex weighting math and boundary conditions are rigorously t
 
 ![UVM Results](media/BNR_UVM.png)
 
-## Logic Synthesis & Static Timing Analysis (STA)
+### Logic Synthesis & Static Timing Analysis (STA)
 Logic synthesis and static timing analysis (STA) for the BNR module were executed using Yosys and OpenSTA across three distinct operating corners: `slow` (worst-case), `typ`, and `fast`. The target technology mapping utilized the nanGate45 standard cell library alongside custom 10x2048 SRAM macro libraries. The synthesis targeted a strict 3ns clock period (333.33 MHz) via ABC constraints.
 
 * **Capacitance & Slew Violations:** Similar to the DPC module, during the synthesis phase, the optimization pass failed to properly buffer several high-fanout nets. OpenSTA flagged these as severe maximum capacitance (`max_capacitance`) violations, which consequently cascaded into maximum slew (`max_slew`) failures.
 * **Worst-Case Timing:** As a direct result of the high capacitance and degraded slew on these unbuffered nets, the static timing analysis reported setup failures under the `slow` worst-case corner. 
 * **Waiver & Resolution:** Because Yosys relies on ideal clock networks and basic wire load assumptions, these synthesis-stage violations were waived. The physical design (PNR) tool's superior CTS (Clock Tree Synthesis) and routing engines successfully rebuilt the data paths, buffered the high-fanout nets, and resolved all capacitance, slew, and setup timing issues for final sign-off.
 
-## Physical Design (PNR)
+### Physical Design (PNR)
 The physical implementation flow was executed using OpenROAD, advancing the synthesized netlist through floorplanning, placement, clock tree synthesis (CTS), and detailed routing. The final layout targets a fixed die size of 1150µm × 1820µm utilizing the nanGate45 standard cell library and four custom OpenRAM SRAM macro configurations.
 
 * **Floorplanning & Power Distribution:** The design incorporates an extensive power distribution network (PDN) utilizing `metal1` for standard cell rows, `metal4` for intermediate horizontal stripes, and wide `metal5`/`metal6` grids for low-impedance vertical infrastructure. Custom SRAM halos (`-halo {1 1 1 1}`) and grid mappings were applied to ensure clean power delivery to the memory blocks.
@@ -205,23 +230,23 @@ The physical implementation flow was executed using OpenROAD, advancing the synt
 
 ![UVM Results](media/BNR_PNR.png)
 
-# White Balance Gain (WBG)
+## White Balance Gain (WBG)
 
-## Overview
+### Overview
 The White Balance Gain (WBG) stage adjusts the relative color intensities of the Bayer filter grid to ensure that neutral colors are accurately reproduced under varying ambient lighting conditions. By applying independent, digital gains to each specific color channel (R, Gr, Gb, and B), the module compensates for illumination imbalances introduced by the capture environment or inherent camera sensor sensitivities. 
 
 The correction relies on a fixed-point multiplication datapath: `pixel_out = (pixel_in * GAIN) >> FRAC_BITS`. The active gain configuration is dynamically multiplexed into the execution pipeline based on the real-time row and column synchronization state of the raw image stream.
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
-### WBG Pipeline (`WBG.v`)
+#### WBG Pipeline (`WBG.v`)
 The module streams pixel data through a highly synchronized, single-stage execution pipeline (`DELAY = 1`) that precisely aligns data transformations with passing control indicators.
 * **Bayer Phase Tracking:** The architecture implements local monitoring registers (`row`, `col`) that track line and frame transitions by checking the `v_sync` and `h_sync` boundaries. This coordinate tracking uniquely identifies the current color channel phase for every incoming pixel.
 * **Fixed-Point Gain Application:** The core computes scaling math using an 8-bit fractional shift parameter (`FRAC_BITS = 8`). Based on the determined Bayer quadrant, the incoming pixel is multiplied by corresponding programmable channel coefficients: `R_GAIN = 384`, `GR_GAIN = 256`, `GB_GAIN = 256`, or `B_GAIN = 512`.
 * **Control Pipelining:** To guarantee timing closure under high frequency operation, control qualifiers (`valid_in`, `h_sync`, `v_sync`) are registered and advanced through parallel matching pipelines (`valid_pipe`, `h_pipe`, `v_pipe`) to emerge perfectly aligned with the processed pixel output.
 * **Overflow Dynamic Clamping:** Following the fixed-point right-shift operation, the product is evaluated against a 10-bit maximum headroom limit (`MAX_VAL`). If the scaled pixel exceeds the top boundary, the output is bounded to full scale to avoid structural wrapping artifacts and protect image clarity.
 
-## UVM Verification Environment
+### UVM Verification Environment
 The mathematical accuracy and coordinate tracking logic of the WBG module are thoroughly validated using a comprehensive UVM testbench.
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/Jc8Z)
@@ -232,25 +257,25 @@ The mathematical accuracy and coordinate tracking logic of the WBG module are th
 
 ![UVM Results](media/WBG_UVM.png)
 
-# Demosaic (DEMOS)
+## Demosaic (DEMOS)
 
-## Overview
+### Overview
 The Demosaic (DEMOS) module is responsible for reconstructing a full-color RGB image from the single-channel Bayer pattern captured by the sensor. The design implements the High-Quality Linear Interpolation algorithm, commonly known as the Malvar-He-Cutler (MHC) approach. By evaluating a 5x5 spatial window, the algorithm calculates sharp, artifact-free color interpolations by factoring in the high-frequency luminance data (usually the Green channel) to correct the Red and Blue channel estimations.
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
-### Memory and Buffering (`DEMOSAIC.v`)
+#### Memory and Buffering (`DEMOSAIC.v`)
 To facilitate the necessary 5x5 spatial window for the MHC algorithm, the module must simultaneously access 5 lines of video data.
 * **SRAM Line Buffers:** The top-level module instantiates four distinct 10x2048 SRAM blocks (`sram0` through `sram3`). These act as synchronized FIFO line buffers, cascading the incoming 10-bit pixel stream to construct the required vertical depth.
 
-### MHC Processing Core (`DEMOS_CORE.v`)
+#### MHC Processing Core (`DEMOS_CORE.v`)
 To compute the complex cross, diagonal, and linear summations required by the MHC algorithm without violating timing, the mathematical core is aggressively pipelined across 4 stages (`DELAY = 4`).
 * **Bayer Phase Tracking:** The core actively tracks the underlying X and Y coordinates to determine the phase of the 5x5 window's center pixel (`2'b00` for Red center, `2'b01`/`2'b10` for Green centers, and `2'b11` for Blue center). This dictates exactly which interpolation equations are routed to the final RGB output ports.
 * **Hardware-Optimized Interpolation:** The core evaluates directional sums (cross, diagonal, vertical/horizontal inner/outer) and computes the necessary gradients. To avoid instantiating costly hardware dividers, the final normalization steps utilize fixed-point right shifts (e.g., `>>> 3` for division by 8, and `>>> 4` for division by 16).
 * **Edge Handling:** To prevent visual artifacts at the extreme boundaries of the image frame, the module implements dynamic edge padding logic, intelligently repeating boundary pixels into the `calc_window` when the coordinate pipeline detects a frame edge.
 * **Dynamic Clamping:** Following interpolation, the resulting color values are aggressively clamped. Any mathematically underflowed values are locked to `0`, and any overflowed values are locked to the 10-bit maximum (`MAX_VAL`) to maintain data integrity.
 
-## UVM Verification Environment
+### UVM Verification Environment
 The DEMOS module's mathematical model and boundary handling are thoroughly validated using a comprehensive UVM framework.
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/c7bt)
@@ -260,7 +285,7 @@ The DEMOS module's mathematical model and boundary handling are thoroughly valid
 
 ![UVM Results](media/DEMOS_UVM.png)
 
-## Logic Synthesis & Static Timing Analysis (STA)
+### Logic Synthesis & Static Timing Analysis (STA)
 Logic synthesis and static timing analysis (STA) were executed using Yosys and OpenSTA across three distinct operating corners: `slow` (worst-case), `typ`, and `fast`. The target technology mapping utilized the nanGate45 standard cell library alongside custom 10x2048 SRAM macro libraries. The logic synthesis targeted a strict 3ns clock period (333.33 MHz) via ABC constraints (`-D 3000`).
 
 * **Capacitance & Slew Violations:** Similar to other modules in the pipeline, the synthesis optimization pass failed to properly buffer several high-fanout nets. OpenSTA flagged these as severe maximum capacitance (`max_capacitance`) and maximum fanout (`max_fanout`) violations, which consequently cascaded into maximum slew (`max_slew`) failures.
@@ -268,7 +293,7 @@ Logic synthesis and static timing analysis (STA) were executed using Yosys and O
 * **Worst-Case Timing:** As a direct result of the high capacitance and degraded slew on these unbuffered nets, the static timing analysis reported maximum path delay (setup) failures under the worst-case operating corners. 
 * **Waiver & Resolution:** Because Yosys relies on ideal clock networks and basic wire load assumptions, these synthesis-stage violations were waived. The physical design (PNR) tool's superior CTS (Clock Tree Synthesis) and routing engines successfully rebuilt the data paths, buffered the high-fanout nets, and resolved all capacitance, slew, and setup/hold timing issues for final sign-off.
 
-## Physical Design (PNR)
+### Physical Design (PNR)
 The physical implementation flow was executed using OpenROAD, advancing the synthesized netlist through floorplanning, placement, clock tree synthesis (CTS), and detailed routing. The final layout targets a fixed die size of 1050µm × 1720µm utilizing standard cells and four distinct custom SRAM macro configurations (`sram0` through `sram3`).
 
 * **Floorplanning & Power Distribution:** The design incorporates an extensive power distribution network (PDN) utilizing `metal1` for standard cell rows, `metal4` for intermediate horizontal stripes, and wide `metal5`/`metal6` grids for low-impedance vertical infrastructure. Custom SRAM halos (`-halo {1 1 1 1}`) and grid mappings were applied to ensure clean power delivery to the memory blocks.
@@ -282,12 +307,12 @@ The physical implementation flow was executed using OpenROAD, advancing the synt
 ![PNR Results](media/DEMOS_PNR.png)
 
 
-# Color Correction Matrix (CCM)
+## Color Correction Matrix (CCM)
 
-## Overview
+### Overview
 The Color Correction Matrix (CCM) module applies a 3x3 transformation matrix to the incoming RGB video stream to correct and calibrate color representation. By computing the linear combinations of the input Red, Green, and Blue channels, the module adjusts the color space to compensate for sensor cross-talk and illumination variances. 
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 The CCM hardware is aggressively pipelined with a 3-cycle delay (`DELAY = 3`) to maintain high-throughput arithmetic processing without violating the target clock frequency.
 
 * **Dynamic Coefficient Loading:** The 3x3 transformation matrix coefficients are loaded dynamically into internal registers at the start of a video frame when both `coef_in` and `v_sync` signals are asserted high. The coefficients are provided via concatenated row inputs (`row0`, `row1`, `row2`).
@@ -295,14 +320,14 @@ The CCM hardware is aggressively pipelined with a 3-cycle delay (`DELAY = 3`) to
 * **Pipeline Stage 2 (Accumulation):** The resulting multiplier products for each channel are summed together to create an unnormalized, high-resolution distance value (e.g., `red_mult[0] + red_mult[1] + red_mult[2]`).
 * **Pipeline Stage 3 (Normalization & Clamping):** To resolve the fixed-point arithmetic, a rounding constant (`ROUND_CONST`) is added to the accumulated sum, followed by an arithmetic right shift (`>>> FRAC_W`). The hardware then evaluates the sign bit; negative results (underflow) are clamped to `0`, while results exceeding the 10-bit maximum are clamped to `MAX_VAL`. 
 
-## Verification Environment
+### Verification Environment
 The CCM logic is validated through a dedicated Verilog testbench (`ccm_tb.v`) designed to verify the fixed-point arithmetic limits and boundary conditions.
 
 * **Fixed-Point Mapping:** The testbench models real-world fractional coefficients (e.g., `1.20`, `-0.10`) by converting them into signed integer equivalents (e.g., `307`, `-26`) corresponding to the module's 8-bit fractional width (`FRAC_W = 8`).
 * **Reference Model:** A software function (`calc_expected`) accurately mirrors the hardware's rounding constant addition, bit-shifting, and saturation logic.
 * **Randomized Stimulus:** The testbench injects randomized 10-bit RGB pixel data across a complete frame footprint (`FRAME_W` and `LINE_W`), continuously comparing the hardware's output against the reference model to guarantee bit-level accuracy.
 
-## UVM Verification Environment
+### UVM Verification Environment
 The Color Correction Matrix (CCM) module is verified using a comprehensive Universal Verification Methodology (UVM) framework designed to thoroughly validate its pipelined control logic and fixed-point arithmetic across all operating extremes.
 
 **EDA Playground Link:** [Launch UVM Simulation](https://edaplayground.com/x/wvd9)
@@ -313,30 +338,30 @@ The Color Correction Matrix (CCM) module is verified using a comprehensive Unive
 
 ![UVM Results](media/CCM_UVM.png)
 
-# Gamma Correction (GAM)
+## Gamma Correction (GAM)
 
-## Overview
+### Overview
 The Gamma Correction (GAM) module implements non-linear luminance/color mapping to match the display characteristics of human visual perception or target display devices. Rather than utilizing resource-intensive mathematical power functions ($\gamma$), the module leverages Look-Up Tables (LUTs) stored in on-chip SRAM to rapidly map 10-bit input RGB intensity values to their gamma-corrected target values.
 
-## Architecture & Hardware Design
+### Architecture & Hardware Design
 
-### Look-Up Table (LUT) & Channel Memory (`GAM.v`)
+#### Look-Up Table (LUT) & Channel Memory (`GAM.v`)
 The module instantiates six 10x2048 SRAM blocks (`SRAM10x2048`) divided into two functional tiers:
 * **Gamma LUT SRAMs (`red_gamma`, `green_gamma`, `blue_gamma`):** Store the target gamma correction curves for each color channel. These memories are updated dynamically during the first line of a video frame (`line_count == 0` and `wr_addr < GAM_W`), streaming incoming gamma table values (`gam_red_in`, `gam_green_in`, `gam_blue_in`) directly into memory.
 * **Channel Buffering SRAMs (`red_channel`, `green_channel`, `blue_channel`):** Store incoming video pixel streams (`red_in`, `green_in`, `blue_in`). As pixels are read out from these buffers, their intensity values act directly as the read addresses (`red_addr`, `green_addr`, `blue_addr`) to query the Gamma LUT SRAMs.
 
-### Control Logic & Pipeline Delay
+#### Control Logic & Pipeline Delay
 * **Two-Stage Memory Lookup:** Gamma correction involves a cascaded memory read operations: incoming pixels are first written/read from the channel SRAMs to produce lookup indices, which then drive the read ports of the Gamma LUT SRAMs to retrieve final RGB intensity values (`red_gamma_out`, `green_gamma_out`, `blue_gamma_out`).
 * **Pipelined Sync Control:** To keep control signals aligned with memory read latencies, `read_trigger` tracks frame depth (`pixel_cnt >= LINE_W`). Shift registers (`val_shift`, `h_shift`, `v_shift`) delay `valid_in`, `h_sync`, and `v_sync` across the pipeline to align with the valid output data (`valid_out`, `h_sync_out`, `v_sync_out`).
 
-## Verification Environment
+### Verification Environment
 The GAM module is validated using a self-checking Verilog testbench (`gam_tb.v`) designed to verify memory array updates and pixel transformation correctness.
 
 * **LUT Modeling:** The testbench populates software-side reference arrays (`LUT_R`, `LUT_G`, `LUT_B`) with mathematical transformations across the active LUT width (`GAM_W`).
 * **Stimulus & Response Tracking:** During simulation, the testbench streams test pixels alongside active gamma LUT data during the frame's initial row. The reference function pre-calculates target outputs based on the software LUT and stores expected values in queues (`exp_r`, `exp_g`, `exp_b`).
 * **Automated Comparison:** As `valid_out` is asserted, the testbench extracts the transformed RGB values from the DUT, comparing them directly against the expected LUT lookup outputs and logging any mismatches (`err_count`).
 
-## UVM Verification Environment for Gamma Correction (GAM)
+### UVM Verification Environment for Gamma Correction (GAM)
 
 The Gamma Correction (GAM) module is verified using a Universal Verification Methodology (UVM) testbench that thoroughly validates its memory array updates, pipeline delays, and fixed-point data translation logic. 
 
@@ -348,25 +373,25 @@ The Gamma Correction (GAM) module is verified using a Universal Verification Met
 
 ![UVM Results](media/GAM_UVM.png)
 
-## Synthesis & Static Timing Analysis (STA)
+### Synthesis & Static Timing Analysis (STA)
 
-### Overview
+#### Overview
 The physical implementation and timing verification for the Gamma Correction (`GAM`) module are managed through an automated multi-corner flow using Yosys for synthesis and an STA engine for timing sign-off. The design targets the Nangate 45nm OpenCellLibrary alongside a custom 10x2048 SRAM macro (`SRAM10x2048.lib`).
 
-### Logic Synthesis (Yosys)
+#### Logic Synthesis (Yosys)
 The synthesis process is driven by a script that sequentially iterates across three operational corners: `slow`, `typ`, and `fast`. 
 * **Design Mapping:** The `GAM.v` RTL is read, flattened, and linked against the target standard cell and SRAM liberty files. 
 * **Logic Optimization:** Sequential elements and memories are mapped directly to target library components, utilizing `abc` for combinational logic mapping with a target clock period constraint of 3000ps (`-D 3000`). High and low signal tie-offs are explicitly mapped to `LOGIC1_X1` and `LOGIC0_X1` standard cells[cite: 35].
 * **Outputs:** For each respective corner, the flow outputs a synthesized Verilog netlist (`GAM_<corner>_netlist.v`) and a statistical area/cell report (`GAM_<corner>_stat.txt`).
 
-### Static Timing Analysis
+#### Static Timing Analysis
 A dedicated STA script evaluates the synthesized netlists against the `gam.sdc` design constraints across the three extreme voltage/temperature corners. 
 * **Timing Paths:** It generates detailed, full-clock-expanded reports analyzing maximum path delays for setup timing (`setup_timing.rpt`) and minimum path delays for hold timing (`hold_timing.rpt`).
 * **Slack Metrics:** Comprehensive Worst Negative Slack (WNS) and Total Negative Slack (TNS) reports are extracted down to a 4-digit precision to quantify timing margins.
 * **Design Rule Checks (DRC):** The STA flow actively flags electrical violations, outputting separate lists for maximum slew (`slew_drv.rpt`), maximum capacitance (`cap_drv.rpt`), and maximum fanout (`fanout_drv.rpt`) violations to ensure signal integrity.
 
 
-## Physical Design (PNR)
+### Physical Design (PNR)
 The physical implementation flow was executed utilizing the Nangate45 Open Cell Library and custom 10x2048 SRAM macros. The design was advanced through floorplanning, placement, clock tree synthesis (CTS), and detailed routing to achieve final sign-off.
 
 * **Floorplanning & Power Distribution:** The floorplan was initialized with a die area of 1455µm × 2040µm and a core area of 1445µm × 2030µm. The power distribution network (PDN) routes standard cell rows using `metal1` and constructs a core power mesh across `metal4`, `metal5`, and `metal6`. The internal SRAM macros were configured with a placement halo of `{1 1 1 1}` to ensure proper spacing and clean power delivery.

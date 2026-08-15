@@ -4,7 +4,8 @@ set_routing_layers -clock metal3-metal6
 global_route -verbose
 
 # estimate_parasitics -global_routing
-# repair_timing -hold
+repair_timing
+detailed_placement
 
 detailed_route -output_drc reports/5_route_drc.rpt -verbose 1
 

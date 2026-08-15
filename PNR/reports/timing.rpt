@@ -1,0 +1,168 @@
+Startpoint: row1[21] (input port clocked by clk)
+Endpoint: _29351_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.15    0.15 ^ input external delay
+  20.74    0.00    0.00    0.15 ^ row1[21] (in)
+           0.01    0.00    0.15 ^ wire245/A (BUF_X4)
+   1.89    0.00    0.01    0.16 ^ wire245/Z (BUF_X4)
+           0.00    0.00    0.16 ^ _26140_/A (MUX2_X1)
+   1.47    0.01    0.02    0.19 ^ _26140_/Z (MUX2_X1)
+           0.01    0.00    0.19 ^ _29351_/D (DFFR_X2)
+                           0.19   data arrival time
+
+                   0.00    0.00   clock clk (rise edge)
+                   1.48    1.48   clock network delay (propagated)
+                   0.05    1.53   clock uncertainty
+                   0.00    1.53   clock reconvergence pessimism
+                           1.53 ^ _29351_/CK (DFFR_X2)
+                   0.01    1.54   library hold time
+                           1.54   data required time
+-----------------------------------------------------------------------
+                           1.54   data required time
+                          -0.19   data arrival time
+-----------------------------------------------------------------------
+                          -1.35   slack (VIOLATED)
+
+
+Startpoint: _29272_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _29348_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   1.46    1.46   clock network delay (propagated)
+           0.07    0.00    1.46 ^ _29272_/CK (DFFR_X2)
+  18.09    0.01    0.13    1.59 v _29272_/Q (DFFR_X2)
+           0.01    0.00    1.60 v place8217/A (BUF_X8)
+ 184.01    0.01    0.05    1.64 v place8217/Z (BUF_X8)
+           0.50    0.44    2.08 v place8216/A (BUF_X8)
+  10.11    0.02    0.14    2.23 v place8216/Z (BUF_X8)
+           0.02    0.00    2.23 v place8215/A (BUF_X8)
+   7.48    0.01    0.03    2.26 v place8215/Z (BUF_X8)
+           0.01    0.00    2.26 v place8214/A (BUF_X8)
+   8.37    0.00    0.02    2.29 v place8214/Z (BUF_X8)
+           0.00    0.00    2.29 v place8213/A (BUF_X8)
+  13.10    0.01    0.02    2.31 v place8213/Z (BUF_X8)
+           0.01    0.00    2.31 v place8212/A (BUF_X16)
+ 141.27    0.01    0.03    2.34 v place8212/Z (BUF_X16)
+           0.28    0.25    2.59 v place8211/A (BUF_X1)
+   5.38    0.02    0.12    2.70 v place8211/Z (BUF_X1)
+           0.02    0.00    2.71 v _26364_/A2 (NAND2_X1)
+   7.72    0.02    0.04    2.74 ^ _26364_/ZN (NAND2_X1)
+           0.02    0.00    2.74 ^ _26402_/A (XOR2_X1)
+   2.14    0.02    0.06    2.80 ^ _26402_/Z (XOR2_X1)
+           0.02    0.00    2.80 ^ place6081/A (BUF_X2)
+   3.82    0.01    0.03    2.83 ^ place6081/Z (BUF_X2)
+           0.01    0.00    2.83 ^ _26438_/A (AOI21_X1)
+   1.93    0.02    0.01    2.84 v _26438_/ZN (AOI21_X1)
+           0.02    0.00    2.84 v place5687/A (BUF_X2)
+   2.34    0.01    0.03    2.87 v place5687/Z (BUF_X2)
+           0.01    0.00    2.87 v _26439_/A2 (NOR2_X1)
+  14.15    0.07    0.10    2.97 ^ _26439_/ZN (NOR2_X1)
+           0.07    0.00    2.97 ^ _26442_/B (XNOR2_X1)
+   5.83    0.04    0.07    3.04 ^ _26442_/ZN (XNOR2_X1)
+           0.04    0.00    3.04 ^ _26443_/B (XNOR2_X1)
+   5.11    0.03    0.06    3.10 ^ _26443_/ZN (XNOR2_X1)
+           0.03    0.00    3.10 ^ _26485_/A (XNOR2_X1)
+  13.84    0.07    0.08    3.18 ^ _26485_/ZN (XNOR2_X1)
+           0.07    0.00    3.18 ^ _26492_/B (XNOR2_X1)
+   5.23    0.03    0.06    3.24 ^ _26492_/ZN (XNOR2_X1)
+           0.03    0.00    3.24 ^ place4211/A (BUF_X4)
+   3.26    0.01    0.03    3.27 ^ place4211/Z (BUF_X4)
+           0.01    0.00    3.27 ^ _26524_/B (XNOR2_X1)
+   5.63    0.04    0.05    3.32 ^ _26524_/ZN (XNOR2_X1)
+           0.04    0.00    3.32 ^ _26526_/B (XNOR2_X1)
+   4.00    0.03    0.05    3.38 ^ _26526_/ZN (XNOR2_X1)
+           0.03    0.00    3.38 ^ place3728/A (BUF_X4)
+   5.10    0.01    0.03    3.40 ^ place3728/Z (BUF_X4)
+           0.01    0.00    3.40 ^ _26556_/B (XOR2_X1)
+  12.53    0.07    0.10    3.51 ^ _26556_/Z (XOR2_X1)
+           0.07    0.00    3.51 ^ place3512/A (BUF_X2)
+  14.77    0.02    0.05    3.56 ^ place3512/Z (BUF_X2)
+           0.02    0.00    3.56 ^ _26629_/B (XOR2_X1)
+   3.97    0.01    0.02    3.59 v _26629_/Z (XOR2_X1)
+           0.01    0.00    3.59 v _26630_/A2 (NAND2_X1)
+  13.91    0.04    0.05    3.64 ^ _26630_/ZN (NAND2_X1)
+           0.04    0.00    3.64 ^ place3195/A (BUF_X4)
+   6.96    0.01    0.03    3.67 ^ place3195/Z (BUF_X4)
+           0.01    0.00    3.67 ^ _26633_/B1 (AOI21_X1)
+   3.63    0.02    0.02    3.69 v _26633_/ZN (AOI21_X1)
+           0.02    0.00    3.69 v place3050/A (BUF_X4)
+   8.41    0.01    0.04    3.72 v place3050/Z (BUF_X4)
+           0.01    0.00    3.73 v _26636_/B1 (OAI21_X1)
+   3.99    0.03    0.04    3.77 ^ _26636_/ZN (OAI21_X1)
+           0.03    0.00    3.77 ^ place2950/A (BUF_X4)
+   7.13    0.01    0.03    3.79 ^ place2950/Z (BUF_X4)
+           0.01    0.00    3.79 ^ _26637_/A2 (NAND2_X2)
+  62.07    0.04    0.06    3.85 v _26637_/ZN (NAND2_X2)
+           0.08    0.06    3.91 v place2877/A (BUF_X8)
+   7.65    0.01    0.05    3.97 v place2877/Z (BUF_X8)
+           0.01    0.00    3.97 v place2876/A (BUF_X8)
+   7.11    0.00    0.02    3.99 v place2876/Z (BUF_X8)
+           0.00    0.00    3.99 v place2875/A (BUF_X8)
+   5.13    0.00    0.02    4.01 v place2875/Z (BUF_X8)
+           0.00    0.00    4.01 v _26639_/A1 (NAND2_X1)
+   9.32    0.03    0.03    4.05 ^ _26639_/ZN (NAND2_X1)
+           0.03    0.00    4.05 ^ place2822/A (BUF_X4)
+  17.49    0.01    0.03    4.08 ^ place2822/Z (BUF_X4)
+           0.01    0.01    4.09 ^ _26641_/B1 (AOI21_X1)
+   4.19    0.01    0.02    4.11 v _26641_/ZN (AOI21_X1)
+           0.01    0.00    4.11 v _26642_/A2 (OR2_X1)
+   8.28    0.02    0.07    4.18 v _26642_/ZN (OR2_X1)
+           0.02    0.00    4.18 v _26644_/A1 (NAND2_X1)
+   4.03    0.01    0.03    4.20 ^ _26644_/ZN (NAND2_X1)
+           0.01    0.00    4.20 ^ _26645_/B2 (AOI21_X1)
+  20.01    0.04    0.06    4.26 v _26645_/ZN (AOI21_X1)
+           0.04    0.01    4.27 v _26647_/B1 (OAI21_X1)
+   7.90    0.05    0.08    4.34 ^ _26647_/ZN (OAI21_X1)
+           0.05    0.00    4.35 ^ place2577/A (BUF_X4)
+   8.60    0.01    0.03    4.38 ^ place2577/Z (BUF_X4)
+           0.01    0.00    4.38 ^ _26649_/B1 (AOI21_X1)
+   3.83    0.02    0.02    4.40 v _26649_/ZN (AOI21_X1)
+           0.02    0.00    4.40 v place2532/A (BUF_X4)
+  12.35    0.01    0.03    4.43 v place2532/Z (BUF_X4)
+           0.01    0.00    4.43 v _26650_/A (AOI21_X4)
+  52.14    0.07    0.09    4.52 ^ _26650_/ZN (AOI21_X4)
+           0.08    0.05    4.57 ^ place2494/A (BUF_X8)
+   5.95    0.01    0.03    4.60 ^ place2494/Z (BUF_X8)
+           0.01    0.00    4.60 ^ _26652_/A1 (NOR2_X1)
+   3.34    0.01    0.01    4.61 v _26652_/ZN (NOR2_X1)
+           0.01    0.00    4.61 v place2451/A (BUF_X4)
+   2.07    0.00    0.03    4.63 v place2451/Z (BUF_X4)
+           0.00    0.00    4.63 v _26653_/A (AOI21_X1)
+  12.18    0.07    0.10    4.73 ^ _26653_/ZN (AOI21_X1)
+           0.07    0.00    4.73 ^ place2429/A (BUF_X4)
+  34.51    0.02    0.04    4.78 ^ place2429/Z (BUF_X4)
+           0.03    0.02    4.80 ^ _26655_/B2 (OAI21_X1)
+   6.04    0.02    0.03    4.83 v _26655_/ZN (OAI21_X1)
+           0.02    0.00    4.83 v place2414/A (BUF_X4)
+  35.75    0.01    0.04    4.87 v place2414/Z (BUF_X4)
+           0.01    0.01    4.88 v _26656_/B2 (OAI22_X1)
+  29.87    0.16    0.20    5.08 ^ _26656_/ZN (OAI22_X1)
+           0.16    0.02    5.09 ^ _29348_/D (DFFR_X1)
+                           5.09   data arrival time
+
+                   3.00    3.00   clock clk (rise edge)
+                   0.72    3.72   clock network delay (propagated)
+                  -0.15    3.57   clock uncertainty
+                   0.24    3.81   clock reconvergence pessimism
+                           3.81 ^ _29348_/CK (DFFR_X1)
+                  -0.05    3.77   library setup time
+                           3.77   data required time
+-----------------------------------------------------------------------
+                           3.77   data required time
+                          -5.09   data arrival time
+-----------------------------------------------------------------------
+                          -1.33   slack (VIOLATED)
+
+
+worst slack min -1.35
+worst slack max -1.33

@@ -10,7 +10,7 @@ set SLW_PDK_LIB "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_
 set TYP_PDK_LIB "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_typical.lib"
 set FST_PDK_LIB "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_fast.lib"
 
-set SRAM_LIB "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib"
+set SRAM_LIB "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib"
 
 cd ${WORKING_DIR}
 

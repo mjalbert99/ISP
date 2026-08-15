@@ -1,0 +1,20 @@
+%Error: src/P_CPU.v:38:5: Cannot find file containing module: 'BLC'
+   38 |     BLC blc (
+      |     ^~~
+%Error: src/P_CPU.v:38:5: This may be because there's no search path specified with -I<dir>.
+   38 |     BLC blc (
+      |     ^~~
+        ... Looked in:
+             BLC
+             BLC.v
+             BLC.sv
+             obj_dir/BLC
+             obj_dir/BLC.v
+             obj_dir/BLC.sv
+%Error: src/P_CPU.v:52:5: Cannot find file containing module: 'LSC'
+   52 |     LSC lsc (
+      |     ^~~
+%Error: src/P_CPU.v:66:5: Cannot find file containing module: 'DPC'
+   66 |     DPC dpc (
+      |     ^~~
+%Error: Exiting due to 4 error(s)

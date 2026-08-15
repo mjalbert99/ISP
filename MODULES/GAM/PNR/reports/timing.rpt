@@ -1,86 +1,66 @@
-Startpoint: _1261_ (rising edge-triggered flip-flop clocked by clk)
-Endpoint: red_gamma (rising edge-triggered flip-flop clocked by clk)
+Startpoint: _1359_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1323_ (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: min
 
     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------
                    0.00    0.00   clock clk (rise edge)
-                   0.30    0.30   clock network delay (propagated)
-           0.01    0.00    0.30 ^ _1261_/CK (DFFR_X2)
-   2.83    0.00    0.06    0.36 v _1261_/Q (DFFR_X2)
-           0.00    0.00    0.36 v hold3079/A (CLKBUF_X1)
-   0.89    0.00    0.01    0.38 v hold3079/Z (CLKBUF_X1)
-           0.00    0.00    0.38 v hold2669/A (CLKBUF_X1)
-   0.92    0.00    0.01    0.39 v hold2669/Z (CLKBUF_X1)
-           0.00    0.00    0.39 v hold3080/A (CLKBUF_X1)
-   0.86    0.00    0.01    0.40 v hold3080/Z (CLKBUF_X1)
-           0.00    0.00    0.40 v hold1174/A (CLKBUF_X1)
-   0.91    0.00    0.01    0.42 v hold1174/Z (CLKBUF_X1)
-           0.00    0.00    0.42 v hold3081/A (CLKBUF_X1)
-   0.84    0.00    0.01    0.43 v hold3081/Z (CLKBUF_X1)
-           0.00    0.00    0.43 v hold2670/A (CLKBUF_X1)
-   0.88    0.00    0.01    0.45 v hold2670/Z (CLKBUF_X1)
-           0.00    0.00    0.45 v hold3082/A (CLKBUF_X1)
-   1.86    0.01    0.02    0.46 v hold3082/Z (CLKBUF_X1)
-           0.01    0.00    0.46 v place1110/A (BUF_X2)
-   1.92    0.00    0.01    0.47 v place1110/Z (BUF_X2)
-           0.00    0.00    0.47 v hold2671/A (CLKBUF_X3)
-  66.71    0.04    0.06    0.53 v hold2671/Z (CLKBUF_X3)
-           0.04    0.00    0.53 v red_gamma/din0[3] (SRAM10x2048)
-                           0.53   data arrival time
+                   0.19    0.19   clock network delay (propagated)
+           0.01    0.00    0.19 ^ _1359_/CK (DFFR_X1)
+  10.09    0.01    0.06    0.25 v _1359_/Q (DFFR_X1)
+           0.01    0.00    0.25 v _1323_/D (DFFR_X1)
+                           0.25   data arrival time
 
                    0.00    0.00   clock clk (rise edge)
-                   0.43    0.43   clock network delay (propagated)
-                   0.05    0.48   clock uncertainty
-                  -0.03    0.45   clock reconvergence pessimism
-                           0.45 ^ red_gamma/clk0 (SRAM10x2048)
-                   0.09    0.53   library hold time
-                           0.53   data required time
+                   0.31    0.31   clock network delay (propagated)
+                   0.05    0.36   clock uncertainty
+                  -0.13    0.24   clock reconvergence pessimism
+                           0.24 ^ _1323_/CK (DFFR_X1)
+                   0.01    0.24   library hold time
+                           0.24   data required time
 -----------------------------------------------------------------------
-                           0.53   data required time
-                          -0.53   data arrival time
+                           0.24   data required time
+                          -0.25   data arrival time
 -----------------------------------------------------------------------
                            0.00   slack (MET)
 
 
-Startpoint: blue_channel (falling edge-triggered flip-flop clocked by clk)
-Endpoint: blue_gamma (rising edge-triggered flip-flop clocked by clk)
+Startpoint: green_channel (falling edge-triggered flip-flop clocked by clk)
+Endpoint: green_gamma (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: max
 
     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------
                    1.50    1.50   clock clk (fall edge)
-                   0.54    2.04   clock network delay (propagated)
-           0.05    0.00    2.04 v blue_channel/clk1 (SRAM10x2048)
-  68.26    0.14    0.60    2.64 ^ blue_channel/dout1[3] (SRAM10x2048)
-           0.16    0.08    2.72 ^ place986/A (BUF_X4)
-   4.54    0.01    0.03    2.75 ^ place986/Z (BUF_X4)
-           0.01    0.00    2.75 ^ place985/A (BUF_X2)
-   6.84    0.01    0.03    2.78 ^ place985/Z (BUF_X2)
-           0.01    0.00    2.78 ^ place984/A (BUF_X2)
-   5.10    0.01    0.03    2.81 ^ place984/Z (BUF_X2)
-           0.01    0.00    2.81 ^ place983/A (BUF_X2)
-   7.96    0.01    0.03    2.83 ^ place983/Z (BUF_X2)
-           0.01    0.00    2.84 ^ place982/A (BUF_X4)
- 150.89    0.03    0.05    2.89 ^ place982/Z (BUF_X4)
-           0.31    0.27    3.16 ^ blue_gamma/addr1[3] (SRAM10x2048)
-                           3.16   data arrival time
+                   0.27    1.77   clock network delay (propagated)
+           0.01    0.00    1.77 v green_channel/clk1 (SRAM10x2048)
+   8.57    0.02    0.47    2.24 ^ green_channel/dout1[3] (SRAM10x2048)
+           0.02    0.00    2.24 ^ place708/A (BUF_X2)
+  11.02    0.01    0.04    2.27 ^ place708/Z (BUF_X2)
+           0.01    0.00    2.28 ^ place707/A (BUF_X2)
+  50.00    0.04    0.06    2.34 ^ place707/Z (BUF_X2)
+           0.07    0.05    2.38 ^ place706/A (BUF_X2)
+  66.16    0.05    0.07    2.45 ^ place706/Z (BUF_X2)
+           0.12    0.09    2.54 ^ place705/A (BUF_X4)
+  92.87    0.02    0.05    2.59 ^ place705/Z (BUF_X4)
+           0.12    0.10    2.68 ^ green_gamma/addr1[3] (SRAM10x2048)
+                           2.68   data arrival time
 
                    3.00    3.00   clock clk (rise edge)
-                   0.32    3.32   clock network delay (propagated)
-                  -0.15    3.17   clock uncertainty
-                   0.07    3.24   clock reconvergence pessimism
-                           3.24 ^ blue_gamma/clk1 (SRAM10x2048)
-                  -0.01    3.23   library setup time
-                           3.23   data required time
+                   0.16    3.16   clock network delay (propagated)
+                  -0.15    3.01   clock uncertainty
+                   0.05    3.06   clock reconvergence pessimism
+                           3.06 ^ green_gamma/clk1 (SRAM10x2048)
+                   0.01    3.07   library setup time
+                           3.07   data required time
 -----------------------------------------------------------------------
-                           3.23   data required time
-                          -3.16   data arrival time
+                           3.07   data required time
+                          -2.68   data arrival time
 -----------------------------------------------------------------------
-                           0.07   slack (MET)
+                           0.39   slack (MET)
 
 
 worst slack min 0.00
-worst slack max 0.07
+worst slack max 0.39

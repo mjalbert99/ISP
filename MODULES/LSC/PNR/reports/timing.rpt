@@ -1,0 +1,122 @@
+Startpoint: _8023_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _8095_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.08    0.08   clock network delay (propagated)
+           0.01    0.00    0.08 ^ _8023_/CK (DFF_X1)
+   5.24    0.01    0.05    0.13 v _8023_/Q (DFF_X1)
+           0.01    0.00    0.13 v _5544_/A (XOR2_X1)
+   3.96    0.01    0.02    0.15 ^ _5544_/Z (XOR2_X1)
+           0.01    0.00    0.15 ^ _5545_/A (OAI21_X1)
+   4.53    0.01    0.01    0.16 v _5545_/ZN (OAI21_X1)
+           0.01    0.00    0.16 v _5615_/A2 (NAND2_X1)
+   1.85    0.01    0.01    0.17 ^ _5615_/ZN (NAND2_X1)
+           0.01    0.00    0.17 ^ _5616_/B2 (OAI22_X1)
+   1.38    0.00    0.01    0.18 v _5616_/ZN (OAI22_X1)
+           0.00    0.00    0.18 v _8095_/D (DFFR_X1)
+                           0.18   data arrival time
+
+                   0.00    0.00   clock clk (rise edge)
+                   0.16    0.16   clock network delay (propagated)
+                   0.05    0.21   clock uncertainty
+                  -0.03    0.18   clock reconvergence pessimism
+                           0.18 ^ _8095_/CK (DFFR_X1)
+                   0.01    0.18   library hold time
+                           0.18   data required time
+-----------------------------------------------------------------------
+                           0.18   data required time
+                          -0.18   data arrival time
+-----------------------------------------------------------------------
+                           0.00   slack (MET)
+
+
+Startpoint: _8174_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _8018_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.16    0.16   clock network delay (propagated)
+           0.02    0.00    0.16 ^ _8174_/CK (DFFR_X1)
+  58.84    0.13    0.26    0.41 ^ _8174_/Q (DFFR_X1)
+           0.13    0.00    0.42 ^ _7025_/A1 (NAND2_X1)
+   4.03    0.03    0.04    0.45 v _7025_/ZN (NAND2_X1)
+           0.03    0.00    0.45 v _7029_/A1 (OR3_X1)
+   2.68    0.01    0.08    0.54 v _7029_/ZN (OR3_X1)
+           0.01    0.00    0.54 v _7031_/A2 (AND3_X1)
+   4.32    0.01    0.04    0.58 v _7031_/ZN (AND3_X1)
+           0.01    0.00    0.58 v _7034_/A2 (OR3_X1)
+   4.22    0.02    0.09    0.67 v _7034_/ZN (OR3_X1)
+           0.02    0.00    0.67 v _7048_/A1 (AND3_X1)
+   6.96    0.01    0.05    0.72 v _7048_/ZN (AND3_X1)
+           0.01    0.00    0.72 v _7050_/A2 (OR3_X1)
+   6.19    0.02    0.10    0.82 v _7050_/ZN (OR3_X1)
+           0.02    0.00    0.82 v _7053_/A1 (AND3_X1)
+   4.56    0.01    0.04    0.86 v _7053_/ZN (AND3_X1)
+           0.01    0.00    0.86 v _7161_/A1 (OR3_X1)
+   2.80    0.01    0.07    0.93 v _7161_/ZN (OR3_X1)
+           0.01    0.00    0.93 v _7188_/B1 (AOI22_X1)
+   3.58    0.03    0.06    0.99 ^ _7188_/ZN (AOI22_X1)
+           0.03    0.00    0.99 ^ _7189_/B1 (OAI21_X1)
+   1.83    0.01    0.02    1.01 v _7189_/ZN (OAI21_X1)
+           0.01    0.00    1.01 v _7215_/B2 (AOI221_X1)
+   2.65    0.05    0.09    1.10 ^ _7215_/ZN (AOI221_X1)
+           0.05    0.00    1.10 ^ _7216_/B (AOI211_X1)
+   3.38    0.02    0.03    1.13 v _7216_/ZN (AOI211_X1)
+           0.02    0.00    1.13 v _7324_/C1 (OAI221_X1)
+   3.16    0.04    0.04    1.18 ^ _7324_/ZN (OAI221_X1)
+           0.04    0.00    1.18 ^ _7423_/B2 (AOI21_X1)
+   3.06    0.01    0.03    1.20 v _7423_/ZN (AOI21_X1)
+           0.01    0.00    1.20 v _7530_/B2 (OAI21_X1)
+   4.14    0.03    0.05    1.25 ^ _7530_/ZN (OAI21_X1)
+           0.03    0.00    1.25 ^ _7631_/C1 (AOI211_X1)
+   3.61    0.01    0.03    1.28 v _7631_/ZN (AOI211_X1)
+           0.01    0.00    1.28 v _7737_/C1 (OAI211_X1)
+   3.59    0.03    0.04    1.32 ^ _7737_/ZN (OAI211_X1)
+           0.03    0.00    1.32 ^ _7743_/B2 (AOI21_X1)
+   3.64    0.01    0.03    1.35 v _7743_/ZN (AOI21_X1)
+           0.01    0.00    1.35 v _7745_/B3 (OAI33_X1)
+   4.93    0.08    0.12    1.47 ^ _7745_/ZN (OAI33_X1)
+           0.08    0.00    1.47 ^ _7748_/C2 (OAI211_X1)
+   2.92    0.03    0.05    1.51 v _7748_/ZN (OAI211_X1)
+           0.03    0.00    1.51 v _7750_/A3 (AND3_X1)
+   3.41    0.01    0.05    1.57 v _7750_/ZN (AND3_X1)
+           0.01    0.00    1.57 v _7753_/B1 (OAI21_X1)
+   4.26    0.03    0.04    1.61 ^ _7753_/ZN (OAI21_X1)
+           0.03    0.00    1.61 ^ _7754_/B2 (AOI21_X1)
+   5.21    0.01    0.03    1.64 v _7754_/ZN (AOI21_X1)
+           0.01    0.00    1.64 v _7755_/B2 (OAI21_X1)
+   4.75    0.03    0.05    1.69 ^ _7755_/ZN (OAI21_X1)
+           0.03    0.00    1.69 ^ _7757_/B1 (AOI21_X1)
+   2.92    0.01    0.02    1.72 v _7757_/ZN (AOI21_X1)
+           0.01    0.00    1.72 v _7758_/A2 (NOR2_X1)
+   4.45    0.03    0.05    1.77 ^ _7758_/ZN (NOR2_X1)
+           0.03    0.00    1.77 ^ _7766_/C2 (OAI211_X1)
+   1.44    0.02    0.03    1.80 v _7766_/ZN (OAI211_X1)
+           0.02    0.00    1.80 v _7768_/A1 (AND2_X1)
+   1.39    0.01    0.03    1.83 v _7768_/ZN (AND2_X1)
+           0.01    0.00    1.83 v _8018_/D (DFF_X1)
+                           1.83   data arrival time
+
+                   2.50    2.50   clock clk (rise edge)
+                   0.08    2.58   clock network delay (propagated)
+                  -0.15    2.43   clock uncertainty
+                   0.03    2.46   clock reconvergence pessimism
+                           2.46 ^ _8018_/CK (DFF_X1)
+                  -0.04    2.42   library setup time
+                           2.42   data required time
+-----------------------------------------------------------------------
+                           2.42   data required time
+                          -1.83   data arrival time
+-----------------------------------------------------------------------
+                           0.59   slack (MET)
+
+
+worst slack min 0.00
+worst slack max 0.59

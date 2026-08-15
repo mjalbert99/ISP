@@ -1,5 +1,5 @@
-Startpoint: _18695_ (rising edge-triggered flip-flop clocked by clk)
-Endpoint: _18626_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: _18633_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _18566_ (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: max
 
@@ -7,44 +7,38 @@ Fanout     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------------
                   0.00    0.00    0.00   clock clk (rise edge)
                           0.00    0.00   clock network delay (ideal)
-                  0.00    0.00    0.00 ^ _18695_/CK (DFFR_X1)
-   252  468.28    3.79    4.57    4.57 ^ _18695_/Q (DFFR_X1)
-                  3.79    0.00    4.57 ^ _13989_/A3 (NAND3_X1)
-     1    1.43    0.47    0.30    4.87 v _13989_/ZN (NAND3_X1)
-                  0.47    0.00    4.87 v _13991_/A3 (NOR4_X1)
-     2    2.53    0.22    0.55    5.42 ^ _13991_/ZN (NOR4_X1)
-                  0.22    0.00    5.42 ^ _14798_/A2 (AND2_X1)
-     5    7.93    0.08    0.23    5.65 ^ _14798_/ZN (AND2_X1)
-                  0.08    0.00    5.65 ^ _14799_/A2 (NOR2_X1)
-     2    2.93    0.06    0.05    5.70 v _14799_/ZN (NOR2_X1)
-                  0.06    0.00    5.70 v _14800_/A (INV_X1)
-     3    3.47    0.04    0.09    5.79 ^ _14800_/ZN (INV_X1)
-                  0.04    0.00    5.79 ^ _14801_/A3 (AND3_X1)
-     3    4.08    0.05    0.17    5.96 ^ _14801_/ZN (AND3_X1)
-                  0.05    0.00    5.96 ^ _14802_/A2 (AND2_X1)
-     3    4.12    0.05    0.13    6.09 ^ _14802_/ZN (AND2_X1)
-                  0.05    0.00    6.09 ^ _14803_/A2 (AND2_X1)
-     3    4.12    0.05    0.13    6.22 ^ _14803_/ZN (AND2_X1)
-                  0.05    0.00    6.22 ^ _14804_/A2 (AND2_X1)
-     3    4.78    0.05    0.14    6.36 ^ _14804_/ZN (AND2_X1)
-                  0.05    0.00    6.36 ^ _14809_/B2 (OAI21_X1)
-     1    1.47    0.05    0.06    6.42 v _14809_/ZN (OAI21_X1)
-                  0.05    0.00    6.42 v _14810_/A (AOI21_X1)
-     1    1.09    0.07    0.16    6.58 ^ _14810_/ZN (AOI21_X1)
-                  0.07    0.00    6.58 ^ _18626_/D (DFFR_X1)
-                                  6.58   data arrival time
+                  0.00    0.00    0.00 ^ _18633_/CK (DFFR_X1)
+   251  466.67    3.78    4.56    4.56 ^ _18633_/Q (DFFR_X1)
+                  3.78    0.00    4.56 ^ _13942_/A3 (AND3_X1)
+     3    4.07    0.12    0.86    5.41 ^ _13942_/ZN (AND3_X1)
+                  0.12    0.00    5.41 ^ _13943_/A2 (AND2_X1)
+     4    5.76    0.06    0.18    5.59 ^ _13943_/ZN (AND2_X1)
+                  0.06    0.00    5.59 ^ _13944_/A (INV_X1)
+     1    1.37    0.02    0.03    5.62 v _13944_/ZN (INV_X1)
+                  0.02    0.00    5.62 v _13954_/A1 (NOR3_X1)
+     3    4.08    0.17    0.22    5.84 ^ _13954_/ZN (NOR3_X1)
+                  0.17    0.00    5.84 ^ _14771_/A2 (AND3_X1)
+     4    5.70    0.06    0.24    6.08 ^ _14771_/ZN (AND3_X1)
+                  0.06    0.00    6.08 ^ _14772_/A4 (AND4_X1)
+     2    4.09    0.05    0.23    6.31 ^ _14772_/ZN (AND4_X1)
+                  0.05    0.00    6.31 ^ _17587_/B (XNOR2_X1)
+     1    1.59    0.07    0.14    6.45 ^ _17587_/ZN (XNOR2_X1)
+                  0.07    0.00    6.45 ^ _17588_/A2 (NOR2_X1)
+     1    1.02    0.06    0.04    6.49 v _17588_/ZN (NOR2_X1)
+                  0.06    0.00    6.49 v _18566_/D (DFFR_X1)
+                                  6.49   data arrival time
 
-                  0.00    3.00    3.00   clock clk (rise edge)
-                          0.00    3.00   clock network delay (ideal)
-                         -0.15    2.85   clock uncertainty
-                          0.00    2.85   clock reconvergence pessimism
-                                  2.85 ^ _18626_/CK (DFFR_X1)
-                         -0.10    2.75   library setup time
-                                  2.75   data required time
+                  0.00    2.50    2.50   clock clk (rise edge)
+                          0.00    2.50   clock network delay (ideal)
+                         -0.15    2.35   clock uncertainty
+                          0.00    2.35   clock reconvergence pessimism
+                                  2.35 ^ _18566_/CK (DFFR_X1)
+                         -0.18    2.17   library setup time
+                                  2.17   data required time
 -----------------------------------------------------------------------------
-                                  2.75   data required time
-                                 -6.58   data arrival time
+                                  2.17   data required time
+                                 -6.49   data arrival time
 -----------------------------------------------------------------------------
-                                 -3.83   slack (VIOLATED)
+                                 -4.31   slack (VIOLATED)
 
 

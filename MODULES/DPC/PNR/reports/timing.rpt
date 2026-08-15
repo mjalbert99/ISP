@@ -1,62 +1,162 @@
-Startpoint: valid_in (input port clocked by clk)
-Endpoint: _7945_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: _7684_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _7610_ (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: min
 
     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------
                    0.00    0.00   clock clk (rise edge)
-                   0.00    0.00   clock network delay (propagated)
-                   0.15    0.15 ^ input external delay
-  45.27    0.00    0.00    0.15 ^ valid_in (in)
-           0.00    0.00    0.15 ^ _7427_/S (MUX2_X1)
-   1.98    0.01    0.02    0.17 ^ _7427_/Z (MUX2_X1)
-           0.01    0.00    0.17 ^ _7945_/D (DFFR_X1)
-                           0.17   data arrival time
+                   0.20    0.20   clock network delay (propagated)
+           0.01    0.00    0.20 ^ _7684_/CK (DFFR_X1)
+  13.66    0.02    0.07    0.27 ^ _7684_/Q (DFFR_X1)
+           0.02    0.00    0.27 ^ _5949_/A1 (OR2_X1)
+   5.05    0.01    0.02    0.29 ^ _5949_/ZN (OR2_X1)
+           0.01    0.00    0.29 ^ _6457_/A (OAI21_X1)
+   3.33    0.01    0.01    0.30 v _6457_/ZN (OAI21_X1)
+           0.01    0.00    0.30 v _6461_/B (XNOR2_X1)
+   3.34    0.01    0.02    0.32 ^ _6461_/ZN (XNOR2_X1)
+           0.01    0.00    0.32 ^ _6499_/B (XOR2_X1)
+   8.97    0.01    0.02    0.34 v _6499_/Z (XOR2_X1)
+           0.01    0.00    0.34 v _6500_/B (MUX2_X1)
+   2.20    0.01    0.03    0.37 v _6500_/Z (MUX2_X1)
+           0.01    0.00    0.37 v _7610_/D (DFFR_X1)
+                           0.37   data arrival time
 
                    0.00    0.00   clock clk (rise edge)
-                   0.52    0.52   clock network delay (propagated)
-                   0.05    0.57   clock uncertainty
-                   0.00    0.57   clock reconvergence pessimism
-                           0.57 ^ _7945_/CK (DFFR_X1)
-                   0.01    0.58   library hold time
-                           0.58   data required time
+                   0.39    0.39   clock network delay (propagated)
+                   0.05    0.44   clock uncertainty
+                  -0.08    0.36   clock reconvergence pessimism
+                           0.36 ^ _7610_/CK (DFFR_X1)
+                   0.01    0.37   library hold time
+                           0.37   data required time
 -----------------------------------------------------------------------
-                           0.58   data required time
-                          -0.17   data arrival time
+                           0.37   data required time
+                          -0.37   data arrival time
 -----------------------------------------------------------------------
-                          -0.41   slack (VIOLATED)
+                           0.00   slack (MET)
 
 
-Startpoint: sram0 (falling edge-triggered flip-flop clocked by clk)
-Endpoint: _7833_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: valid_in (input port clocked by clk)
+Endpoint: _7940_ (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: max
 
     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------
-                   1.50    1.50   clock clk (fall edge)
-                   0.46    1.96   clock network delay (propagated)
-           0.04    0.00    1.96 v sram0/clk1 (SRAM10x2048)
- 163.27    0.23    0.65    2.62 ^ sram0/dout1[8] (SRAM10x2048)
-           0.53    0.38    3.00 ^ _7417_/B (MUX2_X1)
-   2.13    0.02    0.08    3.08 ^ _7417_/Z (MUX2_X1)
-           0.02    0.00    3.08 ^ _7833_/D (DFFR_X1)
-                           3.08   data arrival time
+                   0.00    0.00   clock clk (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.80    0.80 v input external delay
+   9.00    0.00    0.00    0.80 v valid_in (in)
+           0.00    0.00    0.80 v hold770/A (CLKBUF_X1)
+   0.84    0.01    0.02    0.83 v hold770/Z (CLKBUF_X1)
+           0.01    0.00    0.83 v hold771/A (CLKBUF_X1)
+   1.11    0.01    0.03    0.85 v hold771/Z (CLKBUF_X1)
+           0.01    0.00    0.85 v hold746/A (CLKBUF_X1)
+   0.86    0.01    0.03    0.88 v hold746/Z (CLKBUF_X1)
+           0.01    0.00    0.88 v hold772/A (CLKBUF_X1)
+   1.13    0.01    0.03    0.91 v hold772/Z (CLKBUF_X1)
+           0.01    0.00    0.91 v hold762/A (CLKBUF_X1)
+   0.89    0.01    0.03    0.94 v hold762/Z (CLKBUF_X1)
+           0.01    0.00    0.94 v hold773/A (CLKBUF_X1)
+   1.19    0.01    0.03    0.96 v hold773/Z (CLKBUF_X1)
+           0.01    0.00    0.96 v hold734/A (CLKBUF_X1)
+   1.21    0.01    0.03    0.99 v hold734/Z (CLKBUF_X1)
+           0.01    0.00    0.99 v hold774/A (CLKBUF_X1)
+   1.19    0.01    0.03    1.02 v hold774/Z (CLKBUF_X1)
+           0.01    0.00    1.02 v hold763/A (CLKBUF_X1)
+   1.48    0.01    0.03    1.05 v hold763/Z (CLKBUF_X1)
+           0.01    0.00    1.05 v hold775/A (CLKBUF_X1)
+  13.84    0.03    0.06    1.11 v hold775/Z (CLKBUF_X1)
+           0.03    0.00    1.12 v hold747/A (CLKBUF_X1)
+  13.56    0.03    0.08    1.20 v hold747/Z (CLKBUF_X1)
+           0.03    0.00    1.20 v hold776/A (CLKBUF_X1)
+   1.46    0.01    0.04    1.24 v hold776/Z (CLKBUF_X1)
+           0.01    0.00    1.24 v hold764/A (CLKBUF_X1)
+   1.24    0.01    0.03    1.27 v hold764/Z (CLKBUF_X1)
+           0.01    0.00    1.27 v hold777/A (CLKBUF_X1)
+  13.00    0.03    0.06    1.33 v hold777/Z (CLKBUF_X1)
+           0.03    0.00    1.34 v hold714/A (CLKBUF_X1)
+  12.78    0.03    0.07    1.41 v hold714/Z (CLKBUF_X1)
+           0.03    0.00    1.41 v hold778/A (CLKBUF_X1)
+   0.89    0.01    0.04    1.45 v hold778/Z (CLKBUF_X1)
+           0.01    0.00    1.45 v hold765/A (CLKBUF_X1)
+   1.29    0.01    0.03    1.48 v hold765/Z (CLKBUF_X1)
+           0.01    0.00    1.48 v hold779/A (CLKBUF_X1)
+   1.23    0.01    0.03    1.51 v hold779/Z (CLKBUF_X1)
+           0.01    0.00    1.51 v hold748/A (CLKBUF_X1)
+   1.53    0.01    0.03    1.54 v hold748/Z (CLKBUF_X1)
+           0.01    0.00    1.54 v hold780/A (CLKBUF_X1)
+   1.81    0.01    0.03    1.57 v hold780/Z (CLKBUF_X1)
+           0.01    0.00    1.57 v hold766/A (CLKBUF_X1)
+   1.32    0.01    0.03    1.60 v hold766/Z (CLKBUF_X1)
+           0.01    0.00    1.60 v hold781/A (CLKBUF_X1)
+   1.18    0.01    0.03    1.63 v hold781/Z (CLKBUF_X1)
+           0.01    0.00    1.63 v hold735/A (CLKBUF_X1)
+   0.88    0.01    0.03    1.66 v hold735/Z (CLKBUF_X1)
+           0.01    0.00    1.66 v hold782/A (CLKBUF_X1)
+   1.14    0.01    0.03    1.68 v hold782/Z (CLKBUF_X1)
+           0.01    0.00    1.68 v hold767/A (CLKBUF_X1)
+   0.87    0.01    0.03    1.71 v hold767/Z (CLKBUF_X1)
+           0.01    0.00    1.71 v hold783/A (CLKBUF_X1)
+   1.15    0.01    0.03    1.74 v hold783/Z (CLKBUF_X1)
+           0.01    0.00    1.74 v hold749/A (CLKBUF_X1)
+   0.88    0.01    0.03    1.77 v hold749/Z (CLKBUF_X1)
+           0.01    0.00    1.77 v hold768/A (CLKBUF_X1)
+  14.03    0.03    0.07    1.83 v hold768/Z (CLKBUF_X1)
+           0.03    0.00    1.83 v max_length61/A (BUF_X4)
+  41.15    0.01    0.05    1.88 v max_length61/Z (BUF_X4)
+           0.03    0.02    1.91 v hold736/A (CLKBUF_X3)
+  10.89    0.01    0.05    1.96 v hold736/Z (CLKBUF_X3)
+           0.01    0.00    1.96 v hold751/A (CLKBUF_X3)
+  37.03    0.03    0.07    2.03 v hold751/Z (CLKBUF_X3)
+           0.03    0.00    2.03 v _7228_/S (MUX2_X1)
+   2.61    0.01    0.07    2.10 ^ _7228_/Z (MUX2_X1)
+           0.01    0.00    2.10 ^ hold1617/A (CLKBUF_X1)
+   1.60    0.01    0.03    2.13 ^ hold1617/Z (CLKBUF_X1)
+           0.01    0.00    2.13 ^ hold1365/A (CLKBUF_X1)
+   1.66    0.01    0.03    2.16 ^ hold1365/Z (CLKBUF_X1)
+           0.01    0.00    2.16 ^ hold1618/A (CLKBUF_X1)
+   1.62    0.01    0.03    2.19 ^ hold1618/Z (CLKBUF_X1)
+           0.01    0.00    2.19 ^ hold1315/A (CLKBUF_X1)
+   1.39    0.01    0.03    2.22 ^ hold1315/Z (CLKBUF_X1)
+           0.01    0.00    2.22 ^ hold1619/A (CLKBUF_X1)
+   1.58    0.01    0.03    2.25 ^ hold1619/Z (CLKBUF_X1)
+           0.01    0.00    2.25 ^ hold1366/A (CLKBUF_X1)
+   1.34    0.01    0.03    2.28 ^ hold1366/Z (CLKBUF_X1)
+           0.01    0.00    2.28 ^ hold1620/A (CLKBUF_X1)
+   1.55    0.01    0.03    2.31 ^ hold1620/Z (CLKBUF_X1)
+           0.01    0.00    2.31 ^ hold719/A (CLKBUF_X1)
+   1.38    0.01    0.03    2.34 ^ hold719/Z (CLKBUF_X1)
+           0.01    0.00    2.34 ^ hold1621/A (CLKBUF_X1)
+   1.28    0.01    0.03    2.37 ^ hold1621/Z (CLKBUF_X1)
+           0.01    0.00    2.37 ^ hold1367/A (CLKBUF_X1)
+   2.08    0.01    0.03    2.40 ^ hold1367/Z (CLKBUF_X1)
+           0.01    0.00    2.40 ^ hold1622/A (CLKBUF_X1)
+   1.75    0.01    0.03    2.43 ^ hold1622/Z (CLKBUF_X1)
+           0.01    0.00    2.43 ^ hold1316/A (CLKBUF_X1)
+   1.16    0.01    0.03    2.46 ^ hold1316/Z (CLKBUF_X1)
+           0.01    0.00    2.46 ^ hold1623/A (CLKBUF_X1)
+   1.22    0.01    0.03    2.49 ^ hold1623/Z (CLKBUF_X1)
+           0.01    0.00    2.49 ^ hold1368/A (CLKBUF_X1)
+   1.28    0.01    0.03    2.52 ^ hold1368/Z (CLKBUF_X1)
+           0.01    0.00    2.52 ^ hold1624/A (CLKBUF_X1)
+   4.25    0.01    0.04    2.55 ^ hold1624/Z (CLKBUF_X1)
+           0.01    0.00    2.55 ^ _7940_/D (DFFR_X1)
+                           2.55   data arrival time
 
-                   3.00    3.00   clock clk (rise edge)
-                   0.28    3.28   clock network delay (propagated)
-                  -0.15    3.13   clock uncertainty
-                   0.02    3.14   clock reconvergence pessimism
-                           3.14 ^ _7833_/CK (DFFR_X1)
-                  -0.04    3.11   library setup time
-                           3.11   data required time
+                   2.50    2.50   clock clk (rise edge)
+                   0.27    2.77   clock network delay (propagated)
+                  -0.15    2.62   clock uncertainty
+                   0.00    2.62   clock reconvergence pessimism
+                           2.62 ^ _7940_/CK (DFFR_X1)
+                  -0.03    2.58   library setup time
+                           2.58   data required time
 -----------------------------------------------------------------------
-                           3.11   data required time
-                          -3.08   data arrival time
+                           2.58   data required time
+                          -2.55   data arrival time
 -----------------------------------------------------------------------
                            0.03   slack (MET)
 
 
-worst slack min -0.41
+worst slack min 0.00
 worst slack max 0.03

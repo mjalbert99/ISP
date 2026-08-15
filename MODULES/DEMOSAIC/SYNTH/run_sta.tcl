@@ -4,13 +4,13 @@ set SDC_FILE "../constraints/demos.sdc"
 set corners [list \
     "slow"\
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_slow.lib" \
-    "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib" \
+    "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
     "typ"\
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_typical.lib" \
-    "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib" \
+    "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
     "fast" \
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_fast.lib" \
-    "../../SRAM/10x2048/PNR/metals/SRAM10x2048.lib" \
+    "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
 ]
 
 foreach {corner_name std_lib sram_lib} $corners {

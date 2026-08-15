@@ -1,0 +1,80 @@
+Startpoint: _446_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _457_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.04    0.04   clock network delay (propagated)
+           0.01    0.00    0.04 ^ _446_/CK (DFFR_X1)
+   3.99    0.01    0.06    0.10 ^ _446_/Q (DFFR_X1)
+           0.01    0.00    0.10 ^ _330_/B2 (OAI22_X1)
+   1.86    0.00    0.01    0.11 v _330_/ZN (OAI22_X1)
+           0.00    0.00    0.11 v _331_/A (INV_X1)
+   1.23    0.00    0.01    0.12 ^ _331_/ZN (INV_X1)
+           0.00    0.00    0.12 ^ _457_/D (DFFR_X1)
+                           0.12   data arrival time
+
+                   0.00    0.00   clock clk (rise edge)
+                   0.07    0.07   clock network delay (propagated)
+                   0.05    0.12   clock uncertainty
+                  -0.01    0.11   clock reconvergence pessimism
+                           0.11 ^ _457_/CK (DFFR_X1)
+                   0.00    0.11   library hold time
+                           0.11   data required time
+-----------------------------------------------------------------------
+                           0.11   data required time
+                          -0.12   data arrival time
+-----------------------------------------------------------------------
+                           0.00   slack (MET)
+
+
+Startpoint: pixel_in[4] (input port clocked by clk)
+Endpoint: _449_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.00    0.00   clock network delay (propagated)
+                   0.80    0.80 v input external delay
+  11.45    0.00    0.00    0.80 v pixel_in[4] (in)
+           0.00    0.00    0.80 v _345_/B (XNOR2_X1)
+   3.22    0.01    0.04    0.84 v _345_/ZN (XNOR2_X1)
+           0.01    0.00    0.84 v _349_/A1 (OR3_X1)
+   3.27    0.01    0.08    0.92 v _349_/ZN (OR3_X1)
+           0.01    0.00    0.92 v _351_/B2 (AOI21_X1)
+   2.97    0.03    0.04    0.96 ^ _351_/ZN (AOI21_X1)
+           0.03    0.00    0.96 ^ _353_/A2 (OR2_X1)
+   2.03    0.01    0.03    0.99 ^ _353_/ZN (OR2_X1)
+           0.01    0.00    0.99 ^ _355_/C2 (AOI211_X1)
+   2.86    0.01    0.02    1.01 v _355_/ZN (AOI211_X1)
+           0.01    0.00    1.01 v _356_/A3 (OR3_X1)
+   8.52    0.02    0.11    1.12 v _356_/ZN (OR3_X1)
+           0.02    0.00    1.12 v _384_/C2 (AOI211_X1)
+   1.91    0.04    0.06    1.17 ^ _384_/ZN (AOI211_X1)
+           0.04    0.00    1.17 ^ _386_/B1 (OAI21_X1)
+   1.55    0.02    0.02    1.19 v _386_/ZN (OAI21_X1)
+           0.02    0.00    1.19 v _388_/B1 (AOI21_X1)
+   1.51    0.02    0.03    1.23 ^ _388_/ZN (AOI21_X1)
+           0.02    0.00    1.23 ^ _449_/D (DFFR_X1)
+                           1.23   data arrival time
+
+                   2.50    2.50   clock clk (rise edge)
+                   0.04    2.54   clock network delay (propagated)
+                  -0.15    2.39   clock uncertainty
+                   0.00    2.39   clock reconvergence pessimism
+                           2.39 ^ _449_/CK (DFFR_X1)
+                  -0.04    2.36   library setup time
+                           2.36   data required time
+-----------------------------------------------------------------------
+                           2.36   data required time
+                          -1.23   data arrival time
+-----------------------------------------------------------------------
+                           1.13   slack (MET)
+
+
+worst slack min 0.00
+worst slack max 1.13

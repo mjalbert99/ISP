@@ -1,0 +1,32 @@
+Startpoint: v_sync (input port clocked by clk)
+Endpoint: _19091_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.80    0.80 ^ input external delay
+     2    2.84    0.00    0.00    0.80 ^ v_sync (in)
+                  0.00    0.00    0.80 ^ _13290_/A2 (NAND2_X1)
+    90  165.70    0.23    0.29    1.09 v _13290_/ZN (NAND2_X1)
+                  0.23    0.00    1.09 v _13308_/S (MUX2_X1)
+     1    1.09    0.01    0.09    1.18 v _13308_/Z (MUX2_X1)
+                  0.01    0.00    1.18 v _19091_/D (DFFR_X1)
+                                  1.18   data arrival time
+
+                  0.00    3.00    3.00   clock clk (rise edge)
+                          0.00    3.00   clock network delay (ideal)
+                         -0.15    2.85   clock uncertainty
+                          0.00    2.85   clock reconvergence pessimism
+                                  2.85 ^ _19091_/CK (DFFR_X1)
+                         -0.02    2.83   library setup time
+                                  2.83   data required time
+-----------------------------------------------------------------------------
+                                  2.83   data required time
+                                 -1.18   data arrival time
+-----------------------------------------------------------------------------
+                                  1.65   slack (MET)
+
+

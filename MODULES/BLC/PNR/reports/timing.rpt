@@ -1,0 +1,108 @@
+Startpoint: _2041_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _2014_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.05    0.05   clock network delay (propagated)
+           0.01    0.00    0.05 ^ _2041_/CK (DFFR_X1)
+   4.43    0.01    0.06    0.11 ^ _2041_/Q (DFFR_X1)
+           0.01    0.00    0.11 ^ _1987_/B (MUX2_X1)
+   1.27    0.00    0.02    0.13 ^ _1987_/Z (MUX2_X1)
+           0.00    0.00    0.13 ^ _2014_/D (DFF_X1)
+                           0.13   data arrival time
+
+                   0.00    0.00   clock clk (rise edge)
+                   0.08    0.08   clock network delay (propagated)
+                   0.05    0.13   clock uncertainty
+                  -0.01    0.12   clock reconvergence pessimism
+                           0.12 ^ _2014_/CK (DFF_X1)
+                   0.01    0.13   library hold time
+                           0.13   data required time
+-----------------------------------------------------------------------
+                           0.13   data required time
+                          -0.13   data arrival time
+-----------------------------------------------------------------------
+                           0.00   slack (MET)
+
+
+Startpoint: _1996_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _2025_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------
+                   0.00    0.00   clock clk (rise edge)
+                   0.08    0.08   clock network delay (propagated)
+           0.02    0.00    0.08 ^ _1996_/CK (DFFR_X1)
+  38.41    0.09    0.21    0.29 ^ _1996_/Q (DFFR_X1)
+           0.09    0.00    0.29 ^ _1731_/A2 (AOI22_X1)
+   2.96    0.03    0.03    0.32 v _1731_/ZN (AOI22_X1)
+           0.03    0.00    0.32 v _1732_/A3 (OR3_X1)
+   4.13    0.02    0.10    0.42 v _1732_/ZN (OR3_X1)
+           0.02    0.00    0.42 v _1735_/A2 (AND3_X1)
+   4.50    0.01    0.05    0.47 v _1735_/ZN (AND3_X1)
+           0.01    0.00    0.47 v _1737_/A2 (OR3_X1)
+   4.22    0.02    0.09    0.56 v _1737_/ZN (OR3_X1)
+           0.02    0.00    0.56 v _1750_/A1 (AND3_X1)
+   5.89    0.01    0.05    0.60 v _1750_/ZN (AND3_X1)
+           0.01    0.00    0.60 v _1753_/A2 (OR3_X1)
+   2.55    0.01    0.09    0.69 v _1753_/ZN (OR3_X1)
+           0.01    0.00    0.69 v _1755_/A2 (AND3_X1)
+   7.43    0.01    0.05    0.74 v _1755_/ZN (AND3_X1)
+           0.01    0.00    0.74 v _1758_/A2 (OR3_X1)
+   2.88    0.01    0.09    0.82 v _1758_/ZN (OR3_X1)
+           0.01    0.00    0.82 v _1760_/A3 (AND4_X1)
+   4.35    0.01    0.05    0.87 v _1760_/ZN (AND4_X1)
+           0.01    0.00    0.87 v _1796_/A2 (OR3_X1)
+   2.87    0.01    0.09    0.96 v _1796_/ZN (OR3_X1)
+           0.01    0.00    0.96 v _1797_/A (OAI21_X1)
+   1.93    0.02    0.03    0.99 ^ _1797_/ZN (OAI21_X1)
+           0.02    0.00    0.99 ^ _1829_/B1 (OAI21_X1)
+   2.03    0.01    0.02    1.00 v _1829_/ZN (OAI21_X1)
+           0.01    0.00    1.00 v _1876_/B2 (AOI222_X1)
+   2.63    0.05    0.10    1.10 ^ _1876_/ZN (AOI222_X1)
+           0.05    0.00    1.10 ^ _1896_/B2 (OAI21_X1)
+   3.19    0.02    0.03    1.14 v _1896_/ZN (OAI21_X1)
+           0.02    0.00    1.14 v _1900_/B2 (AOI21_X1)
+   2.37    0.02    0.04    1.18 ^ _1900_/ZN (AOI21_X1)
+           0.02    0.00    1.18 ^ _1904_/B3 (OAI33_X1)
+   2.85    0.02    0.04    1.21 v _1904_/ZN (OAI33_X1)
+           0.02    0.00    1.21 v _1907_/A3 (OR3_X1)
+   2.95    0.01    0.09    1.31 v _1907_/ZN (OR3_X1)
+           0.01    0.00    1.31 v _1910_/B1 (AOI21_X1)
+   4.81    0.04    0.05    1.36 ^ _1910_/ZN (AOI21_X1)
+           0.04    0.00    1.36 ^ _1912_/B1 (OAI21_X1)
+   6.86    0.02    0.04    1.39 v _1912_/ZN (OAI21_X1)
+           0.02    0.00    1.39 v _1915_/C1 (AOI211_X1)
+   1.72    0.04    0.05    1.44 ^ _1915_/ZN (AOI211_X1)
+           0.04    0.00    1.44 ^ _1918_/B2 (OAI21_X1)
+   5.19    0.02    0.04    1.48 v _1918_/ZN (OAI21_X1)
+           0.02    0.00    1.48 v _1920_/B2 (AOI21_X1)
+   3.58    0.03    0.05    1.52 ^ _1920_/ZN (AOI21_X1)
+           0.03    0.00    1.52 ^ _1922_/B1 (OAI21_X1)
+   2.37    0.02    0.02    1.55 v _1922_/ZN (OAI21_X1)
+           0.02    0.00    1.55 v _1923_/A (OAI21_X1)
+   1.25    0.02    0.03    1.57 ^ _1923_/ZN (OAI21_X1)
+           0.02    0.00    1.57 ^ _2025_/D (DFFR_X1)
+                           1.57   data arrival time
+
+                   2.50    2.50   clock clk (rise edge)
+                   0.05    2.55   clock network delay (propagated)
+                  -0.15    2.40   clock uncertainty
+                   0.01    2.41   clock reconvergence pessimism
+                           2.41 ^ _2025_/CK (DFFR_X1)
+                  -0.03    2.38   library setup time
+                           2.38   data required time
+-----------------------------------------------------------------------
+                           2.38   data required time
+                          -1.57   data arrival time
+-----------------------------------------------------------------------
+                           0.80   slack (MET)
+
+
+worst slack min 0.00
+worst slack max 0.80

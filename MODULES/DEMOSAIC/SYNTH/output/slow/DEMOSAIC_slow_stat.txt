@@ -12,7 +12,7 @@
       746        - public wire bits
        12        - ports
        48        - port bits
-     2918 8.92E+05 cells
+     2918 6.02E+05 cells
         1        -   $scopeinfo
       104  110.656   AND2_X1
        46    61.18   AND3_X1
@@ -40,12 +40,12 @@
        39   41.496   OR2_X1
        22    29.26   OR3_X1
         3    4.788   OR4_X1
-        4 8.86E+05   SRAM10x2048
+        4 5.96E+05   SRAM10x2048
       247  394.212   XNOR2_X1
       163  260.148   XOR2_X1
 
    Area for cell type $scopeinfo is unknown!
 
-   Chip area for module '\DEMOSAIC': 891947.316000
-     of which used for sequential elements: 2634.464000 (0.30%)
+   Chip area for module '\DEMOSAIC': 601754.944000
+     of which used for sequential elements: 2634.464000 (0.44%)
 

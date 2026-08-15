@@ -11,9 +11,9 @@ set LIB_FILE_FST  "${PDK_ROOT}/libs/NangateOpenCellLibrary_fast.lib"
 
 set SRAM_ROOT "/root/Work/vlsi/pdks/pdk/nangate45/sram_20x2048"
 
-set SRAM_LEF "../../SRAM/10x2048H/PNR/metals/SRAM10x2048_abstract.lef"
-set SRAM_LIB_SLW "../../SRAM/10x2048H/PNR/metals/SRAM10x2048.lib"
-set SRAM_LIB_FST "../../SRAM/10x2048H/PNR/metals/SRAM10x2048.lib"
+set SRAM_LEF "../../SRAM/10x2048V/PNR/metals/SRAM10x2048_abstract.lef"
+set SRAM_LIB_SLW "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib"
+set SRAM_LIB_FST "../../SRAM/10x2048V/PNR/metals/SRAM10x2048.lib"
 
 read_lef $TECH_LEF
 read_lef $CELL_LEF
@@ -35,8 +35,11 @@ read_sdc $SDC_PATH
 file mkdir output
 
 
-initialize_floorplan -die_area {0 0 910 1500} \
-                     -core_area {10 10 900 1490} \
+# initialize_floorplan -die_area {0 0 910 1800} \
+#                      -core_area {10 10 900 1790} \
+#                      -site FreePDK45_38x28_10R_NP_162NW_34O
+initialize_floorplan -die_area {0 0 1300 885} \
+                     -core_area {10 10 1290 875} \
                      -site FreePDK45_38x28_10R_NP_162NW_34O
 
 
@@ -44,15 +47,19 @@ make_tracks
 
 set_macro_base_halo 5 5
 # rtl_macro_placer -write_macro_placement macros.txt
-place_macro -macro_name {sram0} -location {119 1120} -orientation R0
-place_macro -macro_name {sram1} -location {119 750} -orientation R0
-place_macro -macro_name {sram2} -location {119 380} -orientation R0
-place_macro -macro_name {sram3} -location {119 20} -orientation R0
+# place_macro -macro_name {sram0} -location {119 1435} -orientation R0
+# place_macro -macro_name {sram1} -location {119 1000} -orientation R0
+# place_macro -macro_name {sram2} -location {119 530} -orientation R0
+# place_macro -macro_name {sram3} -location {119 20} -orientation R0
+place_macro -macro_name {sram0} -location {15 20} -orientation R0
+place_macro -macro_name {sram1} -location {340 20} -orientation R0
+place_macro -macro_name {sram2} -location {670 20} -orientation R0
+place_macro -macro_name {sram3} -location {990 20} -orientation R0
 
 
 
-set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync pixel_in} -region left:500-900
-set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out pixel_out} -region rigth:500-900
+set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync pixel_in} -region left:*
+set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out pixel_out} -region right:*
 
 place_pins -hor_layers metal3 -ver_layers metal2 \
             -min_distance 20 \

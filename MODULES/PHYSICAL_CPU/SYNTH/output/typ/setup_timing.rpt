@@ -1,0 +1,29 @@
+Startpoint: lsc (rising edge-triggered flip-flop clocked by clk)
+Endpoint: dpc (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ lsc/clk (LSC)
+     1    9.08    0.02    0.13    0.13 ^ lsc/valid_out (LSC)
+                  0.02    0.00    0.13 ^ dpc/valid_in (DPC)
+                                  0.13   data arrival time
+
+                  0.00    2.50    2.50   clock clk (rise edge)
+                          0.00    2.50   clock network delay (ideal)
+                         -0.15    2.35   clock uncertainty
+                          0.00    2.35   clock reconvergence pessimism
+                                  2.35 ^ dpc/clk (DPC)
+                         -0.20    2.15   macro clock tree delay
+                         -1.35    0.80   library setup time
+                                  0.80   data required time
+-----------------------------------------------------------------------------
+                                  0.80   data required time
+                                 -0.13   data arrival time
+-----------------------------------------------------------------------------
+                                  0.67   slack (MET)
+
+

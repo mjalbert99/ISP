@@ -1,0 +1,6 @@
+../MODULES/GAM/RTL/src/GAM.v:120: warning: Port 7 (addr1) of SRAM10x2048 expects 11 bits, got 10.
+../MODULES/GAM/RTL/src/GAM.v:120:        : Padding 1 high bits of the port.
+../MODULES/GAM/RTL/src/GAM.v:131: warning: Port 7 (addr1) of SRAM10x2048 expects 11 bits, got 10.
+../MODULES/GAM/RTL/src/GAM.v:131:        : Padding 1 high bits of the port.
+../MODULES/GAM/RTL/src/GAM.v:142: warning: Port 7 (addr1) of SRAM10x2048 expects 11 bits, got 10.
+../MODULES/GAM/RTL/src/GAM.v:142:        : Padding 1 high bits of the port.

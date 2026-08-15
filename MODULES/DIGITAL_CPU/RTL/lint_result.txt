@@ -1,0 +1,20 @@
+%Error: src/D_CPU.v:35:5: Cannot find file containing module: 'BNR'
+   35 |     BNR  bnr (
+      |     ^~~
+%Error: src/D_CPU.v:35:5: This may be because there's no search path specified with -I<dir>.
+   35 |     BNR  bnr (
+      |     ^~~
+        ... Looked in:
+             BNR
+             BNR.v
+             BNR.sv
+             obj_dir/BNR
+             obj_dir/BNR.v
+             obj_dir/BNR.sv
+%Error: src/D_CPU.v:49:5: Cannot find file containing module: 'WBG'
+   49 |     WBG wbg (
+      |     ^~~
+%Error: src/D_CPU.v:63:5: Cannot find file containing module: 'DEMOSAIC'
+   63 |     DEMOSAIC demos (
+      |     ^~~~~~~~
+%Error: Exiting due to 4 error(s)
