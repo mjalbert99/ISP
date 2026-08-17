@@ -58,8 +58,8 @@ place_macro -macro_name {blue_gamma} -location {410 760} -orientation RX
 place_macro -macro_name {blue_channel} -location {750  760} -orientation MX
 
 
-set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync red_in green_in blue_in gam_red_in gam_green_in gam_blue_in} -region right:*
-set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out red_out green_out blue_out} -region left:*
+set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync red_in green_in blue_in gam_red_in gam_green_in gam_blue_in} -region left:*
+set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out red_out green_out blue_out} -region right:*
 
 place_pins -hor_layers {metal3 } -ver_layers {metal2 } \
             -min_distance 20 \

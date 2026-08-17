@@ -1,0 +1,17 @@
+%Error: src/C_CPU.v:22:5: Cannot find file containing module: 'CCM'
+   22 |     CCM ccm (
+      |     ^~~
+%Error: src/C_CPU.v:22:5: This may be because there's no search path specified with -I<dir>.
+   22 |     CCM ccm (
+      |     ^~~
+        ... Looked in:
+             CCM
+             CCM.v
+             CCM.sv
+             obj_dir/CCM
+             obj_dir/CCM.v
+             obj_dir/CCM.sv
+%Error: src/C_CPU.v:44:5: Cannot find file containing module: 'GAM'
+   44 |     GAM gam (
+      |     ^~~
+%Error: Exiting due to 3 error(s)

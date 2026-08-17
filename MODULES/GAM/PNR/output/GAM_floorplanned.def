@@ -1645,395 +1645,395 @@ PINS 100 ;
     - blue_in[0] + NET blue_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 200340 ) N ;
+        + PLACED ( 70 200340 ) N ;
     - blue_in[1] + NET blue_in[1] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1681820 ) N ;
+        + PLACED ( 70 1481620 ) N ;
     - blue_in[2] + NET blue_in[2] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2482620 ) N ;
+        + PLACED ( 70 840980 ) N ;
     - blue_in[3] + NET blue_in[3] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1521660 ) N ;
+        + PLACED ( 70 1561700 ) N ;
     - blue_in[4] + NET blue_in[4] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2642780 ) N ;
+        + PLACED ( 70 1601740 ) N ;
     - blue_in[5] + NET blue_in[5] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1361500 ) N ;
+        + PLACED ( 70 1441580 ) N ;
     - blue_in[6] + NET blue_in[6] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1321460 ) N ;
+        + PLACED ( 70 1641780 ) N ;
     - blue_in[7] + NET blue_in[7] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2242380 ) N ;
+        + PLACED ( 70 480620 ) N ;
     - blue_in[8] + NET blue_in[8] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1281420 ) N ;
+        + PLACED ( 70 1721860 ) N ;
     - blue_in[9] + NET blue_in[9] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2202340 ) N ;
+        + PLACED ( 70 320460 ) N ;
     - blue_out[0] + NET blue_out[0] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 840980 ) N ;
+        + PLACED ( 2139930 840980 ) N ;
     - blue_out[1] + NET blue_out[1] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1161300 ) N ;
+        + PLACED ( 2139930 1481620 ) N ;
     - blue_out[2] + NET blue_out[2] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1521660 ) N ;
+        + PLACED ( 2139930 2002140 ) N ;
     - blue_out[3] + NET blue_out[3] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1561700 ) N ;
+        + PLACED ( 2139930 1841980 ) N ;
     - blue_out[4] + NET blue_out[4] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1481620 ) N ;
+        + PLACED ( 2139930 1641780 ) N ;
     - blue_out[5] + NET blue_out[5] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1441580 ) N ;
+        + PLACED ( 2139930 1361500 ) N ;
     - blue_out[6] + NET blue_out[6] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1121260 ) N ;
+        + PLACED ( 2139930 1321460 ) N ;
     - blue_out[7] + NET blue_out[7] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1681820 ) N ;
+        + PLACED ( 2139930 1561700 ) N ;
     - blue_out[8] + NET blue_out[8] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1721860 ) N ;
+        + PLACED ( 2139930 1882020 ) N ;
     - blue_out[9] + NET blue_out[9] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 961100 ) N ;
+        + PLACED ( 2139930 1241380 ) N ;
     - clk + NET clk + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 280420 ) N ;
+        + PLACED ( 70 280420 ) N ;
     - gam_blue_in[0] + NET gam_blue_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1201340 ) N ;
+        + PLACED ( 70 1761900 ) N ;
     - gam_blue_in[1] + NET gam_blue_in[1] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1601740 ) N ;
+        + PLACED ( 70 1801940 ) N ;
     - gam_blue_in[2] + NET gam_blue_in[2] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1161300 ) N ;
+        + PLACED ( 70 760900 ) N ;
     - gam_blue_in[3] + NET gam_blue_in[3] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1121260 ) N ;
+        + PLACED ( 70 1361500 ) N ;
     - gam_blue_in[4] + NET gam_blue_in[4] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2522660 ) N ;
+        + PLACED ( 70 1882020 ) N ;
     - gam_blue_in[5] + NET gam_blue_in[5] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1641780 ) N ;
+        + PLACED ( 70 1922060 ) N ;
     - gam_blue_in[6] + NET gam_blue_in[6] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2722860 ) N ;
+        + PLACED ( 70 680820 ) N ;
     - gam_blue_in[7] + NET gam_blue_in[7] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1001140 ) N ;
+        + PLACED ( 70 720860 ) N ;
     - gam_blue_in[8] + NET gam_blue_in[8] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 961100 ) N ;
+        + PLACED ( 70 2002140 ) N ;
     - gam_blue_in[9] + NET gam_blue_in[9] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2282420 ) N ;
+        + PLACED ( 70 2042180 ) N ;
     - gam_green_in[0] + NET gam_green_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 921060 ) N ;
+        + PLACED ( 70 2082220 ) N ;
     - gam_green_in[1] + NET gam_green_in[1] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 881020 ) N ;
+        + PLACED ( 70 1281420 ) N ;
     - gam_green_in[2] + NET gam_green_in[2] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 840980 ) N ;
+        + PLACED ( 70 440580 ) N ;
     - gam_green_in[3] + NET gam_green_in[3] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1721860 ) N ;
+        + PLACED ( 70 240380 ) N ;
     - gam_green_in[4] + NET gam_green_in[4] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 800940 ) N ;
+        + PLACED ( 70 2202340 ) N ;
     - gam_green_in[5] + NET gam_green_in[5] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2322460 ) N ;
+        + PLACED ( 70 1241380 ) N ;
     - gam_green_in[6] + NET gam_green_in[6] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 720860 ) N ;
+        + PLACED ( 70 2242380 ) N ;
     - gam_green_in[7] + NET gam_green_in[7] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1761900 ) N ;
+        + PLACED ( 70 1962100 ) N ;
     - gam_green_in[8] + NET gam_green_in[8] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2002140 ) N ;
+        + PLACED ( 70 640780 ) N ;
     - gam_green_in[9] + NET gam_green_in[9] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1441580 ) N ;
+        + PLACED ( 70 1201340 ) N ;
     - gam_red_in[0] + NET gam_red_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1922060 ) N ;
+        + PLACED ( 70 2322460 ) N ;
     - gam_red_in[1] + NET gam_red_in[1] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1801940 ) N ;
+        + PLACED ( 70 2362500 ) N ;
     - gam_red_in[2] + NET gam_red_in[2] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2562700 ) N ;
+        + PLACED ( 70 400540 ) N ;
     - gam_red_in[3] + NET gam_red_in[3] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 600740 ) N ;
+        + PLACED ( 70 1161300 ) N ;
     - gam_red_in[4] + NET gam_red_in[4] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2362500 ) N ;
+        + PLACED ( 70 2122260 ) N ;
     - gam_red_in[5] + NET gam_red_in[5] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1841980 ) N ;
+        + PLACED ( 70 1521660 ) N ;
     - gam_red_in[6] + NET gam_red_in[6] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 560700 ) N ;
+        + PLACED ( 70 1401540 ) N ;
     - gam_red_in[7] + NET gam_red_in[7] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1081220 ) N ;
+        + PLACED ( 70 1121260 ) N ;
     - gam_red_in[8] + NET gam_red_in[8] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 520660 ) N ;
+        + PLACED ( 70 600740 ) N ;
     - gam_red_in[9] + NET gam_red_in[9] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1882020 ) N ;
+        + PLACED ( 70 2522660 ) N ;
     - green_in[0] + NET green_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1241380 ) N ;
+        + PLACED ( 70 1681820 ) N ;
     - green_in[1] + NET green_in[1] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 480620 ) N ;
+        + PLACED ( 70 1081220 ) N ;
     - green_in[2] + NET green_in[2] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2602740 ) N ;
+        + PLACED ( 70 921060 ) N ;
     - green_in[3] + NET green_in[3] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2402540 ) N ;
+        + PLACED ( 70 1321460 ) N ;
     - green_in[4] + NET green_in[4] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2682820 ) N ;
+        + PLACED ( 70 2562700 ) N ;
     - green_in[5] + NET green_in[5] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2042180 ) N ;
+        + PLACED ( 70 1041180 ) N ;
     - green_in[6] + NET green_in[6] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1561700 ) N ;
+        + PLACED ( 70 2482620 ) N ;
     - green_in[7] + NET green_in[7] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1962100 ) N ;
+        + PLACED ( 70 2642780 ) N ;
     - green_in[8] + NET green_in[8] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 640780 ) N ;
+        + PLACED ( 70 560700 ) N ;
     - green_in[9] + NET green_in[9] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 760900 ) N ;
+        + PLACED ( 70 1001140 ) N ;
     - green_out[0] + NET green_out[0] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1761900 ) N ;
+        + PLACED ( 2139930 1201340 ) N ;
     - green_out[1] + NET green_out[1] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1081220 ) N ;
+        + PLACED ( 2139930 1601740 ) N ;
     - green_out[2] + NET green_out[2] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1841980 ) N ;
+        + PLACED ( 2139930 1161300 ) N ;
     - green_out[3] + NET green_out[3] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1361500 ) N ;
+        + PLACED ( 2139930 1922060 ) N ;
     - green_out[4] + NET green_out[4] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1882020 ) N ;
+        + PLACED ( 2139930 1081220 ) N ;
     - green_out[5] + NET green_out[5] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1922060 ) N ;
+        + PLACED ( 2139930 2042180 ) N ;
     - green_out[6] + NET green_out[6] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1962100 ) N ;
+        + PLACED ( 2139930 1441580 ) N ;
     - green_out[7] + NET green_out[7] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1321460 ) N ;
+        + PLACED ( 2139930 2122260 ) N ;
     - green_out[8] + NET green_out[8] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1041180 ) N ;
+        + PLACED ( 2139930 1041180 ) N ;
     - green_out[9] + NET green_out[9] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 881020 ) N ;
+        + PLACED ( 2139930 1681820 ) N ;
     - h_sync + NET h_sync + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 400540 ) N ;
+        + PLACED ( 70 2282420 ) N ;
     - h_sync_out + NET h_sync_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1641780 ) N ;
+        + PLACED ( 2139930 1281420 ) N ;
     - red_in[0] + NET red_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2762900 ) N ;
+        + PLACED ( 70 2722860 ) N ;
     - red_in[1] + NET red_in[1] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 440580 ) N ;
+        + PLACED ( 70 2402540 ) N ;
     - red_in[2] + NET red_in[2] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 320460 ) N ;
+        + PLACED ( 70 961100 ) N ;
     - red_in[3] + NET red_in[3] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2162300 ) N ;
+        + PLACED ( 70 2162300 ) N ;
     - red_in[4] + NET red_in[4] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2442580 ) N ;
+        + PLACED ( 70 1841980 ) N ;
     - red_in[5] + NET red_in[5] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 680820 ) N ;
+        + PLACED ( 70 2762900 ) N ;
     - red_in[6] + NET red_in[6] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1481620 ) N ;
+        + PLACED ( 70 360500 ) N ;
     - red_in[7] + NET red_in[7] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 240380 ) N ;
+        + PLACED ( 70 520660 ) N ;
     - red_in[8] + NET red_in[8] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2082220 ) N ;
+        + PLACED ( 70 2442580 ) N ;
     - red_in[9] + NET red_in[9] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 360500 ) N ;
+        + PLACED ( 70 2602740 ) N ;
     - red_out[0] + NET red_out[0] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1281420 ) N ;
+        + PLACED ( 2139930 961100 ) N ;
     - red_out[1] + NET red_out[1] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 2002140 ) N ;
+        + PLACED ( 2139930 1401540 ) N ;
     - red_out[2] + NET red_out[2] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 921060 ) N ;
+        + PLACED ( 2139930 1721860 ) N ;
     - red_out[3] + NET red_out[3] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1201340 ) N ;
+        + PLACED ( 2139930 1962100 ) N ;
     - red_out[4] + NET red_out[4] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1241380 ) N ;
+        + PLACED ( 2139930 1521660 ) N ;
     - red_out[5] + NET red_out[5] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 2082220 ) N ;
+        + PLACED ( 2139930 921060 ) N ;
     - red_out[6] + NET red_out[6] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 2122260 ) N ;
+        + PLACED ( 2139930 1761900 ) N ;
     - red_out[7] + NET red_out[7] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1401540 ) N ;
+        + PLACED ( 2139930 881020 ) N ;
     - red_out[8] + NET red_out[8] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1001140 ) N ;
+        + PLACED ( 2139930 1121260 ) N ;
     - red_out[9] + NET red_out[9] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 2042180 ) N ;
+        + PLACED ( 2139930 1001140 ) N ;
     - resetn + NET resetn + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1041180 ) N ;
+        + PLACED ( 70 881020 ) N ;
     - v_sync + NET v_sync + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 1401540 ) N ;
+        + PLACED ( 70 800940 ) N ;
     - v_sync_out + NET v_sync_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1601740 ) N ;
+        + PLACED ( 2139930 1801940 ) N ;
     - valid_in + NET valid_in + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2139930 2122260 ) N ;
+        + PLACED ( 70 2682820 ) N ;
     - valid_out + NET valid_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 70 1801940 ) N ;
+        + PLACED ( 2139930 2082220 ) N ;
 END PINS
 SPECIALNETS 2 ;
     - VDD ( PIN VDD ) ( * VDD ) + USE POWER

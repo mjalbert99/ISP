@@ -1,0 +1,22 @@
+
+42. Printing statistics.
+
+=== D_CPU ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       26 wires
+      107 wire bits
+       26 public wires
+      107 public wire bits
+       12 ports
+       48 port bits
+        3 cells
+        1   BNR
+        1   DEMOSAIC
+        1   WBG
+
+   Area for cell type \BNR is unknown!
+   Area for cell type \WBG is unknown!
+   Area for cell type \DEMOSAIC is unknown!
+

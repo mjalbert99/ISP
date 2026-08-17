@@ -1,0 +1,28 @@
+strash
+&get -n
+&fraig -x
+&put
+scorr
+dc2
+dretime
+retime -o 
+
+# Timing-driven logic restructuring
+strash
+&get -n
+&dch -f
+&nf
+&put
+
+# Delay-targeted mapping (Forces delay focus using your 3.0ns period)
+map -D 3.0 -A 0.0 -B 1.0
+
+# Paced buffering and structural gate sizing
+buffer -N 5
+upsize
+dnsize
+
+# Final gate sizing pass with physical footprint context
+topo
+upsize
+dnsize

@@ -1,0 +1,20 @@
+
+26. Printing statistics.
+
+=== C_CPU ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       27 wires
+      222 wire bits
+       27 public wires
+      222 public wire bits
+       21 ports
+      189 port bits
+        2 cells
+        1   CCM
+        1   GAM
+
+   Area for cell type \CCM is unknown!
+   Area for cell type \GAM is unknown!
+
