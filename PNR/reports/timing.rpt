@@ -1,5 +1,5 @@
-Startpoint: row1[21] (input port clocked by clk)
-Endpoint: _29351_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: row2[15] (input port clocked by clk)
+Endpoint: c_cpu (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: min
 
@@ -7,162 +7,116 @@ Path Type: min
 -----------------------------------------------------------------------
                    0.00    0.00   clock clk (rise edge)
                    0.00    0.00   clock network delay (propagated)
-                   0.15    0.15 ^ input external delay
-  20.74    0.00    0.00    0.15 ^ row1[21] (in)
-           0.01    0.00    0.15 ^ wire245/A (BUF_X4)
-   1.89    0.00    0.01    0.16 ^ wire245/Z (BUF_X4)
-           0.00    0.00    0.16 ^ _26140_/A (MUX2_X1)
-   1.47    0.01    0.02    0.19 ^ _26140_/Z (MUX2_X1)
-           0.01    0.00    0.19 ^ _29351_/D (DFFR_X2)
-                           0.19   data arrival time
+                   0.15    0.15 v input external delay
+   1.91    0.00    0.00    0.15 v row2[15] (in)
+           0.00    0.00    0.15 v hold4273/A (CLKBUF_X1)
+   0.78    0.00    0.01    0.16 v hold4273/Z (CLKBUF_X1)
+           0.00    0.00    0.16 v hold2397/A (CLKBUF_X1)
+   0.79    0.00    0.01    0.18 v hold2397/Z (CLKBUF_X1)
+           0.00    0.00    0.18 v hold1173/A (CLKBUF_X1)
+   0.79    0.00    0.01    0.19 v hold1173/Z (CLKBUF_X1)
+           0.00    0.00    0.19 v hold2398/A (CLKBUF_X1)
+   0.88    0.00    0.01    0.20 v hold2398/Z (CLKBUF_X1)
+           0.00    0.00    0.20 v hold571/A (CLKBUF_X1)
+   1.09    0.00    0.01    0.22 v hold571/Z (CLKBUF_X1)
+           0.00    0.00    0.22 v hold2399/A (CLKBUF_X1)
+   0.99    0.00    0.01    0.23 v hold2399/Z (CLKBUF_X1)
+           0.00    0.00    0.23 v hold1174/A (CLKBUF_X1)
+   0.99    0.00    0.01    0.25 v hold1174/Z (CLKBUF_X1)
+           0.00    0.00    0.25 v hold2400/A (CLKBUF_X1)
+   1.03    0.00    0.01    0.26 v hold2400/Z (CLKBUF_X1)
+           0.00    0.00    0.26 v hold267/A (CLKBUF_X1)
+   1.12    0.00    0.01    0.27 v hold267/Z (CLKBUF_X1)
+           0.00    0.00    0.27 v hold2401/A (CLKBUF_X1)
+   0.98    0.00    0.01    0.29 v hold2401/Z (CLKBUF_X1)
+           0.00    0.00    0.29 v hold1175/A (CLKBUF_X1)
+   1.02    0.00    0.01    0.30 v hold1175/Z (CLKBUF_X1)
+           0.00    0.00    0.30 v hold2402/A (CLKBUF_X1)
+   1.02    0.00    0.01    0.32 v hold2402/Z (CLKBUF_X1)
+           0.00    0.00    0.32 v hold572/A (CLKBUF_X1)
+   1.07    0.00    0.01    0.33 v hold572/Z (CLKBUF_X1)
+           0.00    0.00    0.33 v hold2403/A (CLKBUF_X1)
+   1.00    0.00    0.01    0.35 v hold2403/Z (CLKBUF_X1)
+           0.00    0.00    0.35 v hold1176/A (CLKBUF_X1)
+   0.97    0.00    0.01    0.36 v hold1176/Z (CLKBUF_X1)
+           0.00    0.00    0.36 v hold2404/A (CLKBUF_X1)
+   1.04    0.00    0.01    0.37 v hold2404/Z (CLKBUF_X1)
+           0.00    0.00    0.37 v hold118/A (CLKBUF_X1)
+   1.13    0.00    0.01    0.39 v hold118/Z (CLKBUF_X1)
+           0.00    0.00    0.39 v hold2405/A (CLKBUF_X1)
+   0.98    0.00    0.01    0.40 v hold2405/Z (CLKBUF_X1)
+           0.00    0.00    0.40 v hold1177/A (CLKBUF_X1)
+   1.03    0.00    0.01    0.42 v hold1177/Z (CLKBUF_X1)
+           0.00    0.00    0.42 v hold2406/A (CLKBUF_X1)
+   1.02    0.00    0.01    0.43 v hold2406/Z (CLKBUF_X1)
+           0.00    0.00    0.43 v hold573/A (CLKBUF_X1)
+   1.08    0.00    0.01    0.44 v hold573/Z (CLKBUF_X1)
+           0.00    0.00    0.44 v hold2407/A (CLKBUF_X1)
+   1.00    0.00    0.01    0.46 v hold2407/Z (CLKBUF_X1)
+           0.00    0.00    0.46 v hold1178/A (CLKBUF_X1)
+   0.98    0.00    0.01    0.47 v hold1178/Z (CLKBUF_X1)
+           0.00    0.00    0.47 v hold2408/A (CLKBUF_X1)
+   1.03    0.00    0.01    0.49 v hold2408/Z (CLKBUF_X1)
+           0.00    0.00    0.49 v hold268/A (CLKBUF_X1)
+   1.11    0.00    0.01    0.50 v hold268/Z (CLKBUF_X1)
+           0.00    0.00    0.50 v hold2409/A (CLKBUF_X1)
+   0.99    0.00    0.01    0.52 v hold2409/Z (CLKBUF_X1)
+           0.00    0.00    0.52 v hold1179/A (CLKBUF_X1)
+   1.01    0.00    0.01    0.53 v hold1179/Z (CLKBUF_X1)
+           0.00    0.00    0.53 v hold2410/A (CLKBUF_X1)
+   1.03    0.00    0.01    0.54 v hold2410/Z (CLKBUF_X1)
+           0.00    0.00    0.54 v hold574/A (CLKBUF_X1)
+   1.06    0.00    0.01    0.56 v hold574/Z (CLKBUF_X1)
+           0.00    0.00    0.56 v hold2411/A (CLKBUF_X1)
+   1.01    0.00    0.01    0.57 v hold2411/Z (CLKBUF_X1)
+           0.00    0.00    0.57 v hold1180/A (CLKBUF_X1)
+   0.97    0.00    0.01    0.59 v hold1180/Z (CLKBUF_X1)
+           0.00    0.00    0.59 v hold2412/A (CLKBUF_X1)
+   2.26    0.01    0.02    0.60 v hold2412/Z (CLKBUF_X1)
+           0.01    0.00    0.60 v c_cpu/row2[15] (C_CPU)
+                           0.60   data arrival time
 
                    0.00    0.00   clock clk (rise edge)
-                   1.48    1.48   clock network delay (propagated)
-                   0.05    1.53   clock uncertainty
-                   0.00    1.53   clock reconvergence pessimism
-                           1.53 ^ _29351_/CK (DFFR_X2)
-                   0.01    1.54   library hold time
-                           1.54   data required time
+                   0.49    0.49   clock network delay (propagated)
+                   0.05    0.54   clock uncertainty
+                   0.00    0.54   clock reconvergence pessimism
+                           0.54 ^ c_cpu/clk (C_CPU)
+                   0.07    0.60   library hold time
+                           0.60   data required time
 -----------------------------------------------------------------------
-                           1.54   data required time
-                          -0.19   data arrival time
+                           0.60   data required time
+                          -0.60   data arrival time
 -----------------------------------------------------------------------
-                          -1.35   slack (VIOLATED)
+                           0.00   slack (MET)
 
 
-Startpoint: _29272_ (rising edge-triggered flip-flop clocked by clk)
-Endpoint: _29348_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: d_cpu (rising edge-triggered flip-flop clocked by clk)
+Endpoint: c_cpu (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: max
 
     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------
                    0.00    0.00   clock clk (rise edge)
-                   1.46    1.46   clock network delay (propagated)
-           0.07    0.00    1.46 ^ _29272_/CK (DFFR_X2)
-  18.09    0.01    0.13    1.59 v _29272_/Q (DFFR_X2)
-           0.01    0.00    1.60 v place8217/A (BUF_X8)
- 184.01    0.01    0.05    1.64 v place8217/Z (BUF_X8)
-           0.50    0.44    2.08 v place8216/A (BUF_X8)
-  10.11    0.02    0.14    2.23 v place8216/Z (BUF_X8)
-           0.02    0.00    2.23 v place8215/A (BUF_X8)
-   7.48    0.01    0.03    2.26 v place8215/Z (BUF_X8)
-           0.01    0.00    2.26 v place8214/A (BUF_X8)
-   8.37    0.00    0.02    2.29 v place8214/Z (BUF_X8)
-           0.00    0.00    2.29 v place8213/A (BUF_X8)
-  13.10    0.01    0.02    2.31 v place8213/Z (BUF_X8)
-           0.01    0.00    2.31 v place8212/A (BUF_X16)
- 141.27    0.01    0.03    2.34 v place8212/Z (BUF_X16)
-           0.28    0.25    2.59 v place8211/A (BUF_X1)
-   5.38    0.02    0.12    2.70 v place8211/Z (BUF_X1)
-           0.02    0.00    2.71 v _26364_/A2 (NAND2_X1)
-   7.72    0.02    0.04    2.74 ^ _26364_/ZN (NAND2_X1)
-           0.02    0.00    2.74 ^ _26402_/A (XOR2_X1)
-   2.14    0.02    0.06    2.80 ^ _26402_/Z (XOR2_X1)
-           0.02    0.00    2.80 ^ place6081/A (BUF_X2)
-   3.82    0.01    0.03    2.83 ^ place6081/Z (BUF_X2)
-           0.01    0.00    2.83 ^ _26438_/A (AOI21_X1)
-   1.93    0.02    0.01    2.84 v _26438_/ZN (AOI21_X1)
-           0.02    0.00    2.84 v place5687/A (BUF_X2)
-   2.34    0.01    0.03    2.87 v place5687/Z (BUF_X2)
-           0.01    0.00    2.87 v _26439_/A2 (NOR2_X1)
-  14.15    0.07    0.10    2.97 ^ _26439_/ZN (NOR2_X1)
-           0.07    0.00    2.97 ^ _26442_/B (XNOR2_X1)
-   5.83    0.04    0.07    3.04 ^ _26442_/ZN (XNOR2_X1)
-           0.04    0.00    3.04 ^ _26443_/B (XNOR2_X1)
-   5.11    0.03    0.06    3.10 ^ _26443_/ZN (XNOR2_X1)
-           0.03    0.00    3.10 ^ _26485_/A (XNOR2_X1)
-  13.84    0.07    0.08    3.18 ^ _26485_/ZN (XNOR2_X1)
-           0.07    0.00    3.18 ^ _26492_/B (XNOR2_X1)
-   5.23    0.03    0.06    3.24 ^ _26492_/ZN (XNOR2_X1)
-           0.03    0.00    3.24 ^ place4211/A (BUF_X4)
-   3.26    0.01    0.03    3.27 ^ place4211/Z (BUF_X4)
-           0.01    0.00    3.27 ^ _26524_/B (XNOR2_X1)
-   5.63    0.04    0.05    3.32 ^ _26524_/ZN (XNOR2_X1)
-           0.04    0.00    3.32 ^ _26526_/B (XNOR2_X1)
-   4.00    0.03    0.05    3.38 ^ _26526_/ZN (XNOR2_X1)
-           0.03    0.00    3.38 ^ place3728/A (BUF_X4)
-   5.10    0.01    0.03    3.40 ^ place3728/Z (BUF_X4)
-           0.01    0.00    3.40 ^ _26556_/B (XOR2_X1)
-  12.53    0.07    0.10    3.51 ^ _26556_/Z (XOR2_X1)
-           0.07    0.00    3.51 ^ place3512/A (BUF_X2)
-  14.77    0.02    0.05    3.56 ^ place3512/Z (BUF_X2)
-           0.02    0.00    3.56 ^ _26629_/B (XOR2_X1)
-   3.97    0.01    0.02    3.59 v _26629_/Z (XOR2_X1)
-           0.01    0.00    3.59 v _26630_/A2 (NAND2_X1)
-  13.91    0.04    0.05    3.64 ^ _26630_/ZN (NAND2_X1)
-           0.04    0.00    3.64 ^ place3195/A (BUF_X4)
-   6.96    0.01    0.03    3.67 ^ place3195/Z (BUF_X4)
-           0.01    0.00    3.67 ^ _26633_/B1 (AOI21_X1)
-   3.63    0.02    0.02    3.69 v _26633_/ZN (AOI21_X1)
-           0.02    0.00    3.69 v place3050/A (BUF_X4)
-   8.41    0.01    0.04    3.72 v place3050/Z (BUF_X4)
-           0.01    0.00    3.73 v _26636_/B1 (OAI21_X1)
-   3.99    0.03    0.04    3.77 ^ _26636_/ZN (OAI21_X1)
-           0.03    0.00    3.77 ^ place2950/A (BUF_X4)
-   7.13    0.01    0.03    3.79 ^ place2950/Z (BUF_X4)
-           0.01    0.00    3.79 ^ _26637_/A2 (NAND2_X2)
-  62.07    0.04    0.06    3.85 v _26637_/ZN (NAND2_X2)
-           0.08    0.06    3.91 v place2877/A (BUF_X8)
-   7.65    0.01    0.05    3.97 v place2877/Z (BUF_X8)
-           0.01    0.00    3.97 v place2876/A (BUF_X8)
-   7.11    0.00    0.02    3.99 v place2876/Z (BUF_X8)
-           0.00    0.00    3.99 v place2875/A (BUF_X8)
-   5.13    0.00    0.02    4.01 v place2875/Z (BUF_X8)
-           0.00    0.00    4.01 v _26639_/A1 (NAND2_X1)
-   9.32    0.03    0.03    4.05 ^ _26639_/ZN (NAND2_X1)
-           0.03    0.00    4.05 ^ place2822/A (BUF_X4)
-  17.49    0.01    0.03    4.08 ^ place2822/Z (BUF_X4)
-           0.01    0.01    4.09 ^ _26641_/B1 (AOI21_X1)
-   4.19    0.01    0.02    4.11 v _26641_/ZN (AOI21_X1)
-           0.01    0.00    4.11 v _26642_/A2 (OR2_X1)
-   8.28    0.02    0.07    4.18 v _26642_/ZN (OR2_X1)
-           0.02    0.00    4.18 v _26644_/A1 (NAND2_X1)
-   4.03    0.01    0.03    4.20 ^ _26644_/ZN (NAND2_X1)
-           0.01    0.00    4.20 ^ _26645_/B2 (AOI21_X1)
-  20.01    0.04    0.06    4.26 v _26645_/ZN (AOI21_X1)
-           0.04    0.01    4.27 v _26647_/B1 (OAI21_X1)
-   7.90    0.05    0.08    4.34 ^ _26647_/ZN (OAI21_X1)
-           0.05    0.00    4.35 ^ place2577/A (BUF_X4)
-   8.60    0.01    0.03    4.38 ^ place2577/Z (BUF_X4)
-           0.01    0.00    4.38 ^ _26649_/B1 (AOI21_X1)
-   3.83    0.02    0.02    4.40 v _26649_/ZN (AOI21_X1)
-           0.02    0.00    4.40 v place2532/A (BUF_X4)
-  12.35    0.01    0.03    4.43 v place2532/Z (BUF_X4)
-           0.01    0.00    4.43 v _26650_/A (AOI21_X4)
-  52.14    0.07    0.09    4.52 ^ _26650_/ZN (AOI21_X4)
-           0.08    0.05    4.57 ^ place2494/A (BUF_X8)
-   5.95    0.01    0.03    4.60 ^ place2494/Z (BUF_X8)
-           0.01    0.00    4.60 ^ _26652_/A1 (NOR2_X1)
-   3.34    0.01    0.01    4.61 v _26652_/ZN (NOR2_X1)
-           0.01    0.00    4.61 v place2451/A (BUF_X4)
-   2.07    0.00    0.03    4.63 v place2451/Z (BUF_X4)
-           0.00    0.00    4.63 v _26653_/A (AOI21_X1)
-  12.18    0.07    0.10    4.73 ^ _26653_/ZN (AOI21_X1)
-           0.07    0.00    4.73 ^ place2429/A (BUF_X4)
-  34.51    0.02    0.04    4.78 ^ place2429/Z (BUF_X4)
-           0.03    0.02    4.80 ^ _26655_/B2 (OAI21_X1)
-   6.04    0.02    0.03    4.83 v _26655_/ZN (OAI21_X1)
-           0.02    0.00    4.83 v place2414/A (BUF_X4)
-  35.75    0.01    0.04    4.87 v place2414/Z (BUF_X4)
-           0.01    0.01    4.88 v _26656_/B2 (OAI22_X1)
-  29.87    0.16    0.20    5.08 ^ _26656_/ZN (OAI22_X1)
-           0.16    0.02    5.09 ^ _29348_/D (DFFR_X1)
-                           5.09   data arrival time
+                   0.62    0.62   clock network delay (propagated)
+           0.15    0.00    0.62 ^ d_cpu/clk (D_CPU)
+ 161.31    0.35    1.78    2.41 ^ d_cpu/h_sync_out (D_CPU)
+           0.35    0.05    2.45 ^ c_cpu/h_sync (C_CPU)
+                           2.45   data arrival time
 
                    3.00    3.00   clock clk (rise edge)
-                   0.72    3.72   clock network delay (propagated)
-                  -0.15    3.57   clock uncertainty
-                   0.24    3.81   clock reconvergence pessimism
-                           3.81 ^ _29348_/CK (DFFR_X1)
-                  -0.05    3.77   library setup time
-                           3.77   data required time
+                   0.29    3.29   clock network delay (propagated)
+                  -0.15    3.14   clock uncertainty
+                   0.07    3.21   clock reconvergence pessimism
+                           3.21 ^ c_cpu/clk (C_CPU)
+                  -0.27    2.94   library setup time
+                           2.94   data required time
 -----------------------------------------------------------------------
-                           3.77   data required time
-                          -5.09   data arrival time
+                           2.94   data required time
+                          -2.45   data arrival time
 -----------------------------------------------------------------------
-                          -1.33   slack (VIOLATED)
+                           0.49   slack (MET)
 
 
-worst slack min -1.35
-worst slack max -1.33
+worst slack min 0.00
+worst slack max 0.49

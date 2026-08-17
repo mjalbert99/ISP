@@ -827,7 +827,7 @@ PINS 30 ;
     - h_sync_out + NET h_dpc_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2537830 1839930 ) N ;
+        + PLACED ( 1450270 1839930 ) N ;
     - pixel_in[0] + NET pixel_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
@@ -871,43 +871,43 @@ PINS 30 ;
     - pixel_out[0] + NET pixel_dpc_out[0] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2618390 1839930 ) N ;
+        + PLACED ( 1530830 1839930 ) N ;
     - pixel_out[1] + NET pixel_dpc_out[1] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2980910 1839930 ) N ;
+        + PLACED ( 1893350 1839930 ) N ;
     - pixel_out[2] + NET pixel_dpc_out[2] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2940630 1839930 ) N ;
+        + PLACED ( 1853070 1839930 ) N ;
     - pixel_out[3] + NET pixel_dpc_out[3] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2739230 1839930 ) N ;
+        + PLACED ( 1651670 1839930 ) N ;
     - pixel_out[4] + NET pixel_dpc_out[4] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2578110 1839930 ) N ;
+        + PLACED ( 1490550 1839930 ) N ;
     - pixel_out[5] + NET pixel_dpc_out[5] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 3021190 1839930 ) N ;
+        + PLACED ( 1933630 1839930 ) N ;
     - pixel_out[6] + NET pixel_dpc_out[6] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2698950 1839930 ) N ;
+        + PLACED ( 1611390 1839930 ) N ;
     - pixel_out[7] + NET pixel_dpc_out[7] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2779510 1839930 ) N ;
+        + PLACED ( 1691950 1839930 ) N ;
     - pixel_out[8] + NET pixel_dpc_out[8] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2860070 1839930 ) N ;
+        + PLACED ( 1772510 1839930 ) N ;
     - pixel_out[9] + NET pixel_dpc_out[9] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2658670 1839930 ) N ;
+        + PLACED ( 1571110 1839930 ) N ;
     - resetn + NET resetn + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
@@ -919,7 +919,7 @@ PINS 30 ;
     - v_sync_out + NET v_dpc_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2819790 1839930 ) N ;
+        + PLACED ( 1732230 1839930 ) N ;
     - valid_in + NET valid_in + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
@@ -927,7 +927,7 @@ PINS 30 ;
     - valid_out + NET valid_dpc_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2900350 1839930 ) N ;
+        + PLACED ( 1812790 1839930 ) N ;
 END PINS
 SPECIALNETS 2 ;
     - VDD ( PIN VDD ) ( lsc VDD ) ( dpc VDD ) ( blc VDD ) + USE POWER

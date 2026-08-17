@@ -27195,7 +27195,7 @@ PINS 30 ;
     - h_sync_out + NET h_dpc_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2537830 1839930 ) N ;
+        + PLACED ( 1450270 1839930 ) N ;
     - pixel_in[0] + NET pixel_in[0] + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
@@ -27239,43 +27239,43 @@ PINS 30 ;
     - pixel_out[0] + NET pixel_dpc_out[0] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2618390 1839930 ) N ;
+        + PLACED ( 1530830 1839930 ) N ;
     - pixel_out[1] + NET pixel_dpc_out[1] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2980910 1839930 ) N ;
+        + PLACED ( 1893350 1839930 ) N ;
     - pixel_out[2] + NET pixel_dpc_out[2] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2940630 1839930 ) N ;
+        + PLACED ( 1853070 1839930 ) N ;
     - pixel_out[3] + NET pixel_dpc_out[3] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2739230 1839930 ) N ;
+        + PLACED ( 1651670 1839930 ) N ;
     - pixel_out[4] + NET pixel_dpc_out[4] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2578110 1839930 ) N ;
+        + PLACED ( 1490550 1839930 ) N ;
     - pixel_out[5] + NET pixel_dpc_out[5] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 3021190 1839930 ) N ;
+        + PLACED ( 1933630 1839930 ) N ;
     - pixel_out[6] + NET pixel_dpc_out[6] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2698950 1839930 ) N ;
+        + PLACED ( 1611390 1839930 ) N ;
     - pixel_out[7] + NET pixel_dpc_out[7] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2779510 1839930 ) N ;
+        + PLACED ( 1691950 1839930 ) N ;
     - pixel_out[8] + NET pixel_dpc_out[8] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2860070 1839930 ) N ;
+        + PLACED ( 1772510 1839930 ) N ;
     - pixel_out[9] + NET pixel_dpc_out[9] + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2658670 1839930 ) N ;
+        + PLACED ( 1571110 1839930 ) N ;
     - resetn + NET resetn + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
@@ -27287,7 +27287,7 @@ PINS 30 ;
     - v_sync_out + NET v_dpc_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2819790 1839930 ) N ;
+        + PLACED ( 1732230 1839930 ) N ;
     - valid_in + NET valid_in + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER metal3 ( -70 -70 ) ( 70 70 )
@@ -27295,7 +27295,7 @@ PINS 30 ;
     - valid_out + NET valid_dpc_out + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER metal2 ( -70 -70 ) ( 70 70 )
-        + PLACED ( 2900350 1839930 ) N ;
+        + PLACED ( 1812790 1839930 ) N ;
 END PINS
 SPECIALNETS 2 ;
     - VDD ( PIN VDD ) ( lsc VDD ) ( dpc VDD ) ( blc VDD ) + USE POWER
@@ -47902,14 +47902,14 @@ NETS 125 ;
       NEW metal3 ( 173790 978740 ) via3_2
       NEW metal3 ( 173790 940660 ) via3_2 ;
     - h_dpc_out ( PIN h_sync_out ) ( dpc h_sync_out ) + USE SIGNAL
-      + ROUTED metal3 ( 3033930 671020 0 ) ( * 671300 )
+      + ROUTED metal2 ( 1450270 1839740 ) ( * 1839930 0 )
+      NEW metal3 ( 3033930 671020 0 ) ( * 671300 )
       NEW metal3 ( 3029230 671300 ) ( 3033930 * )
       NEW metal4 ( 3029230 671300 ) ( * 1839740 )
-      NEW metal2 ( 2537830 1839740 ) ( * 1839930 0 )
-      NEW metal3 ( 2537830 1839740 ) ( 3029230 * )
+      NEW metal3 ( 1450270 1839740 ) ( 3029230 * )
+      NEW metal2 ( 1450270 1839740 ) via2_5
       NEW metal3 ( 3029230 1839740 ) via3_2
-      NEW metal3 ( 3029230 671300 ) via3_2
-      NEW metal2 ( 2537830 1839740 ) via2_5 ;
+      NEW metal3 ( 3029230 671300 ) via3_2 ;
     - h_lsc_dpc ( lsc h_sync_out ) ( dpc h_sync ) + USE SIGNAL
       + ROUTED metal3 ( 393650 1001140 0 ) ( 412910 * )
       NEW metal4 ( 412910 1001140 ) ( * 1752100 )
@@ -48445,119 +48445,119 @@ NETS 125 ;
       NEW metal3 ( 140750 947380 ) via3_2
       NEW metal3 ( 140750 972020 ) via3_2 ;
     - pixel_dpc_out[0] ( PIN pixel_out[0] ) ( dpc pixel_out[0] ) + USE SIGNAL
-      + ROUTED metal2 ( 2972550 1786820 ) ( * 1838900 )
+      + ROUTED metal2 ( 1530830 1839180 ) ( * 1839930 0 )
       NEW metal3 ( 3033930 911260 0 ) ( * 911540 )
-      NEW metal3 ( 3032590 911540 ) ( 3033930 * )
-      NEW metal4 ( 3032590 911540 ) ( * 1786820 )
-      NEW metal2 ( 2618390 1838900 ) ( * 1839930 0 )
-      NEW metal3 ( 2618390 1838900 ) ( 2972550 * )
-      NEW metal3 ( 2972550 1786820 ) ( 3032590 * )
-      NEW metal2 ( 2972550 1838900 ) via2_5
-      NEW metal2 ( 2972550 1786820 ) via2_5
-      NEW metal3 ( 3032590 911540 ) via3_2
-      NEW metal3 ( 3032590 1786820 ) via3_2
-      NEW metal2 ( 2618390 1838900 ) via2_5 ;
+      NEW metal3 ( 3033710 911540 ) ( 3033930 * )
+      NEW metal4 ( 3033710 911540 ) ( * 1839180 )
+      NEW metal3 ( 1530830 1839180 ) ( 3033710 * )
+      NEW metal2 ( 1530830 1839180 ) via2_5
+      NEW metal3 ( 3033710 1839180 ) via3_2
+      NEW metal3 ( 3033710 911540 ) via3_2 ;
     - pixel_dpc_out[1] ( PIN pixel_out[1] ) ( dpc pixel_out[1] ) + USE SIGNAL
-      + ROUTED metal2 ( 2980910 1838900 ) ( * 1839930 0 )
-      NEW metal3 ( 3033930 871220 0 ) ( * 871500 )
-      NEW metal3 ( 3033710 871500 ) ( 3033930 * )
-      NEW metal4 ( 3033710 871500 ) ( * 1838900 )
-      NEW metal3 ( 2980910 1838900 ) ( 3033710 * )
-      NEW metal2 ( 2980910 1838900 ) via2_5
-      NEW metal3 ( 3033710 871500 ) via3_2
-      NEW metal3 ( 3033710 1838900 ) via3_2 ;
+      + ROUTED metal3 ( 3033930 871220 0 ) ( * 871500 )
+      NEW metal3 ( 3033150 871500 ) ( 3033930 * )
+      NEW metal4 ( 3033150 871500 ) ( * 1786820 )
+      NEW metal2 ( 1893350 1836380 ) ( * 1839930 0 )
+      NEW metal3 ( 1893350 1836380 ) ( 2431050 * )
+      NEW metal2 ( 2431050 1786820 ) ( * 1836380 )
+      NEW metal3 ( 2431050 1786820 ) ( 3033150 * )
+      NEW metal3 ( 3033150 871500 ) via3_2
+      NEW metal3 ( 3033150 1786820 ) via3_2
+      NEW metal2 ( 1893350 1836380 ) via2_5
+      NEW metal2 ( 2431050 1836380 ) via2_5
+      NEW metal2 ( 2431050 1786820 ) via2_5 ;
     - pixel_dpc_out[2] ( PIN pixel_out[2] ) ( dpc pixel_out[2] ) + USE SIGNAL
-      + ROUTED metal3 ( 3033930 1071140 ) ( * 1071420 0 )
-      NEW metal3 ( 3032970 1071140 ) ( 3033930 * )
-      NEW metal3 ( 3031470 1162700 ) ( 3032970 * )
-      NEW metal2 ( 3032970 1071140 ) ( * 1162700 )
+      + ROUTED metal2 ( 1853070 1836940 ) ( * 1839930 0 )
+      NEW metal3 ( 3033930 1071140 ) ( * 1071420 0 )
+      NEW metal3 ( 3032590 1071140 ) ( 3033930 * )
+      NEW metal3 ( 3031470 1162700 ) ( 3032590 * )
+      NEW metal2 ( 3032590 1071140 ) ( * 1162700 )
       NEW metal4 ( 3031470 1162700 ) ( * 1836940 )
-      NEW metal2 ( 2940630 1836940 ) ( * 1839930 0 )
-      NEW metal3 ( 2940630 1836940 ) ( 3031470 * )
+      NEW metal3 ( 1853070 1836940 ) ( 3031470 * )
+      NEW metal2 ( 1853070 1836940 ) via2_5
       NEW metal3 ( 3031470 1836940 ) via3_2
-      NEW metal2 ( 3032970 1071140 ) via2_5
+      NEW metal2 ( 3032590 1071140 ) via2_5
       NEW metal3 ( 3031470 1162700 ) via3_2
-      NEW metal2 ( 3032970 1162700 ) via2_5
-      NEW metal2 ( 2940630 1836940 ) via2_5 ;
+      NEW metal2 ( 3032590 1162700 ) via2_5 ;
     - pixel_dpc_out[3] ( PIN pixel_out[3] ) ( dpc pixel_out[3] ) + USE SIGNAL
-      + ROUTED metal2 ( 2739230 1838340 ) ( * 1839930 0 )
-      NEW metal3 ( 3024190 1458940 ) ( 3034110 * )
+      + ROUTED metal3 ( 3024190 1458940 ) ( 3034110 * )
       NEW metal3 ( 3033930 1153180 ) ( 3034110 * )
       NEW metal3 ( 3033930 1151500 0 ) ( * 1153180 )
       NEW metal2 ( 3034110 1153180 ) ( * 1458940 )
       NEW metal4 ( 3024190 1458940 ) ( * 1838340 )
-      NEW metal3 ( 2739230 1838340 ) ( 3024190 * )
-      NEW metal2 ( 2739230 1838340 ) via2_5
+      NEW metal2 ( 1651670 1838340 ) ( * 1839930 0 )
+      NEW metal3 ( 1651670 1838340 ) ( 3024190 * )
       NEW metal3 ( 3024190 1458940 ) via3_2
       NEW metal2 ( 3034110 1458940 ) via2_5
       NEW metal3 ( 3024190 1838340 ) via3_2
-      NEW metal2 ( 3034110 1153180 ) via2_5 ;
+      NEW metal2 ( 3034110 1153180 ) via2_5
+      NEW metal2 ( 1651670 1838340 ) via2_5 ;
     - pixel_dpc_out[4] ( PIN pixel_out[4] ) ( dpc pixel_out[4] ) + USE SIGNAL
-      + ROUTED metal2 ( 2578110 1839460 ) ( * 1839930 0 )
-      NEW metal3 ( 3033930 832020 ) ( 3034110 * )
+      + ROUTED metal3 ( 3033930 832020 ) ( 3034110 * )
       NEW metal3 ( 3033930 831180 0 ) ( * 832020 )
       NEW metal2 ( 3034110 832020 ) ( * 1040060 )
+      NEW metal2 ( 1490550 1839460 ) ( * 1839930 0 )
       NEW metal3 ( 3018030 1040060 ) ( 3034110 * )
-      NEW metal3 ( 2578110 1839460 ) ( 3018030 * )
+      NEW metal3 ( 1490550 1839460 ) ( 3018030 * )
       NEW metal4 ( 3018030 1040060 ) ( * 1839460 )
-      NEW metal2 ( 2578110 1839460 ) via2_5
       NEW metal2 ( 3034110 1040060 ) via2_5
       NEW metal2 ( 3034110 832020 ) via2_5
+      NEW metal2 ( 1490550 1839460 ) via2_5
       NEW metal3 ( 3018030 1040060 ) via3_2
       NEW metal3 ( 3018030 1839460 ) via3_2 ;
     - pixel_dpc_out[5] ( PIN pixel_out[5] ) ( dpc pixel_out[5] ) + USE SIGNAL
-      + ROUTED metal2 ( 3021190 1839460 ) ( * 1839930 0 )
-      NEW metal3 ( 3021190 1839460 ) ( 3030350 * )
+      + ROUTED metal2 ( 1933630 1836660 ) ( * 1839930 0 )
       NEW metal3 ( 3033930 751100 0 ) ( * 751380 )
       NEW metal3 ( 3030350 751380 ) ( 3033930 * )
-      NEW metal4 ( 3030350 751380 ) ( * 1839460 )
-      NEW metal2 ( 3021190 1839460 ) via2_5
-      NEW metal3 ( 3030350 1839460 ) via3_2
+      NEW metal4 ( 3030350 751380 ) ( * 1836660 )
+      NEW metal3 ( 1933630 1836660 ) ( 3030350 * )
+      NEW metal2 ( 1933630 1836660 ) via2_5
+      NEW metal3 ( 3030350 1836660 ) via3_2
       NEW metal3 ( 3030350 751380 ) via3_2 ;
     - pixel_dpc_out[6] ( PIN pixel_out[6] ) ( dpc pixel_out[6] ) + USE SIGNAL
-      + ROUTED metal3 ( 3030910 1122660 ) ( 3033350 * )
+      + ROUTED metal2 ( 1611390 1838620 ) ( * 1839930 0 )
+      NEW metal3 ( 3030910 1122660 ) ( 3032970 * )
       NEW metal3 ( 3033930 991340 0 ) ( * 991620 )
-      NEW metal3 ( 3033350 991620 ) ( 3033930 * )
-      NEW metal2 ( 3033350 991620 ) ( * 1122660 )
+      NEW metal3 ( 3032970 991620 ) ( 3033930 * )
+      NEW metal2 ( 3032970 991620 ) ( * 1122660 )
       NEW metal4 ( 3030910 1122660 ) ( * 1838620 )
-      NEW metal2 ( 2698950 1838620 ) ( * 1839930 0 )
-      NEW metal3 ( 2698950 1838620 ) ( 3030910 * )
+      NEW metal3 ( 1611390 1838620 ) ( 3030910 * )
+      NEW metal2 ( 1611390 1838620 ) via2_5
       NEW metal3 ( 3030910 1122660 ) via3_2
-      NEW metal2 ( 3033350 1122660 ) via2_5
+      NEW metal2 ( 3032970 1122660 ) via2_5
       NEW metal3 ( 3030910 1838620 ) via3_2
-      NEW metal2 ( 3033350 991620 ) via2_5
-      NEW metal2 ( 2698950 1838620 ) via2_5 ;
+      NEW metal2 ( 3032970 991620 ) via2_5 ;
     - pixel_dpc_out[7] ( PIN pixel_out[7] ) ( dpc pixel_out[7] ) + USE SIGNAL
-      + ROUTED metal3 ( 3033930 711060 0 ) ( * 711340 )
+      + ROUTED metal2 ( 1691950 1838060 ) ( * 1839930 0 )
+      NEW metal3 ( 3033930 711060 0 ) ( * 711340 )
       NEW metal3 ( 3029790 711340 ) ( 3033930 * )
       NEW metal4 ( 3029790 711340 ) ( * 1838060 )
-      NEW metal2 ( 2779510 1838060 ) ( * 1839930 0 )
-      NEW metal3 ( 2779510 1838060 ) ( 3029790 * )
+      NEW metal3 ( 1691950 1838060 ) ( 3029790 * )
+      NEW metal2 ( 1691950 1838060 ) via2_5
       NEW metal3 ( 3029790 711340 ) via3_2
-      NEW metal3 ( 3029790 1838060 ) via3_2
-      NEW metal2 ( 2779510 1838060 ) via2_5 ;
+      NEW metal3 ( 3029790 1838060 ) via3_2 ;
     - pixel_dpc_out[8] ( PIN pixel_out[8] ) ( dpc pixel_out[8] ) + USE SIGNAL
-      + ROUTED metal3 ( 3033930 1031380 0 ) ( * 1031660 )
-      NEW metal3 ( 3032970 1031660 ) ( 3033930 * )
-      NEW metal2 ( 3032970 1031660 ) ( * 1037540 )
-      NEW metal3 ( 3023630 1037540 ) ( 3032970 * )
-      NEW metal4 ( 3023630 1037540 ) ( * 1837500 )
-      NEW metal2 ( 2860070 1837500 ) ( * 1839930 0 )
-      NEW metal3 ( 2860070 1837500 ) ( 3023630 * )
-      NEW metal2 ( 3032970 1031660 ) via2_5
-      NEW metal2 ( 3032970 1037540 ) via2_5
-      NEW metal3 ( 3023630 1037540 ) via3_2
-      NEW metal3 ( 3023630 1837500 ) via3_2
-      NEW metal2 ( 2860070 1837500 ) via2_5 ;
+      + ROUTED metal2 ( 1772510 1837500 ) ( * 1839930 0 )
+      NEW metal3 ( 3033930 1031380 0 ) ( * 1031660 )
+      NEW metal3 ( 3033350 1031660 ) ( 3033930 * )
+      NEW metal2 ( 3033350 1031660 ) ( * 1043140 )
+      NEW metal3 ( 3023630 1043140 ) ( 3033350 * )
+      NEW metal4 ( 3023630 1043140 ) ( * 1837500 )
+      NEW metal3 ( 1772510 1837500 ) ( 3023630 * )
+      NEW metal2 ( 1772510 1837500 ) via2_5
+      NEW metal2 ( 3033350 1031660 ) via2_5
+      NEW metal2 ( 3033350 1043140 ) via2_5
+      NEW metal3 ( 3023630 1043140 ) via3_2
+      NEW metal3 ( 3023630 1837500 ) via3_2 ;
     - pixel_dpc_out[9] ( PIN pixel_out[9] ) ( dpc pixel_out[9] ) + USE SIGNAL
-      + ROUTED metal2 ( 2658670 1839180 ) ( * 1839930 0 )
-      NEW metal3 ( 3033930 792260 ) ( 3034270 * )
+      + ROUTED metal3 ( 3033930 792260 ) ( 3034270 * )
       NEW metal3 ( 3033930 791140 0 ) ( * 792260 )
-      NEW metal4 ( 3034270 792260 ) ( * 1839180 )
-      NEW metal3 ( 2658670 1839180 ) ( 3034270 * )
-      NEW metal2 ( 2658670 1839180 ) via2_5
+      NEW metal4 ( 3034270 792260 ) ( * 1838900 )
+      NEW metal2 ( 1571110 1838900 ) ( * 1839930 0 )
+      NEW metal3 ( 1571110 1838900 ) ( 3034270 * )
       NEW metal3 ( 3034270 792260 ) via3_2
-      NEW metal3 ( 3034270 1839180 ) via3_2 ;
+      NEW metal3 ( 3034270 1838900 ) via3_2
+      NEW metal2 ( 1571110 1838900 ) via2_5 ;
     - pixel_in[0] ( PIN pixel_in[0] ) ( hold53 A ) + USE SIGNAL
       + ROUTED metal2 ( 20330 1143100 ) ( 20710 * )
       NEW metal2 ( 20330 1138060 ) ( * 1143100 )
@@ -48708,14 +48708,14 @@ NETS 125 ;
       NEW metal3 ( 170430 965300 ) via3_2
       NEW metal3 ( 170430 996660 ) via3_2 ;
     - v_dpc_out ( PIN v_sync_out ) ( dpc v_sync_out ) + USE SIGNAL
-      + ROUTED metal2 ( 2819790 1837780 ) ( * 1839930 0 )
-      NEW metal3 ( 3033930 1111180 ) ( * 1111460 0 )
-      NEW metal3 ( 3032590 1111180 ) ( 3033930 * )
-      NEW metal2 ( 3032590 1111180 ) ( * 1837780 )
-      NEW metal3 ( 2819790 1837780 ) ( 3032590 * )
-      NEW metal2 ( 2819790 1837780 ) via2_5
-      NEW metal2 ( 3032590 1111180 ) via2_5
-      NEW metal2 ( 3032590 1837780 ) via2_5 ;
+      + ROUTED metal3 ( 3033930 1111180 ) ( * 1111460 0 )
+      NEW metal3 ( 3033350 1111180 ) ( 3033930 * )
+      NEW metal2 ( 3033350 1111180 ) ( * 1837780 )
+      NEW metal2 ( 1732230 1837780 ) ( * 1839930 0 )
+      NEW metal3 ( 1732230 1837780 ) ( 3033350 * )
+      NEW metal2 ( 3033350 1111180 ) via2_5
+      NEW metal2 ( 3033350 1837780 ) via2_5
+      NEW metal2 ( 1732230 1837780 ) via2_5 ;
     - v_lsc_dpc ( lsc v_sync_out ) ( dpc v_sync ) + USE SIGNAL
       + ROUTED metal3 ( 433070 951300 ) ( 434070 * 0 )
       NEW metal4 ( 433070 951300 ) ( * 985460 )
@@ -48734,14 +48734,14 @@ NETS 125 ;
       NEW metal3 ( 150830 956340 ) via3_2
       NEW metal3 ( 150830 1001140 ) via3_2 ;
     - valid_dpc_out ( PIN valid_out ) ( dpc valid_out ) + USE SIGNAL
-      + ROUTED metal2 ( 2900350 1837220 ) ( * 1839930 0 )
-      NEW metal3 ( 3033930 951300 0 ) ( * 951580 )
-      NEW metal3 ( 3033150 951580 ) ( 3033930 * )
-      NEW metal4 ( 3033150 951580 ) ( * 1837220 )
-      NEW metal3 ( 2900350 1837220 ) ( 3033150 * )
-      NEW metal2 ( 2900350 1837220 ) via2_5
-      NEW metal3 ( 3033150 951580 ) via3_2
-      NEW metal3 ( 3033150 1837220 ) via3_2 ;
+      + ROUTED metal3 ( 3033930 951300 0 ) ( * 951580 )
+      NEW metal3 ( 3032590 951580 ) ( 3033930 * )
+      NEW metal4 ( 3032590 951580 ) ( * 1837220 )
+      NEW metal2 ( 1812790 1837220 ) ( * 1839930 0 )
+      NEW metal3 ( 1812790 1837220 ) ( 3032590 * )
+      NEW metal3 ( 3032590 951580 ) via3_2
+      NEW metal3 ( 3032590 1837220 ) via3_2
+      NEW metal2 ( 1812790 1837220 ) via2_5 ;
     - valid_in ( PIN valid_in ) ( hold40 A ) + USE SIGNAL
       + ROUTED metal3 ( 70 1001140 0 ) ( 20330 * )
       NEW metal2 ( 20330 998060 ) ( * 1001140 )

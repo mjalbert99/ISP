@@ -68,12 +68,13 @@ place_macro -macro_name {demos} -location {20 990} -orientation R0
 
 
 
-set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync pixel_in} -region left:*
-set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out red_out green_out blue_out} -region top:*
+set_io_pin_constraint -pin_names {clk resetn} -region left:*
+set_io_pin_constraint -pin_names {h_sync v_sync pixel_in} -region bottom:500-800
+set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out red_out green_out blue_out} -region top:400-900
 
 place_pins -hor_layers metal3 -ver_layers metal2 \
-            -min_distance 20 \
-            -corner_avoidance 20
+            -min_distance 15 \
+            -corner_avoidance 15
 
 insert_tiecells "LOGIC1_X1/Z" -prefix "TIE_HIGH_"
 insert_tiecells "LOGIC0_X1/Z" -prefix "TIE_LOW_"

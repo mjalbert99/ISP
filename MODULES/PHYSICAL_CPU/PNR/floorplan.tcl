@@ -69,7 +69,7 @@ place_macro -macro_name {dpc} -location {217 15} -orientation R0
 
 
 set_io_pin_constraint -pin_names {clk resetn valid_in h_sync v_sync pixel_in} -region left:*
-set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out pixel_out} -region top:*
+set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out pixel_out} -region top:680-980
 
 place_pins -hor_layers metal3 -ver_layers metal2 \
             -min_distance 20 \

@@ -57,7 +57,8 @@ place_macro -macro_name {gam} -location {215 15} -orientation R0
 
 
 
-set_io_pin_constraint -pin_names {clk resetn coef_in valid_in h_sync v_sync red_in green_in blue_in gam_red_in gam_green_in gam_blue_in row0, row1, row2} -region left:*
+set_io_pin_constraint -pin_names {clk resetn coef_in gam_red_in gam_green_in gam_blue_in row0 row1 row2} -region left:*
+set_io_pin_constraint -pin_names {valid_in h_sync v_sync red_in green_in blue_in} -region bottom:500-800
 set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out red_out green_out blue_out} -region right:*
 
 place_pins -hor_layers metal3 -ver_layers metal2 \

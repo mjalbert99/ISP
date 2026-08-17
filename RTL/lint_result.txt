@@ -1,35 +1,20 @@
-%Error: src/ISP.v:69:5: Cannot find file containing module: 'BLC'
-   69 |     BLC #(
-      |     ^~~
-%Error: src/ISP.v:69:5: This may be because there's no search path specified with -I<dir>.
-   69 |     BLC #(
-      |     ^~~
+%Error: src/ISP.v:20:5: Cannot find file containing module: 'P_CPU'
+   20 |     P_CPU p_cpu (
+      |     ^~~~~
+%Error: src/ISP.v:20:5: This may be because there's no search path specified with -I<dir>.
+   20 |     P_CPU p_cpu (
+      |     ^~~~~
         ... Looked in:
-             BLC
-             BLC.v
-             BLC.sv
-             obj_dir/BLC
-             obj_dir/BLC.v
-             obj_dir/BLC.sv
-%Error: src/ISP.v:92:5: Cannot find file containing module: 'LSC'
-   92 |     LSC #(
-      |     ^~~
-%Error: src/ISP.v:114:5: Cannot find file containing module: 'DPC'
-  114 |     DPC #(
-      |     ^~~
-%Error: src/ISP.v:133:5: Cannot find file containing module: 'BNR'
-  133 |     BNR #(
-      |     ^~~
-%Error: src/ISP.v:152:5: Cannot find file containing module: 'WBG'
-  152 |     WBG #(
-      |     ^~~
-%Error: src/ISP.v:175:5: Cannot find file containing module: 'DEMOSAIC'
-  175 |     DEMOSAIC #(
-      |     ^~~~~~~~
-%Error: src/ISP.v:195:5: Cannot find file containing module: 'CCM'
-  195 |     CCM #(
-      |     ^~~
-%Error: src/ISP.v:223:5: Cannot find file containing module: 'GAM'
-  223 |     GAM #(
-      |     ^~~
-%Error: Exiting due to 9 error(s)
+             P_CPU
+             P_CPU.v
+             P_CPU.sv
+             obj_dir/P_CPU
+             obj_dir/P_CPU.v
+             obj_dir/P_CPU.sv
+%Error: src/ISP.v:33:5: Cannot find file containing module: 'D_CPU'
+   33 |     D_CPU d_cpu (
+      |     ^~~~~
+%Error: src/ISP.v:48:5: Cannot find file containing module: 'C_CPU'
+   48 |     C_CPU c_cpu (
+      |     ^~~~~
+%Error: Exiting due to 4 error(s)

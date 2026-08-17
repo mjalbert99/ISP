@@ -1,5 +1,5 @@
-Startpoint: _29183_ (rising edge-triggered flip-flop clocked by clk)
-Endpoint: _29214_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: d_cpu (rising edge-triggered flip-flop clocked by clk)
+Endpoint: c_cpu (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: max
 
@@ -7,78 +7,23 @@ Fanout     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------------
                   0.00    0.00    0.00   clock clk (rise edge)
                           0.00    0.00   clock network delay (ideal)
-                  0.00    0.00    0.00 ^ _29183_/CK (DFFR_X1)
-    45   69.18    0.16    0.28    0.28 ^ _29183_/Q (DFFR_X1)
-                  0.16    0.00    0.28 ^ _28517_/A2 (NAND2_X1)
-     3    5.08    0.03    0.04    0.32 v _28517_/ZN (NAND2_X1)
-                  0.03    0.00    0.32 v _28560_/A (XOR2_X1)
-     2    3.82    0.01    0.07    0.39 v _28560_/Z (XOR2_X1)
-                  0.01    0.00    0.39 v _28604_/B (XOR2_X1)
-     2    2.41    0.01    0.06    0.45 v _28604_/Z (XOR2_X1)
-                  0.01    0.00    0.45 v _28606_/A3 (OR3_X1)
-     1    0.89    0.01    0.08    0.54 v _28606_/ZN (OR3_X1)
-                  0.01    0.00    0.54 v _28607_/A2 (AND2_X1)
-     2    2.41    0.01    0.04    0.57 v _28607_/ZN (AND2_X1)
-                  0.01    0.00    0.57 v _28609_/A3 (OR3_X1)
-     1    0.89    0.01    0.08    0.66 v _28609_/ZN (OR3_X1)
-                  0.01    0.00    0.66 v _28610_/A2 (AND2_X1)
-     2    3.63    0.01    0.04    0.70 v _28610_/ZN (AND2_X1)
-                  0.01    0.00    0.70 v _28649_/A (XOR2_X1)
-     2    3.96    0.01    0.06    0.75 v _28649_/Z (XOR2_X1)
-                  0.01    0.00    0.75 v _28653_/B (XOR2_X1)
-     2    3.95    0.02    0.07    0.82 v _28653_/Z (XOR2_X1)
-                  0.02    0.00    0.82 v _28692_/B (XOR2_X1)
-     2    3.92    0.01    0.07    0.89 v _28692_/Z (XOR2_X1)
-                  0.01    0.00    0.89 v _28696_/B (XNOR2_X1)
-     2    3.91    0.02    0.05    0.94 v _28696_/ZN (XNOR2_X1)
-                  0.02    0.00    0.94 v _28734_/B (XOR2_X1)
-     2    2.41    0.01    0.06    1.00 v _28734_/Z (XOR2_X1)
-                  0.01    0.00    1.00 v _28870_/A3 (OR3_X1)
-     1    0.89    0.01    0.09    1.09 v _28870_/ZN (OR3_X1)
-                  0.01    0.00    1.09 v _28871_/A2 (AND2_X1)
-     2    3.07    0.01    0.04    1.12 v _28871_/ZN (AND2_X1)
-                  0.01    0.00    1.12 v _28872_/A (OAI21_X1)
-     2    3.33    0.03    0.03    1.15 ^ _28872_/ZN (OAI21_X1)
-                  0.03    0.00    1.15 ^ _28873_/A2 (NAND2_X1)
-     2    3.71    0.01    0.02    1.17 v _28873_/ZN (NAND2_X1)
-                  0.01    0.00    1.17 v _28875_/A1 (NAND2_X1)
-     2    2.57    0.01    0.02    1.19 ^ _28875_/ZN (NAND2_X1)
-                  0.01    0.00    1.19 ^ _28877_/B1 (AOI21_X1)
-     2    2.31    0.01    0.02    1.21 v _28877_/ZN (AOI21_X1)
-                  0.01    0.00    1.21 v _28878_/A2 (OR2_X1)
-     2    3.71    0.01    0.06    1.27 v _28878_/ZN (OR2_X1)
-                  0.01    0.00    1.27 v _28880_/A1 (NAND2_X1)
-     2    2.64    0.01    0.02    1.29 ^ _28880_/ZN (NAND2_X1)
-                  0.01    0.00    1.29 ^ _28881_/B2 (AOI21_X1)
-     3    4.35    0.01    0.02    1.31 v _28881_/ZN (AOI21_X1)
-                  0.01    0.00    1.31 v _28883_/B1 (OAI21_X1)
-     3    4.24    0.03    0.04    1.36 ^ _28883_/ZN (OAI21_X1)
-                  0.03    0.00    1.36 ^ _28885_/B1 (AOI21_X1)
-     2    2.95    0.01    0.02    1.38 v _28885_/ZN (AOI21_X1)
-                  0.01    0.00    1.38 v _28886_/A (AOI21_X1)
-     2    3.95    0.03    0.06    1.44 ^ _28886_/ZN (AOI21_X1)
-                  0.03    0.00    1.44 ^ _28888_/A1 (NOR2_X1)
-     1    1.54    0.01    0.01    1.45 v _28888_/ZN (NOR2_X1)
-                  0.01    0.00    1.45 v _28889_/A (AOI21_X1)
-     2    2.55    0.03    0.05    1.50 ^ _28889_/ZN (AOI21_X1)
-                  0.03    0.00    1.50 ^ _28891_/B2 (OAI21_X1)
-     2    2.96    0.13    0.03    1.52 v _28891_/ZN (OAI21_X1)
-                  0.13    0.00    1.52 v _28957_/B1 (OAI22_X1)
-     1    1.13    0.08    0.09    1.61 ^ _28957_/ZN (OAI22_X1)
-                  0.08    0.00    1.61 ^ _29214_/D (DFFR_X1)
-                                  1.61   data arrival time
+                  0.00    0.00    0.00 ^ d_cpu/clk (D_CPU)
+     1  148.48    0.34    1.67    1.67 ^ d_cpu/red_out[5] (D_CPU)
+                  0.34    0.00    1.67 ^ c_cpu/red_in[5] (C_CPU)
+                                  1.67   data arrival time
 
                   0.00    3.00    3.00   clock clk (rise edge)
                           0.00    3.00   clock network delay (ideal)
                          -0.15    2.85   clock uncertainty
                           0.00    2.85   clock reconvergence pessimism
-                                  2.85 ^ _29214_/CK (DFFR_X1)
-                         -0.05    2.80   library setup time
-                                  2.80   data required time
+                                  2.85 ^ c_cpu/clk (C_CPU)
+                         -0.12    2.73   macro clock tree delay
+                         -0.23    2.50   library setup time
+                                  2.50   data required time
 -----------------------------------------------------------------------------
-                                  2.80   data required time
-                                 -1.61   data arrival time
+                                  2.50   data required time
+                                 -1.67   data arrival time
 -----------------------------------------------------------------------------
-                                  1.19   slack (MET)
+                                  0.82   slack (MET)
 
 

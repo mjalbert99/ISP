@@ -12,30 +12,30 @@ set FST_PDK_LIB "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_
 
 set SRAM_LIB "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048.lib"
 
-set DPC_LIB   "../MODULES/DPC/PNR/metals/DPC.lib"
-set BNR_LIB   "../MODULES/BNR/PNR/metals/BNR.lib"
-set DEMOS_LIB "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC.lib"
-set GAM_LIB   "../MODULES/GAM/PNR/metals/GAM.lib"
+set P_LIB   "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU.lib"
+set D_LIB   "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU.lib"
+set C_LIB   "../MODULES/COLOR_CPU/PNR/metals/C_CPU.lib"
+
 
 cd ${WORKING_DIR}
 
 set corners [list \
-    "slow" $SLW_PDK_LIB $SRAM_LIB $DPC_LIB $BNR_LIB $DEMOS_LIB $GAM_LIB\
-    "typ"  $TYP_PDK_LIB $SRAM_LIB $DPC_LIB $BNR_LIB $DEMOS_LIB $GAM_LIB\
-    "fast" $FST_PDK_LIB $SRAM_LIB $DPC_LIB $BNR_LIB $DEMOS_LIB $GAM_LIB\
+    "slow" $SLW_PDK_LIB $SRAM_LIB $P_LIB $D_LIB $C_LIB\
+    "typ"  $TYP_PDK_LIB $SRAM_LIB $P_LIB $D_LIB $C_LIB\
+    "fast" $FST_PDK_LIB $SRAM_LIB $P_LIB $D_LIB $C_LIB\
 ]
 
-foreach {corner_name corner_lib sram_lib dpc_lib bnr_lib demos_lib gam_lib} $corners {
+foreach {corner_name corner_lib sram_lib p_lib d_lib c_lib} $corners {
     file mkdir ${END_DIR}/output/${corner_name}
 
     design -reset
-    read_verilog src/ISP.v  ../MODULES/BLC/RTL/src/BLC.v ../MODULES/LSC/RTL/src/LSC.v ../MODULES/CCM/RTL/src/CCM.v ../MODULES/WBG/RTL/src/WBG.v
+    read_verilog src/ISP.v
 
     read_liberty -lib $sram_lib
-    read_liberty -lib $dpc_lib
-    read_liberty -lib $bnr_lib
-    read_liberty -lib $demos_lib
-    read_liberty -lib $gam_lib
+    read_liberty -lib $p_lib
+    read_liberty -lib $d_lib
+    read_liberty -lib $c_lib
+
 
     hierarchy -check -top $TOP
 
@@ -61,7 +61,7 @@ foreach {corner_name corner_lib sram_lib dpc_lib bnr_lib demos_lib gam_lib} $cor
     read_liberty -lib -ignore_miss_dir $corner_lib
     read_liberty -lib -ignore_miss_dir $sram_lib
     tee -o ${END_DIR}/output/${corner_name}/${TOP}_${corner_name}_stat.txt \
-        stat -liberty $corner_lib -liberty $sram_lib
+        stat -liberty $corner_lib 
 }
 
 cd ${END_DIR}

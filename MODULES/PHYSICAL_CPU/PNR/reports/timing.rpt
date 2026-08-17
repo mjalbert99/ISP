@@ -48,9 +48,9 @@ Path Type: max
                    0.00    0.00   clock clk (rise edge)
                    0.13    0.13   clock network delay (propagated)
            0.04    0.00    0.13 ^ dpc/clk (DPC)
-  86.56    0.17    0.73    0.86 ^ dpc/h_sync_out (DPC)
-           0.22    0.13    0.98 ^ h_sync_out (out)
-                           0.98   data arrival time
+ 143.11    0.24    0.81    0.94 ^ dpc/h_sync_out (DPC)
+           0.45    0.33    1.27 ^ h_sync_out (out)
+                           1.27   data arrival time
 
                    2.50    2.50   clock clk (rise edge)
                    0.00    2.50   clock network delay (propagated)
@@ -60,10 +60,10 @@ Path Type: max
                            1.55   data required time
 -----------------------------------------------------------------------
                            1.55   data required time
-                          -0.98   data arrival time
+                          -1.27   data arrival time
 -----------------------------------------------------------------------
-                           0.57   slack (MET)
+                           0.28   slack (MET)
 
 
 worst slack min 0.00
-worst slack max 0.57
+worst slack max 0.28

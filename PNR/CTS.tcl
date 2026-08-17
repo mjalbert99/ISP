@@ -10,9 +10,9 @@ clock_tree_synthesis -buf_list $cts_buffers \
 
 set_propagated_clock [all_clocks]
 
+# Re-estimate parasitics and fix timing/slew after clock tree insertion
+estimate_parasitics -placement
 
-# repair_design -verbose
-# repair_timing
 
 detailed_placement -incremental
 

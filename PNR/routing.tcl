@@ -3,7 +3,6 @@ set_routing_layers -clock metal5-metal8
 
 global_route -verbose
 
-repair_timing
 detailed_placement
 
 detailed_route -output_drc reports/5_route_drc.rpt -verbose 1

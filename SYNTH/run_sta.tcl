@@ -7,28 +7,22 @@ set SDC_FILE "../constraints/isp.sdc"
 set corners [list \
     "slow"\
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_slow.lib" \
-    "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
-    "../MODULES/DPC/PNR/metals/DPC.lib" \
-    "../MODULES/BNR/PNR/metals/BNR.lib" \
-    "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC.lib" \
-    "../MODULES/GAM/PNR/metals/GAM.lib" \
+    "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU.lib" \
+    "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU.lib" \
+    "../MODULES/COLOR_CPU/PNR/metals/C_CPU.lib" \
     "typ"\
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_typical.lib" \
-    "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
-    "../MODULES/DPC/PNR/metals/DPC.lib" \
-    "../MODULES/BNR/PNR/metals/BNR.lib" \
-    "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC.lib" \
-    "../MODULES/GAM/PNR/metals/GAM.lib" \
+    "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU.lib" \
+    "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU.lib" \
+    "../MODULES/COLOR_CPU/PNR/metals/C_CPU.lib" \
     "fast" \
     "/root/Work/vlsi/pdks/pdk/nangate45/libs/NangateOpenCellLibrary_fast.lib" \
-    "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048.lib" \
-    "../MODULES/DPC/PNR/metals/DPC.lib" \
-    "../MODULES/BNR/PNR/metals/BNR.lib" \
-    "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC.lib" \
-    "../MODULES/GAM/PNR/metals/GAM.lib" \
+    "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU.lib" \
+    "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU.lib" \
+    "../MODULES/COLOR_CPU/PNR/metals/C_CPU.lib" \
 ]
 
-foreach {corner_name std_lib sram_lib dpc_lib bnr_lib demos_lib gam_lib} $corners {
+foreach {corner_name std_lib p_lib d_lib c_lib} $corners {
     set out_dir "output/${corner_name}"
 
     puts "\n================================================================"
@@ -37,14 +31,11 @@ foreach {corner_name std_lib sram_lib dpc_lib bnr_lib demos_lib gam_lib} $corner
 
     # 1. Read the standard cell library
     read_liberty $std_lib
+    read_liberty $p_lib
+    read_liberty $d_lib
+    read_liberty $c_lib
     
-    # 2. Read the SRAM macro library for this specific corner
-    # read_liberty $sram_lib
 
-    read_liberty $dpc_lib
-    read_liberty $bnr_lib
-    read_liberty $demos_lib
-    read_liberty $gam_lib
     
     read_verilog  output/${corner_name}/${TOP}_${corner_name}_netlist.v
     link_design   $TOP

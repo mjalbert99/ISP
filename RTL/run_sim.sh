@@ -4,6 +4,9 @@ verilator --lint-only src/ISP.v &> lint_result.txt
                                       
 iverilog -o isp_sim \
             src/ISP.v \
+            ../MODULES/COLOR_CPU/RTL/src/C_CPU.v \
+            ../MODULES/DIGITAL_CPU/RTL/src/D_CPU.v \
+            ../MODULES/PHYSICAL_CPU/RTL/src/P_CPU.v \
             ../MODULES/BLC/RTL/src/BLC.v \
             ../MODULES/LSC/RTL/src/LSC.v \
             ../MODULES/DPC/RTL/src/DPC.v \

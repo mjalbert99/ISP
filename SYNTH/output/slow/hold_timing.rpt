@@ -1,5 +1,5 @@
-Startpoint: valid_in (input port clocked by clk)
-Endpoint: _29682_ (rising edge-triggered flip-flop clocked by clk)
+Startpoint: pixel_in[3] (input port clocked by clk)
+Endpoint: p_cpu (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: min
 
@@ -7,22 +7,23 @@ Fanout     Cap    Slew   Delay    Time   Description
 -----------------------------------------------------------------------------
                   0.00    0.00    0.00   clock clk (rise edge)
                           0.00    0.00   clock network delay (ideal)
-                          0.15    0.15 ^ input external delay
-     3    4.31    0.00    0.00    0.15 ^ valid_in (in)
-                  0.00    0.00    0.15 ^ _29682_/D (DFFR_X1)
+                          0.15    0.15 v input external delay
+     1    2.13    0.00    0.00    0.15 v pixel_in[3] (in)
+                  0.00    0.00    0.15 v p_cpu/pixel_in[3] (P_CPU)
                                   0.15   data arrival time
 
                   0.00    0.00    0.00   clock clk (rise edge)
                           0.00    0.00   clock network delay (ideal)
                           0.05    0.05   clock uncertainty
                           0.00    0.05   clock reconvergence pessimism
-                                  0.05 ^ _29682_/CK (DFFR_X1)
-                          0.01    0.06   library hold time
-                                  0.06   data required time
+                                  0.05 ^ p_cpu/clk (P_CPU)
+                          0.12   -0.07   macro clock tree delay
+                          0.08    0.01   library hold time
+                                  0.01   data required time
 -----------------------------------------------------------------------------
-                                  0.06   data required time
+                                  0.01   data required time
                                  -0.15   data arrival time
 -----------------------------------------------------------------------------
-                                  0.09   slack (MET)
+                                  0.14   slack (MET)
 
 

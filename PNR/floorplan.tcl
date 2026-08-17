@@ -15,21 +15,18 @@ set SRAM_LEF     "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048_abstract.lef"
 set SRAM_LIB_SLW "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048.lib"
 set SRAM_LIB_FST "../MODULES/SRAM/10x2048V/PNR/metals/SRAM10x2048.lib"
 
-set DPC_LEF     "../MODULES/DPC/PNR/metals/DPC_abstract.lef"
-set DPC_LIB_SLW "../MODULES/DPC/PNR/metals/DPC.lib"
-set DPC_LIB_FST "../MODULES/DPC/PNR/metals/DPC.lib"
+set P_LEF     "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU_abstract.lef"
+set P_LIB_SLW "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU.lib"
+set P_LIB_FST "../MODULES/PHYSICAL_CPU/PNR/metals/P_CPU.lib"
 
-set BNR_LEF     "../MODULES/BNR/PNR/metals/BNR_abstract.lef"
-set BNR_LIB_SLW "../MODULES/BNR/PNR/metals/BNR.lib"
-set BNR_LIB_FST "../MODULES/BNR/PNR/metals/BNR.lib"
+set D_LEF     "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU_abstract.lef"
+set D_LIB_SLW "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU.lib"
+set D_LIB_FST "../MODULES/DIGITAL_CPU/PNR/metals/D_CPU.lib"
 
-set DEMOSAIC_LEF     "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC_abstract.lef"
-set DEMOSAIC_LIB_SLW "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC.lib"
-set DEMOSAIC_LIB_FST "../MODULES/DEMOSAIC/PNR/metals/DEMOSAIC.lib"
+set C_LEF     "../MODULES/COLOR_CPU/PNR/metals/C_CPU_abstract.lef"
+set C_LIB_SLW "../MODULES/COLOR_CPU/PNR/metals/C_CPU.lib"
+set C_LIB_FST "../MODULES/COLOR_CPU/PNR/metals/C_CPU.lib"
 
-set GAM_LEF     "../MODULES/GAM/PNR/metals/GAM_abstract.lef"
-set GAM_LIB_SLW "../MODULES/GAM/PNR/metals/GAM.lib"
-set GAM_LIB_FST "../MODULES/GAM/PNR/metals/GAM.lib"
 
 read_lef $TECH_LEF
 read_lef $CELL_LEF
@@ -41,21 +38,18 @@ read_lef $SRAM_LEF
 read_liberty -min $SRAM_LIB_FST
 read_liberty -max $SRAM_LIB_SLW
 
-read_lef $DPC_LEF
-read_liberty -max $DPC_LIB_SLW
-read_liberty -min $DPC_LIB_FST
+read_lef $D_LEF
+read_liberty -max $D_LIB_SLW
+read_liberty -min $D_LIB_FST
 
-read_lef $BNR_LEF
-read_liberty -max $BNR_LIB_SLW
-read_liberty -min $BNR_LIB_FST
+read_lef $P_LEF
+read_liberty -max $P_LIB_SLW
+read_liberty -min $P_LIB_FST
 
-read_lef $DEMOSAIC_LEF
-read_liberty -max $DEMOSAIC_LIB_SLW
-read_liberty -min $DEMOSAIC_LIB_FST
+read_lef $C_LEF
+read_liberty -max $C_LIB_SLW
+read_liberty -min $C_LIB_FST
 
-read_lef $GAM_LEF
-read_liberty -max $GAM_LIB_SLW
-read_liberty -min $GAM_LIB_FST
 
 read_verilog ${SYNTH_DIR}/output/typ/${TOP}_typ_netlist.v
 link_design $TOP
@@ -65,14 +59,14 @@ read_sdc $SDC_PATH
 
 file mkdir output
 
-# initialize_floorplan -utilization 70 \
+# initialize_floorplan -utilization 30 \
 #                      -aspect_ratio 1 \
 #                      -core_space 3.5 3.5 \
 #                      -site FreePDK45_38x28_10R_NP_162NW_34O
 
 
-initialize_floorplan -die_area {0 0 2960 2610} \
-                     -core_area {10 10 2950 2600} \
+initialize_floorplan -die_area {0 0 1660 4530} \
+                     -core_area {10 10 1650 4520} \
                      -site FreePDK45_38x28_10R_NP_162NW_34O
 
 
@@ -81,17 +75,18 @@ make_tracks
 set_macro_base_halo 20 20
 # rtl_macro_placer -write_macro_placement macros.txt
 
-place_macro -macro_name {dpc} -location {50 20} -orientation R0
-place_macro -macro_name {bnr} -location {1500 20} -orientation R0
-place_macro -macro_name {demos} -location {1450 1350} -orientation MY
-place_macro -macro_name {gam} -location {20 1100} -orientation MX
+place_macro -macro_name {p_cpu} -location {80 30} -orientation R0
+place_macro -macro_name {d_cpu} -location {80 980} -orientation R0
+place_macro -macro_name {c_cpu} -location {80 2950} -orientation R0
 
-# set_io_pin_constraint -pin_names {clk resetn coef_in valid_in h_sync v_sync pixel_in gam_red_in gam_green_in gam_blue_in row0 row1 row2} -region left:*
+
+set_io_pin_constraint -pin_names {clk resetn coef_in valid_in h_sync v_sync pixel_in gam_red_in gam_green_in gam_blue_in row0 row1 row2} -region left:*
+set_io_pin_constraint -pin_names {valid_out h_sync_out v_sync_out red_out green_out blue_out} -region right:*
 
 
 place_pins -hor_layers {metal3 metal5} -ver_layers {metal2 metal4} \
-            -min_distance 20 \
-            -corner_avoidance 20
+            -min_distance 2 \
+            -corner_avoidance 2
 
 insert_tiecells "LOGIC1_X1/Z" -prefix "TIE_HIGH_"
 insert_tiecells "LOGIC0_X1/Z" -prefix "TIE_LOW_"
@@ -170,7 +165,7 @@ add_pdn_connect -grid "Core" -layers {metal6 metal7}
 add_pdn_connect -grid "Core" -layers {metal7 metal8}
 
 # SRAMS
-define_pdn_grid -name "OpenRAM_Grid0" -macro -instances {dpc bnr demos gam} -halo {1 1 1 1} -grid_over_pg_pins
+define_pdn_grid -name "OpenRAM_Grid0" -macro -instances {p_cpu d_cpu c_cpu} -halo {1 1 1 1} -grid_over_pg_pins
 
 add_pdn_stripe -grid "OpenRAM_Grid0" \
                -layer metal4 \

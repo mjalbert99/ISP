@@ -1,5 +1,5 @@
-Startpoint: pixel_in[0] (input port clocked by clk)
-Endpoint: demos (rising edge-triggered flip-flop clocked by clk)
+Startpoint: valid_in (input port clocked by clk)
+Endpoint: bnr (rising edge-triggered flip-flop clocked by clk)
 Path Group: clk
 Path Type: min
 
@@ -8,26 +8,40 @@ Path Type: min
                    0.00    0.00   clock clk (rise edge)
                    0.00    0.00   clock network delay (propagated)
                    0.15    0.15 v input external delay
- 107.86    0.00    0.00    0.15 v pixel_in[0] (in)
-           0.00    0.00    0.15 v demos/pixel_in[0] (DEMOSAIC)
-                           0.15   data arrival time
+   1.92    0.00    0.00    0.15 v valid_in (in)
+           0.00    0.00    0.15 v hold4/A (CLKBUF_X1)
+   0.78    0.00    0.01    0.16 v hold4/Z (CLKBUF_X1)
+           0.00    0.00    0.16 v hold2/A (CLKBUF_X1)
+   0.80    0.00    0.01    0.18 v hold2/Z (CLKBUF_X1)
+           0.00    0.00    0.18 v hold5/A (CLKBUF_X1)
+   0.88    0.00    0.01    0.19 v hold5/Z (CLKBUF_X1)
+           0.00    0.00    0.19 v hold1/A (CLKBUF_X1)
+   0.97    0.00    0.01    0.20 v hold1/Z (CLKBUF_X1)
+           0.00    0.00    0.20 v hold6/A (CLKBUF_X1)
+   0.85    0.00    0.01    0.22 v hold6/Z (CLKBUF_X1)
+           0.00    0.00    0.22 v hold3/A (CLKBUF_X1)
+   0.87    0.00    0.01    0.23 v hold3/Z (CLKBUF_X1)
+           0.00    0.00    0.23 v hold7/A (CLKBUF_X1)
+   2.57    0.01    0.02    0.25 v hold7/Z (CLKBUF_X1)
+           0.01    0.00    0.25 v bnr/valid_in (BNR)
+                           0.25   data arrival time
 
                    0.00    0.00   clock clk (rise edge)
-                   0.23    0.23   clock network delay (propagated)
-                   0.05    0.28   clock uncertainty
-                   0.00    0.28   clock reconvergence pessimism
-                           0.28 ^ demos/clk (DEMOSAIC)
-                  -0.13    0.15   library hold time
-                           0.15   data required time
+                   0.27    0.27   clock network delay (propagated)
+                   0.05    0.32   clock uncertainty
+                   0.00    0.32   clock reconvergence pessimism
+                           0.32 ^ bnr/clk (BNR)
+                  -0.07    0.24   library hold time
+                           0.24   data required time
 -----------------------------------------------------------------------
-                           0.15   data required time
-                          -0.15   data arrival time
+                           0.24   data required time
+                          -0.25   data arrival time
 -----------------------------------------------------------------------
-                           0.00   slack (MET)
+                           0.01   slack (MET)
 
 
 Startpoint: demos (rising edge-triggered flip-flop clocked by clk)
-Endpoint: blue_out[0] (output port clocked by clk)
+Endpoint: red_out[5] (output port clocked by clk)
 Path Group: clk
 Path Type: max
 
@@ -36,9 +50,9 @@ Path Type: max
                    0.00    0.00   clock clk (rise edge)
                    0.23    0.23   clock network delay (propagated)
            0.09    0.00    0.23 ^ demos/clk (DEMOSAIC)
- 155.00    0.26    0.85    1.07 ^ demos/blue_out[0] (DEMOSAIC)
-           0.50    0.38    1.45 ^ blue_out[0] (out)
-                           1.45   data arrival time
+ 168.98    0.28    0.87    1.10 ^ demos/red_out[5] (DEMOSAIC)
+           0.57    0.44    1.54 ^ red_out[5] (out)
+                           1.54   data arrival time
 
                    2.50    2.50   clock clk (rise edge)
                    0.00    2.50   clock network delay (propagated)
@@ -48,10 +62,10 @@ Path Type: max
                            1.55   data required time
 -----------------------------------------------------------------------
                            1.55   data required time
-                          -1.45   data arrival time
+                          -1.54   data arrival time
 -----------------------------------------------------------------------
-                           0.10   slack (MET)
+                           0.01   slack (MET)
 
 
-worst slack min 0.00
-worst slack max 0.10
+worst slack min 0.01
+worst slack max 0.01
