@@ -1,65 +1,68 @@
-# Useful Refences
-https://learnvisualcomputing.github.io/imaging-isp.html
-
-https://cs.stanford.edu/~zdevito/a144-hegarty.pdf
-
-https://docs.espressif.com/projects/esp-idf/en/stable/esp32p4/api-reference/peripherals/isp.html
-
-https://www.xilinx.com/publications/user-guide/isp-user-guide.pdf
-
-https://10xengineers.ai/exploring-the-world-of-infinite-isp-a-guide-to-infinite-possibilities/
-
-# TODO
-- REDO SUNMODULES STATS and PHOTOS
-- DO CHANNEL CPU
-- FINISH TOP LEVEL/OVERVIEW SECTION
-- RESULT SECTION
-- PIPELINE DIAGRAM
+# Useful References
+* [Visual Computing ISP Guide](https://learnvisualcomputing.github.io/imaging-isp.html)
+* [Stanford Imaging & ISP Architecture (Hegarty)](https://cs.stanford.edu/~zdevito/a144-hegarty.pdf)
+* [Espressif ESP32-P4 ISP Peripheral API](https://docs.espressif.com/projects/esp-idf/en/stable/esp32p4/api-reference/peripherals/isp.html)
+* [Xilinx ISP User Guide](https://www.xilinx.com/publications/user-guide/isp-user-guide.pdf)
+* [10xEngineers Infinite-ISP Guide](https://10xengineers.ai/exploring-the-world-of-infinite-isp-a-guide-to-infinite-possibilities/)
 
 # Project Overview
-This repository contains the ISP core for a System-on-Chip (SoC) project. The core ingests 10-bit width pixel data from a camera sensor and executes burst transactions to feed the downstream ISP FIFO for processing. Designed for a target resolution of 2k at 60 FPS, the bus is synthesized and physically implemented using the nanGate45 Process Design Kit (PDK).
+This repository contains a high-performance Image Signal Processor (ISP) core designed for System-on-Chip (SoC) integration. The core ingests 10-bit raw pixel data from a camera sensor via burst transactions to feed a high-throughput downstream FIFO pipeline. Engineered to target a resolution of 2K (2048×1080) at 60 FPS, the system is synthesized and physically implemented using the Nangate45 Process Design Kit (PDK).
 
-## Pipeline Diagram
+## Pipeline Architecture
+
+![PIPELINE](media/PIPELINE.png)
 
 ## Performance Targets & Timing Budget
-The system is engineered to process 132,710,400 pixels/sec to support the 2048x1080 resolution target. 
-* **Row Budget:** The required data rate equates to a strict 15.43 µs per row, calculated via the relationship $(1/60)/1080 = 15.43 $.
-* **Clock Frequency:** Accounting for burst transaction speeds and data packing, a base 300 MHz clock is required. To provide margin for overhead and potential downstream blocking from the ISP, the operating frequency is elevated to 333.33 MHz (a 3ns period).
-* **Latency Margin:** At this elevated frequency, processing a single row requires 6.14 µs, derived from $2048 / 333.33 { MHz} = 6.14 { \mu s}$. This architecture leaves a comfortable processing overhead of ~9.29 µs within the line budget.
+To support the 2048×1080 target resolution at 60 FPS, the system is engineered to process 132,710,400 pixels/sec.
+* **Row Budget:** Frame timing constraints equate to a strict **15.43 µs per row** calculation: `(1 / 60) / 1080 = 15.43 µs`.
+* **Clock Frequency:** Accounting for burst transaction speeds, data packing, and potential downstream pipeline blocking, the required base clock of 300 MHz is elevated to **333.33 MHz (3.0 ns period)** to build operational margin.
+* **Latency Margin:** At 333.33 MHz, processing a single row consumes **6.14 µs** (`2048 / 333.33 MHz = 6.14 µs`), leaving a comfortable **9.29 µs processing overhead** per row within the line budget.
 
-## Tactics Used
-- Overcontrainted submoduels to 2.5ns clock frequency to ensure once they are used in the top level there is ample timing budget. 
-- Only the single submodules have UVM test enviorments
-- Only submodules using OpenRam SRAM units have PNR for basic logic as these need to be synthesized and PNR'd to create a functioning unit or modules using other submodules like the CPUs/Top Level
-- Broken up into processing cores to ensure timing is meet per each section of physical, digital, and color-channel processing
-- Standard ISP line blanking, sliding window algorithms, math exproximations using left/right shift
-- Improved timing for setup using tighter timing contraints on submodules, pipeling, multi VT, cell resizing, buffering, fan-out reconstructions, and module proximity adjustments
-- Improved hold time with buffing and module proximity adjustments
+## Implementation Methodology & Optimization Tactics
+* **Submodule Over-Constraining:** Submodules were synthesized and constrained to an aggressive 2.5 ns clock period (400 MHz) to guarantee ample timing headroom when instantiated at the top level.
+* **Domain Partitioning:** Partitioned the physical design into three domain-specific processing engines (Physical, Digital, and Color CPUs) to isolate critical paths and streamline timing closure.
+* **Arithmetic Efficiency:** Implemented standard ISP line blanking, sliding-window line buffers, and shift-based hardware math approximations (left/right bit shifts) to eliminate expensive hardware dividers.
+* **Timing Closure Optimization:** Resolved setup and hold violations using selective multi-VT mapping, aggressive pipelining, driver resizing, fan-out restructuring, manual module proximity adjustments, and targeted buffer insertion.
 
-## Challenges
-- Major setup issues on top level. Soultion create sub-cores that meet timing constraints so top level is treated as a connection phase, each logic is created into a module allowing me to adjust where STD cells are precisely, and over constrainted submodules clock frequency to 2.5ns instead of 3ns leading to a greater timing budget.
-- 
+## Challenges & Solutions
+* **Top-Level Setup Timing Closure:** Initial top-level flat synthesis created major setup timing violations due to extensive routing and logic depth.
+  * *Solution:* Implemented a modular hierarchical hierarchy. Partitioned the core logic into sub-engines (`P_CPU`, `D_CPU`, `C_CPU`), turning the top level into a clean interconnect layer. By over-constraining the sub-blocks to 2.5 ns, standard cell placement was precisely controlled and top-level timing closed cleanly at 3.0 ns. Additionally an added pipeline stage was positioned between the `P_CPU` and `D_CPU` as a high capicative load and skew appeared between cores.
 
-## Improvements
-- Could do UVM enviornments and static test benches for all stages instead of just the submodules with STD cells and logic. IE the top level and all CPU cores used in the top level.
+## Physical Implementation Results
+* **Core Area:** 1660 µm × 4530 µm
+* **Target Core Density:** 82% core utilization
+* **Timing Sign-Off:** Successfully closed timing at 333.33 MHz with **0.487 ns setup slack** and **0.00 ns hold slack**.
 
-## Results
-**TODO**
+# ISP Top-Level Architecture
+The top-level ISP core is hierarchically organized into three specialized execution engines based on the three primary stages of image signal processing: Physical CPU (`P_CPU`), Digital CPU (`D_CPU`), and Color CPU (`C_CPU`).
 
-# ISP Top Level
-Made up of three cores based on the 3 different stages of processing. Physical CPU (P_CPU) is for pyshical processing like black level correction, lense shading, and defected pixels, then it goes to Digital CPU (D_CPU) which handles digital artifacts and processing like bayer noise reduction and white balance gain, and demosaic the bayer to RGB channels, then finally the Color CPU (C_CPU) that handles the color channel processing. This has the stages of color correcting, and gamma balancing. All these come together to produce the end result.
+![Top Level PNR Results](media/TOP_LEVEL_PNR.png)
 
-![UVM Results](media/TOP_LEVEL_PNR.png)
+### Physical CPU (`P_CPU`)
+Handles front-end hardware and sensor-level artifact remediation, including Black Level Correction (BLC), Lens Shading Correction (LSC), and Defective Pixel Correction (DPC).
+* **Die Dimensions & Area:** 1540 µm × 1920 µm
+* **Core Utilization:** 66% core density
+* **Timing Sign-Off:** +0.57 ns setup slack | 0.00 ns hold slack
 
-### PHYSICAL_CPU (P_CPU)
-![UVM Results](media/P_CPU_PNR.png)
+![P_CPU PNR Results](media/P_CPU_PNR.png)
 
-### DIGITAL_CPU (P_CPU)
-![UVM Results](media/D_CPU_PNR.png)
+### Digital CPU (`D_CPU`)
+Processes spatial noise, digital artifacts, and raw Bayer pattern reconstruction, comprising Bayer Noise Reduction (BNR), White Balance Gain (WBG), and Malvar-He-Cutler Demosaicing (DEMOS).
+* **Die Dimensions & Area:** 1350 µm × 1940 µm
+* **Core Utilization:** 73% core density
+* **Timing Sign-Off:** +0.10 ns setup slack | 0.00 ns hold slack
 
-### COLOR_CPU (P_CPU)
+![D_CPU PNR Results](media/D_CPU_PNR.png)
 
-![UVM Results](media/C_CPU_PNR.png)
+### Color CPU (`C_CPU`)
+Performs full RGB color space transformation and perceptual balance, incorporating the 3×3 Color Correction Matrix (CCM) and SRAM LUT-based Gamma Correction (GAM).
+* **Die Dimensions & Area:** 1310 µm × 1540 µm
+* **Core Utilization:** 83% core density
+* **Timing Sign-Off:** +0.64 ns setup slack | 0.00 ns hold slack
+
+![C_CPU PNR Results](media/C_CPU_PNR.png)
+
+
 # Submodules
 ## FIFO Buffer
 
@@ -251,9 +254,9 @@ The physical implementation flow was executed using OpenROAD, advancing the synt
 * **Routing & Sign-off:** Signal routing was constrained to layers `metal2` through `metal6`, leaving `metal1` dedicated exclusively to cell local connections. Clock trees were assigned to higher-speed `metal3` through `metal6` layers. Antenna violations were automatically checked and mitigated via intermediate diode insertion (`repair_antennas`). 
 
 * **Physical & Electrical Metrics:** The completed layout achieved full sign-off closure, successfully clearing the setup and design rule violations from synthesis to yield a timing-clean, fully routed module ready for top-level integration.
-  * **Area Utilization:** Achieved `68%` target core density across the 1100µm × 1800µm die boundary.
-  * **Timing Sign-off:** Successfully closed timing with a positive setup slack margin of `0.25ns`.
-  * **Power Consumption:** Total power consumption closed at `6.93mW`, with an electrical distribution profile of `50%` internal power, `46%` dynamic switching power, and a well-controlled `4%` static leakage component.
+  * **Area Utilization:** Achieved `70%` target core density across the 1100µm × 1800µm die boundary.
+  * **Timing Sign-off:** Successfully closed timing with a positive setup slack margin of `0.21ns`.
+  * **Power Consumption:** Total power consumption closed at `5.63mW`, with an electrical distribution profile of `68.9%` internal power, `26.7%` dynamic switching power, and a well-controlled `4.4%` static leakage component.
 
 ![UVM Results](media/BNR_PNR.png)
 
@@ -328,8 +331,8 @@ The physical implementation flow was executed using OpenROAD, advancing the synt
 * **Clock Tree Synthesis (CTS):** Clock networks were synthesized using a specific buffer target list bounded strictly to high-drive variants (`CLKBUF_X3`). 
 * **Routing & Sign-off:** Signal routing was constrained to layers `metal2` through `metal6`, while clock trees were assigned to higher-speed `metal3` through `metal6` layers. Antenna violations were automatically checked and mitigated via intermediate diode insertion (`repair_antennas`). 
 * **Physical & Electrical Metrics:** 
-  * **Timing Sign-off:** Successfully closed timing with a positive setup slack margin of `0.25ns` and a hold slack of `0.00ns`.
-  * **Power Consumption:** Total power consumption closed at `4.02mW` (`4.02e-03 Watts`), with an electrical distribution profile heavily dominated by core logic evaluation: `57.6%` internal power, `36.7%` dynamic switching power, and a well-controlled `5.7%` static leakage component.
+  * **Timing Sign-off:** Successfully closed timing with a positive setup slack margin of `0.16ns` and a hold slack of `0.00ns`.
+  * **Power Consumption:** Total power consumption closed at `4.11mW` (`4.11e-03 Watts`), with an electrical distribution profile heavily dominated by core logic evaluation: `58.4%` internal power, `38.1%` dynamic switching power, and a well-controlled `3.5%` static leakage component.
 
 ![PNR Results](media/DEMOS_PNR.png)
 
@@ -408,7 +411,7 @@ The physical implementation and timing verification for the Gamma Correction (`G
 #### Logic Synthesis (Yosys)
 The synthesis process is driven by a script that sequentially iterates across three operational corners: `slow`, `typ`, and `fast`. 
 * **Design Mapping:** The `GAM.v` RTL is read, flattened, and linked against the target standard cell and SRAM liberty files. 
-* **Logic Optimization:** Sequential elements and memories are mapped directly to target library components, utilizing `abc` for combinational logic mapping with a target clock period constraint of 3000ps (`-D 3000`). High and low signal tie-offs are explicitly mapped to `LOGIC1_X1` and `LOGIC0_X1` standard cells[cite: 35].
+* **Logic Optimization:** Sequential elements and memories are mapped directly to target library components, utilizing `abc` for combinational logic mapping with a target clock period constraint of 3000ps (`-D 3000`). High and low signal tie-offs are explicitly mapped to `LOGIC1_X1` and `LOGIC0_X1` standard cells.
 * **Outputs:** For each respective corner, the flow outputs a synthesized Verilog netlist (`GAM_<corner>_netlist.v`) and a statistical area/cell report (`GAM_<corner>_stat.txt`).
 
 #### Static Timing Analysis
@@ -421,13 +424,12 @@ A dedicated STA script evaluates the synthesized netlists against the `gam.sdc` 
 ### Physical Design (PNR)
 The physical implementation flow was executed utilizing the Nangate45 Open Cell Library and custom 10x2048 SRAM macros. The design was advanced through floorplanning, placement, clock tree synthesis (CTS), and detailed routing to achieve final sign-off.
 
-* **Floorplanning & Power Distribution:** The floorplan was initialized with a die area of 1455µm × 2040µm and a core area of 1445µm × 2030µm. The power distribution network (PDN) routes standard cell rows using `metal1` and constructs a core power mesh across `metal4`, `metal5`, and `metal6`. The internal SRAM macros were configured with a placement halo of `{1 1 1 1}` to ensure proper spacing and clean power delivery.
+* **Floorplanning & Power Distribution:** The floorplan was initialized with a die area of 1070µm × 1490µm and a core area of 1060µm × 1480µm. The power distribution network (PDN) routes standard cell rows using `metal1` and constructs a core power mesh across `metal4`, `metal5`, and `metal6`. The internal SRAM macros were configured with a placement halo of `{1 1 1 1}` to ensure proper spacing and clean power delivery.
 * **Placement & Congestion Control:** To manage routing congestion around the memory interfaces and complex logic, a global placement padding constraint of `-left 5 -right 5` was applied.
 * **Clock Tree Synthesis (CTS):** The clock tree was synthesized targeting a buffer list of high-drive `CLKBUF_X3` variants to ensure robust clock distribution and minimize skew.
 * **Routing & Sign-off:** Signal routing was constrained to layers `metal2` through `metal6`, while clock signals were assigned to layers `metal3` through `metal6`. Antenna violations were automatically detected and mitigated via diode insertion during the detailed routing phase.
-* **Area Utilization:** The final layout achieved a core density/utilization of **57%**.
-* **Timing Sign-off:** The design successfully closed timing with a worst-case max path (setup) slack of **0.07ns** and a min path (hold) slack of **0.00ns**.
-* **Power Consumption:** Total power consumption closed at **2.89mW**. This breaks down into an electrical distribution profile of **37.5%** internal power, **59.6%** dynamic switching power, and **2.9%** static leakage power[cite: 6].
-56% utilization. .2ns setup slack, 0 hold slack, power (37.5% internal, 59.6 swithcing, and 2.9% leakage for ) 2.89 mW.
+* **Area Utilization:** The final layout achieved a core density/utilization of **74%**.
+* **Timing Sign-off:** The design successfully closed timing with a worst-case max path (setup) slack of **0.2ns** and a min path (hold) slack of **0.00ns**.
+* **Power Consumption:** Total power consumption closed at **2.05mW**. This breaks down into an electrical distribution profile of **49.7%** internal power, **46.7%** dynamic switching power, and **3.7%** static leakage power.
 
 ![PNR Results](media/GAM_PNR.png)
